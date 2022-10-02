@@ -21,19 +21,24 @@ h2,
 h3,
 h4 {
   color: $light-blue;
+  font-family: $titles;
 }
 
 h1 {
   font-size: 48px;
+  font-weight: bold;
 }
 
 h2 {
   font-size: 36px;
+  font-weight: bold;
 }
 
 p,
 svg {
   color: $turquoise;
+  font-family: $texts;
+  font-size: 18px;
 }
 
 ol,
@@ -41,4 +46,13 @@ ul,
 li,
 a {
   padding: 10px;
+}
+
+a {
+  color: $light-blue;
+  font-family: $texts;
+}
+
+a:hover {
+  color: $turquoise;
 }
