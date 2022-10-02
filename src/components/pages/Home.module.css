@@ -1,26 +1,19 @@
 .home {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
-  padding: 0 200px;
+  padding: 0 100px 0 100px;
 }
 
 .down-effect:hover {
-  animation: down-effect 1s ease-out forwards;
+  transition: all 300ms ease-out;
 }
 
-/* .down-effect:hover {
+.down-effect:hover {
   transform: translateY(10px);
-} */
+}
 
-@keyframes down-effect {
-  0% {
-    transform: translateY(12px);
-  }
-  80% {
-    transform: translateY(8px);
-  }
-  100% {
-    transform: translateY(12px);
-  }
+.projects {
+  padding-top: 100px;
 }
