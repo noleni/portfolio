@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $dark-blue;
   min-height: 100vh;
@@ -14,6 +18,7 @@ section {
   min-height: 100vh;
   padding: 0px;
   margin: 0px auto;
+  width:100%;
 }
 
 h1,
@@ -35,7 +40,8 @@ h2 {
 }
 
 p,
-svg {
+svg,
+svg rect {
   color: $turquoise;
   font-family: $texts;
   font-size: 18px;
@@ -51,6 +57,7 @@ a {
 a {
   color: $light-blue;
   font-family: $texts;
+  text-decoration: none;
 }
 
 a:hover {

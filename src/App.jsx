@@ -5,9 +5,6 @@ import SideBarLinks from "./components/SideBarLinks";
 
 import "./App.scss";
 
-
-
-
 function App() {
   return (
     <Router>
