@@ -1,5 +1,3 @@
-import './Button.scss';
-
 const Button = (props) => {
   return (
     <button className='btn-main' type={props.type}>

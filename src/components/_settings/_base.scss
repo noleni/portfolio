@@ -2,12 +2,17 @@ html {
   scroll-behavior: smooth;
 }
 
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
 body {
   background-color: $dark-blue;
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-columns: 100%;
+  width:100%;
+  // display: grid;
+  // grid-template-rows: 1fr auto;
+  // grid-template-columns: 100%;
 }
 
 section {
@@ -45,6 +50,7 @@ svg rect {
   color: $turquoise;
   font-family: $texts;
   font-size: 18px;
+  // animation: pulse 1s;
 }
 
 ol,
@@ -62,4 +68,56 @@ a {
 
 a:hover {
   color: $turquoise;
+}
+
+button {
+  padding: 6px 22px;
+  color: $light-blue;
+  border: 1px solid $turquoise;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: $turquoise;
+  color: $dark-blue;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Fade down */
+.fadedown-enter {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+.fadedown-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+}
+
+/* Fade */
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms var(--easing);
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms var(--easing);
+}
+
+.down-effect:hover {
+  transition: all 300ms ease-out;
+}
+
+.down-effect:hover {
+  transform: translateY(10px);
 }

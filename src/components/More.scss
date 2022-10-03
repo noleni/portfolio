@@ -1,0 +1,18 @@
+.fade-appear {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.fade-appear-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 600ms linear, transform 600ms linear;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms var(--easing);
+}
