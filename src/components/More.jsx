@@ -17,7 +17,7 @@ const More = (props) => {
       timeout={600}
       classNames="fade"
     >
-      <div >
+      <div className='more-container'>
         <p>{props.text}</p>
         <DownArrow className='arrow down-effect' width={32} height={32} />
       </div>

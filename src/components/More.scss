@@ -2,7 +2,7 @@
 
 .fade-appear {
   opacity: 0;
-  transform: translateY(-40px);
+  transform: translateY(-50px);
 }
 
 .fade-appear-active {
@@ -16,9 +16,15 @@
 }
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms var(--easing);
+  transition: opacity 600ms var(--easing);
 }
 
 .arrow {
   color: $neon-pink;
 }
+
+.more-container {
+  margin-top: 20px;
+}
+
+

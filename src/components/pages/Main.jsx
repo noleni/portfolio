@@ -14,6 +14,7 @@ const Main = () => {
         h1Class={'title-big'}
         h2Class={'title'}
         projectsClass={'projects'}
+        btnClass={'btn-contact'}
       />
       <About
         presentationClass={'presentation'}

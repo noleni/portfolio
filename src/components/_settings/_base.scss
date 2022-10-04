@@ -10,6 +10,7 @@ body {
   background-color: $off-white;
   min-height: 100vh;
   width:100%;
+  margin: 0;
   // display: grid;
   // grid-template-rows: 1fr auto;
   // grid-template-columns: 100%;
@@ -47,7 +48,6 @@ p {
   color: $neon-pink;
   font-family: $texts;
   font-size: 18px;
-  // animation: pulse 1s;
 }
 
 svg {
@@ -77,12 +77,23 @@ button {
   border: 1px solid $neon-pink;
   border-radius: 4px;
   background-color: transparent;
+  animation: pulse 1s;
+  transition: all 200ms ease-in-out;
+  font-family: $texts;
+  background-color: transparent;
 }
 
 button:hover {
   background-color: rgba(247,31,102, 0.35);
   color: $black;
   cursor: pointer;
+  transform: scale(1.06);
+}
+
+@media(max-width: 764px) {
+  button {
+    background-color: rgba(247,31,102, 0.35);
+  }
 }
 
 
@@ -90,12 +101,20 @@ button:hover {
 .fadedown-enter {
   opacity: 0.01;
   transform: translateY(-20px);
-  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+  transition: opacity 800ms var(--easing), transform 300ms var(--easing);
 }
 .fadedown-enter-active {
   opacity: 1;
   transform: translateY(0px);
-  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
+  transition: opacity 800ms var(--easing), transform 300ms var(--easing);
+}
+
+.fadedown-exit {
+  opacity: 1;
+}
+.fadedown-exit-active {
+  opacity: 0;
+  transition: opacity 800ms var(--easing);
 }
 
 /* Fade */
