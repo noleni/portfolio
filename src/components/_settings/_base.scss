@@ -7,7 +7,7 @@ html.sr .load-hidden {
 }
 
 body {
-  background-color: $dark-blue;
+  background-color: $off-white;
   min-height: 100vh;
   width:100%;
   // display: grid;
@@ -30,13 +30,12 @@ h1,
 h2,
 h3,
 h4 {
-  color: $light-blue;
+  color: $black;
   font-family: $titles;
 }
 
 h1 {
-  font-size: 48px;
-  font-weight: bold;
+
 }
 
 h2 {
@@ -44,44 +43,45 @@ h2 {
   font-weight: bold;
 }
 
-p,
-svg,
-svg rect {
-  color: $turquoise;
+p {
+  color: $neon-pink;
   font-family: $texts;
   font-size: 18px;
   // animation: pulse 1s;
 }
 
-ol,
-ul,
+svg {
+  color: $black;
+  font-family: $texts;
+}
+
+
 li,
 a {
   padding: 10px;
 }
 
 a {
-  color: $light-blue;
+  color: $black;
   font-family: $texts;
   text-decoration: none;
 }
 
 a:hover {
-  color: $turquoise;
+  color: $neon-pink;
 }
 
 button {
   padding: 6px 22px;
-  color: $light-blue;
-  border: 1px solid $turquoise;
+  color: $black;
+  border: 1px solid $neon-pink;
   border-radius: 4px;
   background-color: transparent;
 }
 
 button:hover {
-  background-color: $turquoise;
-  color: $dark-blue;
-  border: none;
+  background-color: rgba(247,31,102, 0.35);
+  color: $black;
   cursor: pointer;
 }
 

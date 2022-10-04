@@ -21,8 +21,19 @@ section {
 }
 
 .presentation {
-  color: $light-blue;
+  color: $black;
   strong {
-    color: $turquoise;
+    color: $neon-pink;
   }
+}
+
+.title-big {
+  font-family: $title;
+  font-size: 66px;
+}
+
+.title {
+  font-family: $title;
+  font-size: 42px;
+  font-weight: lighter;
 }

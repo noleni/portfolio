@@ -1,7 +1,7 @@
 .header {
   display: flex;
   /* -webkit-box-pack: justify; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* -webkit-box-align: center; */
   align-items: center;
   position: fixed;
@@ -9,7 +9,7 @@
   z-index: 11;
   padding: 0px 50px;
   width: 100%;
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(251, 247, 242, 0.45);
   backdrop-filter: blur(10px);
 }
 

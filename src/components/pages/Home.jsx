@@ -9,7 +9,15 @@ import './Home.scss';
 
 const Home = () => {
 
-  ScrollReveal().reveal('#about',{ delay: 500 });
+
+
+
+
+  // const prefersReducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    ScrollReveal().reveal('#about',{ delay: 200, duration: 1000, origin: 'bottom', distance: '20px' });
+  }, []);
 
 
   return (
@@ -17,8 +25,8 @@ const Home = () => {
       <section >
         <div>
           <p>Bonjour, je suis</p>
-          <h1>Marine Ramillon</h1>
-          <h2>Développeuse web en quête d'opportunités !  🚀✨</h2>
+          <h1 className='title-big'>Marine Ramillon</h1>
+          <h2 className='title'>Développeuse web en quête d'opportunités !  🚀✨</h2>
         </div>
         <More
           className="projects"
@@ -26,6 +34,7 @@ const Home = () => {
           text="Pour en savoir plus">
         </More>
       </section>
+
       <section id="about" className='load-hidden'>
           <div>
             <p>à propos de moi</p>

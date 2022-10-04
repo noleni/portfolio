@@ -19,7 +19,7 @@ const More = (props) => {
     >
       <div >
         <p>{props.text}</p>
-        <DownArrow className={props.arrowClassName} width={32} height={32} />
+        <DownArrow className='arrow' width={32} height={32} />
       </div>
     </CSSTransition>
   )
