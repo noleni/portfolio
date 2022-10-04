@@ -7,7 +7,7 @@ const Github = (props) => {
         className="feather feather-github"
         role="img"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"

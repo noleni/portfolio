@@ -6,7 +6,7 @@ const Linkedin = (props) => {
       <path
         className="feather feather-linkedin"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="stroke-linejoin"
         fill="none"
