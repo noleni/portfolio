@@ -1,4 +1,25 @@
+@import '../components/_settings/variables';
+
 .tech-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  border-top: 1px solid $neon-pink;
+  border-bottom: 1px solid $neon-pink;
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 100%;
+}
+
+@media(min-width: 576px) {
+  .tech-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media(min-width: 764px) {
+  .tech-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 }

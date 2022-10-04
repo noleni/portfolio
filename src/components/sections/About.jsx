@@ -4,6 +4,7 @@ import TechList from "../TechList";
 
 const About = (props) => {
   return (
+    <>
     <section id="about">
       <div>
         <p>à propos de moi</p>
@@ -16,16 +17,17 @@ const About = (props) => {
           J'y ai appris à travailler en équipe, dompter git et le terminal et user des bonnes pratiques. Aujourd'hui, je pousse mon apprentissage sur React (que j'adore)
           et je cherche à rejoindre une équipe pour utiliser mes nouvelles compétences au service d'un projet concret et ambitieux.
         </p>
-        <TechList />
       </div>
-        <More
-          className="projects"
-          arrowClassName="down-effect"
-          text="Mes projets">
-        </More>
-      <div>
-    </div>
-  </section>
+    <TechList />
+    <More
+      className="projects"
+      arrowClassName="down-effect"
+      text="Mes projets">
+    </More>
+    </section>
+    </>
+
+
   )
 };
 

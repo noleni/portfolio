@@ -19,6 +19,7 @@ const navLinks = [
     name: 'contact',
     url: '/#contact',
   },
+
 ];
 
 const Header = () => {
@@ -34,7 +35,7 @@ const Header = () => {
     };
   }, []);
 
-  const timeout = isMounted ? 300 : 0;
+  const timeout = isMounted ? 600 : 0;
   const fadeDownClass = isMounted ? 'fadedown' : '';
 
   return (
@@ -52,12 +53,11 @@ const Header = () => {
           }
         </TransitionGroup>
       </ul>
-          {isMounted &&
-            <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-
-      <Button type="button">CV</Button>
-            </CSSTransition>
-          }
+      {isMounted &&
+        <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+          <Button type="button">CV</Button>
+        </CSSTransition>
+      }
     </div>
   )
 };

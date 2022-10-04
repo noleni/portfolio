@@ -6,6 +6,10 @@ import HtmlSvg from "./atoms/SVG/HtmlSvg";
 import JavascriptSvg from "./atoms/SVG/JavaScriptSvg";
 import RubySvg from "./atoms/SVG/RubySvg";
 import RailsSvg from "./atoms/SVG/RailsSvg";
+import CssSvg from "./atoms/SVG/CssSvg";
+import HerokuSvg from "./atoms/SVG/HerokuSvg";
+import FigmaSvg from "./atoms/SVG/FigmaSvg";
+import SassSvg from "./atoms/SVG/SassSvg";
 
 import './TechList.scss';
 
@@ -17,6 +21,10 @@ const TechList = (props) => {
     <ReactSvg />,
     <RubySvg />,
     <RailsSvg />,
+    <CssSvg />,
+    <HerokuSvg />,
+    <FigmaSvg />,
+    <SassSvg />
   ]
 
   const sectionTwo = useRef(null);
