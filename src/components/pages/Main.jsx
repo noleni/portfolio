@@ -39,6 +39,7 @@ const MainStyle = styled.div`
     font-size: 28px;
     font-weight: lighter;
     text-align: center;
+    padding-bottom: 22px;
   }
 
   .btn-contact {

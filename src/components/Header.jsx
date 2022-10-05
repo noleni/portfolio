@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
+import Github from '../components/atoms/SVG/Github';
+import Linkedin from '../components/atoms/SVG/Linkedin';
 
 
 const navLinks = [
@@ -49,17 +51,18 @@ const StyleLargeNav = styled.nav`
 
   @media(min-width: 768px) {
 
+
     .btn-small-nav {
       display: none;
     }
 
     .ul-large {
     display: flex;
+    width: 80%;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
     align-items: flex-end;
-    margin: 0px;
     list-style: none;
   }
 
@@ -70,17 +73,34 @@ const StyleLargeNav = styled.nav`
 `
 
 const MenuStyle = styled.aside`
+  width: 0%;
+  visibility: hidden;
   position:fixed;
   right: 0;
   z-index: 10;
   height: 100vh;
-  width: 80%;
   background-color: var(--neon-pink);
+  transition: all 0.2s ease-in-out;
+
+  &.open {
+    width: 80%;
+    visibility: visible;
+  }
+
 
   .ul-small {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding-top: 120px;
+    padding-right: 12px;
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 12px 0;
   }
 `
 
@@ -130,16 +150,19 @@ const Header = () => {
           {menuOpen ? <>&#10005;</> : <>&#8801;</>}
         </button>
     </StyleLargeNav>
-    {menuOpen &&
-      <MenuStyle>
-        <ul className='ul-small'>
-          {navLinks.map(({url, name}, i) => (
-            <li key={i}>
-              <a onClick={() => setMenuOpen(false)} href={url}>{`0${i + 1} - ${name}`}</a>
-            </li>
-          ))}
-        </ul>
-      </MenuStyle>}
+    <MenuStyle className={menuOpen ? "open" : ""}>
+      <ul className='ul-small'>
+        {navLinks.map(({url, name}, i) => (
+          <li key={i}>
+            <a onClick={() => setMenuOpen(false)} href={url}><h3>{`0${i + 1} - ${name}`}</h3></a>
+          </li>
+        ))}
+      </ul>
+      <div className='social'>
+        <Github width={50} height={50} />
+        <Linkedin width={50} height={50} />
+      </div>
+    </MenuStyle>
     </>
   )
 };

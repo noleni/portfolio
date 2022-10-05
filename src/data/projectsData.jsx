@@ -7,7 +7,7 @@ const projectsData = [
     features: ['requête API', 'Geolocalisation', 'Authentification', 'Filtres multicritères', 'Search'],
     tech: ['Ruby On Rails', 'Ruby', 'Stimulus'],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    illustration: []
+    illustration: "expo-plus-screen.png"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const projectsData = [
     features: ['Scrapping', 'Authentification'],
     tech: ['Ruby On Rails', 'Ruby', 'Stimulus'],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    illustration: []
+    illustration: "expo-plus-two-screens.png"
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const projectsData = [
     features: [],
     tech: ['React', 'JavaScript'],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    illustration: []
+    illustration: "expo-plus-two-screens.png"
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const projectsData = [
     features: [],
     tech: ['React', 'JavaScript', 'Scss'],
     packages: [],
-    illustration: []
+    illustration: "expo-plus-two-screens.png"
   },
 ]
 
