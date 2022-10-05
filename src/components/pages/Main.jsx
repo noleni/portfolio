@@ -26,13 +26,6 @@ const MainStyle = styled.div`
     padding-top: 100px;
   }
 
-  .presentation {
-    color: var(--black);
-    strong {
-      color: var(--neon-pink);
-    }
-  }
-
   .title-big {
     font-family: var(--title);
     font-size: 48px;
