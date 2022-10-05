@@ -3,6 +3,7 @@ import React, {} from 'react';
 import Home from '../sections/Home';
 import About from '../sections/About';
 import Projects from '../sections/Projects';
+import Contact from '../sections/Contact';
 
 import '../_settings/_variables.scss';
 import styled from 'styled-components';
@@ -98,6 +99,7 @@ const Main = () => {
         presentationClass={'presentation'}
       />
       <Projects />
+      <Contact />
     </MainStyle>
   );
 };

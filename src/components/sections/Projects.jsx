@@ -2,7 +2,7 @@ import projectsData from "../../data/projectsData";
 
 const Projects = () => {
   return (
-  <section>
+  <section id="projects">
   <ul>
     {projectsData.map((project) => (
       <li key={project.id}>

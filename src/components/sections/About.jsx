@@ -8,9 +8,6 @@ import TechList from "../TechList";
 const AboutStyle = styled.section`
   .presentation {
     color: var(--black);
-    strong {
-      color: var(--neon-pink);
-    }
   }
 
   .opacity-down {
@@ -32,18 +29,12 @@ const AboutStyle = styled.section`
     background: -o-linear-gradient(rgba(251,247,242,0) 0%, rgba(251,247,242,1) 70%);
     background: linear-gradient(rgba(251,247,242,0) 0%, rgba(251,247,242,1) 70%);
   }
-
-  .btn-show-more {
-    position:absolute;
-    bottom:0;
-  }
 `;
 
 
 const About = (props) => {
 
   const [showMore, setShowMore] = useState(false);
-
 
   const paragraph = `J'ai travaillé pendant près de 10 ans dans le secteur culturel, à Paris, en banlieue parisienne... et en Nouvelle-Zélande !
   Je m'occupais particulièrement de la billetterie, des stratégies de développement de ventes et de l'analyse statistique de fréquentation.
@@ -59,13 +50,14 @@ const About = (props) => {
       </div>
       <div>
         {!showMore &&
-          <p className='presentation opacity-down'>{paragraph.substring(0, 260)}
-            <div className='masked'>
-              <button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
-                + Voir plus
-              </button>
-            </div>
-          </p>
+          <>
+            <p className='presentation opacity-down'>{paragraph.substring(0, 260)}
+              <span className='masked'></span>
+            </p>
+            <button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
+              + Voir plus
+            </button>
+          </>
         }
         {showMore &&
           <>

@@ -44,6 +44,8 @@ const TechList = (props) => {
   }, []);
 
   return (
+    <>
+    <p>Ce que je connais déjà :</p>
     <ul ref={sectionTwo} className='tech-list'>
       {techList.map((item, i) =>
         (
@@ -51,6 +53,7 @@ const TechList = (props) => {
         )
       )}
     </ul>
+    </>
   )
 };
 
