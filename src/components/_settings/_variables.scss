@@ -1,11 +1,15 @@
+
+:root {
 // Colors
 
-$off-white: #fbf7f2;
-$black: #1A1C1A;
-$neon-pink: #F71F66;
+--off-white: #fbf7f2;
+--black: #1A1C1A;
+--neon-pink: #F71F66;
 
 
 // Fonts
-$titles: 'Montserrat', sans-serif;
-$texts: 'Titillium Web', sans-serif;
-$title: 'Righteous', sans-serif;
+--titles: 'Montserrat', sans-serif;
+--texts: 'Titillium Web', sans-serif;
+--title: 'Righteous', sans-serif;
+
+}

@@ -7,7 +7,7 @@ html.sr .load-hidden {
 }
 
 body {
-  background-color: $off-white;
+  background-color: var(--off-white);
   min-height: 100vh;
   width:100%;
   margin: 0;
@@ -31,8 +31,8 @@ h1,
 h2,
 h3,
 h4 {
-  color: $black;
-  font-family: $titles;
+  color: var(--black);
+  font-family: var(--titles);
 }
 
 h1 {
@@ -45,14 +45,14 @@ h2 {
 }
 
 p {
-  color: $neon-pink;
-  font-family: $texts;
+  color: var(--neon-pink);
+  font-family: var(--texts);
   font-size: 18px;
 }
 
 svg {
-  color: $black;
-  font-family: $texts;
+  color: var(--black);
+  font-family: var(--texts);
 }
 
 
@@ -62,30 +62,30 @@ a {
 }
 
 a {
-  color: $black;
-  font-family: $texts;
+  color: var(--black);
+  font-family: var(--texts);
   text-decoration: none;
 }
 
 a:hover {
-  color: $neon-pink;
+  color: var(--neon-pink);
 }
 
 button {
   padding: 6px 22px;
-  color: $black;
-  border: 1px solid $neon-pink;
+  color: var(--black);
+  border: 1px solid var(--neon-pink);
   border-radius: 4px;
   background-color: transparent;
   animation: pulse 1s;
   transition: all 200ms ease-in-out;
-  font-family: $texts;
+  font-family: var(--texts);
   background-color: transparent;
 }
 
 button:hover {
   background-color: rgba(247,31,102, 0.35);
-  color: $black;
+  color: var(--black);
   cursor: pointer;
   transform: scale(1.06);
 }
