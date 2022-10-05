@@ -8,9 +8,9 @@ const FigmaSvg = (props) => {
       width={50} height={50}
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
     <path stroke="currentColor" d="M5 5.5A3.5 3.5 0 018.5 2H12v7H8.5A3.5 3.5 0 015 5.5z" />
     <path stroke="currentColor" d="M12 2h3.5a3.5 3.5 0 110 7H12V2z" />

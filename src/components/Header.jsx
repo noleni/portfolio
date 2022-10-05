@@ -59,16 +59,35 @@ const StyleLargeNav = styled.nav`
     justify-content: space-between;
     -webkit-box-align: center;
     align-items: flex-end;
-    padding: 0px;
     margin: 0px;
     list-style: none;
   }
+
+  .btn-cv-large {
+    display: block;
+  }
+  }
+`
+
+const MenuStyle = styled.aside`
+  position:fixed;
+  right: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 80%;
+  background-color: var(--neon-pink);
+
+  .ul-small {
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
   }
 `
 
 const Header = () => {
 
   const [isMounted, setIsMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -82,7 +101,9 @@ const Header = () => {
   const timeout = isMounted ? 1000 : 0;
   const fadeDownClass = isMounted ? 'fadedown' : '';
 
+
   return (
+    <>
     <StyleLargeNav>
       <ul className='ul-large'>
         <TransitionGroup component={null}>
@@ -102,8 +123,24 @@ const Header = () => {
           <button className='btn-cv-large' type="button">CV</button>
         </CSSTransition>
       }
-      <button className="btn-small-nav" type="button">&#8801;</button>
+      <button
+        className="btn-small-nav"
+        type="button"
+        onClick={()=> setMenuOpen(!menuOpen)}>
+          {menuOpen ? <>&#10005;</> : <>&#8801;</>}
+        </button>
     </StyleLargeNav>
+    {menuOpen &&
+      <MenuStyle>
+        <ul className='ul-small'>
+          {navLinks.map(({url, name}, i) => (
+            <li key={i}>
+              <a onClick={() => setMenuOpen(false)} href={url}>{`0${i + 1} - ${name}`}</a>
+            </li>
+          ))}
+        </ul>
+      </MenuStyle>}
+    </>
   )
 };
 
