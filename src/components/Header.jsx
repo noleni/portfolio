@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
+import Button from './UI/Button';
+
 import styled from 'styled-components';
 import Github from '../components/atoms/SVG/Github';
 import Linkedin from '../components/atoms/SVG/Linkedin';
@@ -140,15 +143,15 @@ const Header = () => {
       </ul>
       {isMounted &&
         <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-          <button className='btn-cv-large' type="button">CV</button>
+          <Button className='btn-cv-large' type="button">CV</Button>
         </CSSTransition>
       }
-      <button
+      <Button
         className="btn-small-nav"
         type="button"
         onClick={()=> setMenuOpen(!menuOpen)}>
           {menuOpen ? <>&#10005;</> : <>&#8801;</>}
-        </button>
+        </Button>
     </StyleLargeNav>
     <MenuStyle className={menuOpen ? "open" : ""}>
       <ul className='ul-small'>

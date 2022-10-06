@@ -32,7 +32,7 @@ h2,
 h3,
 h4 {
   color: var(--black);
-  font-family: var(--titles);
+  font-family: var(--title);
 }
 
 h1 {
@@ -75,30 +75,6 @@ a:hover {
   color: var(--neon-pink);
 }
 
-button {
-  padding: 6px 22px;
-  color: var(--black);
-  border: 1px solid var(--neon-pink);
-  border-radius: 4px;
-  background-color: transparent;
-  animation: pulse 1s;
-  transition: all 200ms ease-in-out;
-  font-family: var(--texts);
-  background-color: transparent;
-}
-
-button:hover {
-  background-color: rgba(247,31,102, 0.35);
-  color: var(--black);
-  cursor: pointer;
-  transform: scale(1.06);
-}
-
-@media(max-width: 764px) {
-  button {
-    background-color: rgba(247,31,102, 0.35);
-  }
-}
 
 
 /* Fade down */

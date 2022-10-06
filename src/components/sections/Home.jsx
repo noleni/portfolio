@@ -1,4 +1,5 @@
 import More from "../More";
+import Button from "../UI/Button";
 import styled from 'styled-components';
 
 const HomesGreetingStyles = styled.p`
@@ -15,7 +16,7 @@ const Home = (props) => {
         <h1 className={props.h1Class}>Marine Ramillon,</h1>
         <h2 className={props.h2Class}>Développeuse web en quête d'opportunités.</h2>
       </div>
-      <button className={props.btnClass}>Me contacter</button>
+      <Button className={props.btnClass}>Me contacter</Button>
       <More
         className={props.projectsClass}
         arrowClassName="down-effect"

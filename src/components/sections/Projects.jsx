@@ -1,35 +1,48 @@
+import React, { useState, useEffect } from 'react';
+
 import projectsData from "../../data/projectsData";
 import styled from 'styled-components';
 
-const ProjetsListStyle = styled.ul`
-  width: 90%;
-  padding-inline-start: 0;
-  display: grid;
-  grid-template-columns: 1fr;
+const ProjetsListContainerStyle = styled.div`
+
+  display: flex;
   align-items:center;
+  width: 100%;
+  max-height: 100vh;
 
   @media(min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+
   }
+
 `
 
 const ProjectCardStyle = styled.li`
-  width: 90%;
-  height: 200px;
+  width: 80px;
+  height: 80px;
   border-radius: 4px;
   margin-bottom: 12px;
   margin-top: 22px;
   ${'' /* display: flex; */}
-  background-color: #141414;
-  opacity: 0.7;
+  background-color: var(--off-white);
+  opacity: 0.9;
   position: relative;
   cursor: pointer;
 
-  @media(min-width: 768px) {
-    width: 260px;
-
+  .project-list-round-background {
+    background-color: var(--offwhite);
+    border-radius: 50%;
   }
 
+  @media(min-width: 768px) {
+
+
+  }
+`
+
+const ProjectListStyle = styled.ul`
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
 
   img {
     width: 100%;
@@ -40,26 +53,51 @@ const ProjectCardStyle = styled.li`
     object-fit: cover;
     opacity: 0.5;
     transition: filter 0.5s ease-in-out;
-    filter: saturate(10%);
+}
+`
+
+const ProjectSelectedStyle = styled.div`
+  width: 100%;
+  position: relative;
+  padding-left: 40px;
+
+
+  img {
+    width: 100%;
+    object-fit: contain;
   }
 `
 
+
 const Projects = () => {
+
+  const [active, setActive] = useState(1);
+
   return (
-  <section id="projects">
-  <ProjetsListStyle>
-    {projectsData.map((project) => (
-      <ProjectCardStyle key={project.id}>
-        <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name}/>
-        <div className="project-info">
-        </div>
-        <div className="project-img">
-        </div>
-        {project.name}
-      </ProjectCardStyle>
-    ))}
-  </ProjetsListStyle>
-  </section>
+    <section id="projects">
+      <ProjetsListContainerStyle>
+        <ProjectListStyle>
+          {projectsData.map((project) => (
+            <ProjectCardStyle key={project.id} onClick={(e) => setActive(e.target.id)}>
+                <div className="project-list">
+                  <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id}/>
+                  <p className='project-list-round-background'>{project.name}</p>
+                </div>
+            </ProjectCardStyle>
+          ))}
+        </ProjectListStyle>
+        <ProjectSelectedStyle className='selected-project'>
+          {projectsData.filter(selected => selected.id === +active).map(project => (
+            <>
+            <p>{project.date}</p>
+            <h3>{project.name}</h3>
+            <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id}/>
+            <p>{project.notice}</p>
+            </>
+          ))}
+        </ProjectSelectedStyle>
+      </ProjetsListContainerStyle>
+    </section>
   )
 };
 

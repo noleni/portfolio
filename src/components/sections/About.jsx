@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import More from "../More";
 import TechList from "../TechList";
+import Button from '../UI/Button';
 
 
 const AboutStyle = styled.section`
@@ -24,10 +25,10 @@ const AboutStyle = styled.section`
     width:100%;
     height: 100%;
     z-index: 2;
-    background: -webkit-linear-gradient(rgba(251,247,242,0) 0%, rgba(251,247,242,1) 70%);
-    background: -moz-linear-gradient(rgba(251,247,242,0) 0%, rgba(251,247,242,1) 70%);
-    background: -o-linear-gradient(rgba(251,247,242,0) 0%, rgba(251,247,242,1) 70%);
-    background: linear-gradient(rgba(251,247,242,0) 0%, rgba(251,247,242,1) 70%);
+    background: -webkit-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+    background: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+    background: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
   }
 `;
 
@@ -54,9 +55,9 @@ const About = (props) => {
             <p className='presentation opacity-down'>{paragraph.substring(0, 260)}
               <span className='masked'></span>
             </p>
-            <button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
+            <Button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
               + Voir plus
-            </button>
+            </Button>
           </>
         }
         {showMore &&
