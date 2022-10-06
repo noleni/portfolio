@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import Button from '../UI/Button';
+
 import projectsData from "../../data/projectsData";
 import styled from 'styled-components';
 
@@ -18,8 +20,9 @@ const ProjetsListContainerStyle = styled.div`
 `
 
 const ProjectListStyle = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  ${'' /* display: grid;
+  grid-template-columns: 1fr 1fr; */}
+  display: flex;
   justify-items: center;
   max-height: 100vh;
   margin-top: 22px;
@@ -42,21 +45,24 @@ const ProjectListStyle = styled.ul`
     }
   }
 
+
   @media(min-width: 768px) {
-    ${'' /* display: block; */}
-    width: 50%;
+    flex-direction: column;
+    width: 33%;
+    padding-right: 0px;
+    border-right: 1px solid var(--black);
   }
 
 `
 
 const ProjectCardStyle = styled.li`
-  width: 90px;
-  height: 90px;
+  width: 45px;
+  height: 45px;
   border-radius: 4px;
   margin-bottom: 6px;
   margin-top: 4px;
-  margin-left: 12px;
-  margin-right: 12px;
+  ${'' /* margin-left: 12px;
+  margin-right: 12px; */}
   opacity: 1;
   position: relative;
   cursor: pointer;
@@ -88,6 +94,8 @@ const ProjectCardStyle = styled.li`
   @media(min-width: 768px) {
     width: 120px;
   height: 120px;
+  margin-left: 12px;
+  margin-right: 12px;
 
   }
 `
@@ -120,18 +128,31 @@ const ProjectSelectedStyle = styled.div`
     margin-right: 8px;
     padding: 0 8px;
   }
+
+  @media(min-width: 768px) {
+    margin-left: 80px;
+
+  }
+
 `
 
 
 const Projects = () => {
 
   const [active, setActive] = useState(1);
+  console.log(active)
+
 
   return (
     <section id="projects">
         <p className='section-title'>Mes projets</p>
       <ProjetsListContainerStyle>
         <ProjectListStyle>
+          {projectsData.map(project => (
+            <li><Button className={project.id === +active ? "active" : ""} onClick={(e) => setActive(e.target.id)} id={project.id}>{project.name}</Button></li>
+          ))}
+        </ProjectListStyle>
+        {/* <ProjectListStyle>
           {projectsData.map((project) => (
             <div className='project-icon'>
             <p className='project-title-small'>#{project.id} - {project.name}</p>
@@ -142,7 +163,7 @@ const Projects = () => {
             </ProjectCardStyle>
             </div>
           ))}
-        </ProjectListStyle>
+        </ProjectListStyle> */}
         <ProjectSelectedStyle className='selected-project'>
           {projectsData.filter(selected => selected.id === +active).map(project => (
             <>
@@ -152,10 +173,9 @@ const Projects = () => {
               <div className='tags-container'>
               {project.tech.map(techno => (<p className='techno-tag'>{techno}</p>))}
               </div>
-            {/* <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id}/> */}
+            <img src={`${process.env.PUBLIC_URL}/images/${project.poster}`} alt={project.name} id={project.id}/>
             <p>{project.notice}</p>
-            <p>{project.notice}</p>
-            <p>{project.notice}</p>
+
 
 
             </>

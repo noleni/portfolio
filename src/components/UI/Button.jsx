@@ -18,6 +18,9 @@ const ButtonStyle = styled.button`
   transform: scale(1.06);
 }
 
+  &.active {
+    background-color: rgba(247,31,102, 0.35);
+  }
   @media(max-width: 764px) {
     background-color: rgba(247,31,102, 0.35);
   }

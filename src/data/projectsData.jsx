@@ -7,6 +7,7 @@ const projectsData = [
     features: ['requête API', 'Geolocalisation', 'Authentification', 'Filtres multicritères', 'Search'],
     tech: ['Ruby On Rails', 'Ruby', 'Stimulus'],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
+    poster: "expo-plus-cover.png",
     illustration: "expo-plus-screen.png",
     github: "https://github.com/Linabemu/expo-plus",
     url: "https://expo-plus.herokuapp.com/"
@@ -19,7 +20,8 @@ const projectsData = [
     features: ['Scrapping', 'Authentification'],
     tech: ['Ruby On Rails', 'Ruby', 'Stimulus'],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    illustration: "expo-plus-two-screens.png",
+    poster: "paper-app-screen.png",
+    illustration: "paper-app-pic.png",
     github: "https://github.com/noleni/rails-papers-app",
   },
   {
@@ -30,6 +32,7 @@ const projectsData = [
     features: [],
     tech: ['React', 'JavaScript'],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
+    poster: "paper-app-screen.png",
     illustration: "expo-plus-two-screens.png",
     github: "https://github.com/noleni/react-fake-marketplace"
   },
@@ -41,6 +44,7 @@ const projectsData = [
     features: [],
     tech: ['React', 'JavaScript', 'Scss'],
     packages: [],
+    poster: "paper-app-screen.png",
     illustration: "expo-plus-two-screens.png",
     github: "https://github.com/noleni/portfolio"
   },
