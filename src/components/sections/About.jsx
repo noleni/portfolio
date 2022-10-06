@@ -47,7 +47,7 @@ const About = (props) => {
   return (
     <AboutStyle id="about">
       <div>
-        <p>à propos de moi</p>
+        <p className='section-title'>À propos de moi</p>
       </div>
       <div>
         {!showMore &&

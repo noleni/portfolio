@@ -6,43 +6,62 @@ import styled from 'styled-components';
 const ProjetsListContainerStyle = styled.div`
 
   display: flex;
+  flex-direction: column;
   align-items:center;
   width: 100%;
   max-height: 100vh;
 
   @media(min-width: 768px) {
+    flex-direction: row;
+  }
 
+`
+
+const ProjectListStyle = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  max-height: 100vh;
+  margin-top: 22px;
+  padding: 0;
+
+
+  .project-title-small {
+    font-size: 12px;
+    color: var(--black);
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .project-icon {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      padding-left: 12px;
+    }
+  }
+
+  @media(min-width: 768px) {
+    ${'' /* display: block; */}
+    width: 50%;
   }
 
 `
 
 const ProjectCardStyle = styled.li`
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 4px;
-  margin-bottom: 12px;
-  margin-top: 22px;
-  ${'' /* display: flex; */}
-  background-color: var(--off-white);
-  opacity: 0.9;
+  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-left: 12px;
+  margin-right: 12px;
+  opacity: 1;
   position: relative;
   cursor: pointer;
-
-  .project-list-round-background {
-    background-color: var(--offwhite);
-    border-radius: 50%;
-  }
-
-  @media(min-width: 768px) {
-
-
-  }
-`
-
-const ProjectListStyle = styled.ul`
-  display: flex;
-  flex-direction: column;
-  max-height: 100vh;
+  border: 1px solid var(--black);
+  transition: all 200ms ease-in-out;
 
   img {
     width: 100%;
@@ -51,20 +70,55 @@ const ProjectListStyle = styled.ul`
     left: 0;
     position: absolute;
     object-fit: cover;
-    opacity: 0.5;
-    transition: filter 0.5s ease-in-out;
+    opacity: 0.6;
+    transition: all 200ms ease-in-out;
 }
+
+  .img-active {
+    opacity: 0.9;
+  }
+
+  &.active {
+    border: 1.5px solid var(--neon-pink);
+    transform: scale(1.04)
+    ${'' /* width: 110px;
+    height: 110px; */}
+  }
+
+  @media(min-width: 768px) {
+    width: 120px;
+  height: 120px;
+
+  }
 `
 
 const ProjectSelectedStyle = styled.div`
   width: 100%;
   position: relative;
-  padding-left: 40px;
+  ${'' /* padding-left: 80px; */}
 
 
   img {
     width: 100%;
     object-fit: contain;
+  }
+
+  .selected-project-title {
+    display: flex;
+  }
+
+  .tags-container {
+    display: flex;
+  }
+
+  .techno-tag {
+    width: fit-content;
+    font-size: 12px;
+    color: var(--off-white);
+    background-color: var(--neon-pink);
+    border-radius: 4px;
+    margin-right: 8px;
+    padding: 0 8px;
   }
 `
 
@@ -75,24 +129,35 @@ const Projects = () => {
 
   return (
     <section id="projects">
+        <p className='section-title'>Mes projets</p>
       <ProjetsListContainerStyle>
         <ProjectListStyle>
           {projectsData.map((project) => (
-            <ProjectCardStyle key={project.id} onClick={(e) => setActive(e.target.id)}>
+            <div className='project-icon'>
+            <p className='project-title-small'>#{project.id} - {project.name}</p>
+            <ProjectCardStyle key={project.id} onClick={(e) => setActive(e.target.id)} className={project.id === +active ? "active" : ""}>
                 <div className="project-list">
-                  <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id}/>
-                  <p className='project-list-round-background'>{project.name}</p>
+                  <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id} className={project.id === +active ? "img-active" : ""}/>
                 </div>
             </ProjectCardStyle>
+            </div>
           ))}
         </ProjectListStyle>
         <ProjectSelectedStyle className='selected-project'>
           {projectsData.filter(selected => selected.id === +active).map(project => (
             <>
-            <p>{project.date}</p>
-            <h3>{project.name}</h3>
-            <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id}/>
+
+
+              <h3>{project.name} / {project.date}</h3>
+              <div className='tags-container'>
+              {project.tech.map(techno => (<p className='techno-tag'>{techno}</p>))}
+              </div>
+            {/* <img src={`${process.env.PUBLIC_URL}/images/${project.illustration}`} alt={project.name} id={project.id}/> */}
             <p>{project.notice}</p>
+            <p>{project.notice}</p>
+            <p>{project.notice}</p>
+
+
             </>
           ))}
         </ProjectSelectedStyle>

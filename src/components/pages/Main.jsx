@@ -42,6 +42,15 @@ const MainStyle = styled.div`
     padding-bottom: 22px;
   }
 
+  .section-title {
+    color: var(--off-white);
+    font-family: var(--title);
+    font-size: 18px;
+    background-color: var(--neon-pink);
+    padding: 0 10px;
+    margin-bottom: 0;
+  }
+
   .btn-contact {
     font-size: 22px;
     margin: 0 auto;
