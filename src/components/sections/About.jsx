@@ -111,26 +111,17 @@ const About = (props) => {
       <p className='section-title'>À propos</p>
       <div className='small-device'>
         {!showMore &&
-          <>
-            <p className='presentation opacity-down'>{paragraph.substring(0, 200)}
-              <span className='masked'></span>
-            </p>
-            <Button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
-              + Voir plus
-            </Button>
-          </>
+          <p className='presentation opacity-down'>{paragraph.substring(0, 200)}
+            <span className='masked'></span>
+          </p>
         }
-        {showMore &&
-          <>
-            <p className='presentation'>{paragraph}</p>
-            <Button type="button" onClick={() => setShowMore(!showMore)}>- Voir moins</Button>
-          </>
-        }
+        {showMore && <p className='presentation'>{paragraph}</p> }
+        <Button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
+          {!showMore ? "Voir plus" : "Voir moins"}
+        </Button>
       </div>
 
-      <div className='large-device'>
-        <p className='presentation'>{paragraph}</p>
-      </div>
+      <p className='presentation large-device'>{paragraph}</p>
 
       <More
         className="projects"

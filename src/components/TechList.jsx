@@ -30,7 +30,7 @@ const TechListStyle = styled.ul`
 }
 
 @media(min-width: 764px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 `
 
