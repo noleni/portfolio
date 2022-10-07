@@ -36,6 +36,7 @@ const MainStyle = styled.div`
 
   .title {
     font-family: var(--title);
+    color: var(--dark-blue);
     font-size: 28px;
     font-weight: lighter;
     text-align: center;
@@ -43,13 +44,12 @@ const MainStyle = styled.div`
   }
 
   .section-title {
-    color: var(--off-white);
+    color: var(--black);
     font-family: var(--title);
     font-size: 18px;
-    background-color: var(--neon-pink);
-    padding: 0 10px;
     margin-bottom: 0;
   }
+
 
   .btn-contact {
     font-size: 22px;
@@ -96,7 +96,6 @@ const MainStyle = styled.div`
 `;
 
 const Main = () => {
-
   return (
     <MainStyle>
       <Home

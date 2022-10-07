@@ -10,15 +10,15 @@ import Linkedin from '../components/atoms/SVG/Linkedin';
 
 const navLinks = [
   {
-    name: 'à propos',
+    name: 'À PROPOS',
     url: '/#about',
   },
   {
-    name: 'projets',
+    name: 'PROJETS',
     url: '/#projects',
   },
   {
-    name: 'contact',
+    name: 'CONTACT',
     url: '/#contact',
   }
 ];
@@ -34,9 +34,16 @@ const StyleLargeNav = styled.nav`
   ${'' /* padding: 4px 50px; */}
   width: 100%;
   height: 60px;
-  background-color: rgba(251, 247, 242, 0.45);
+  background-color: rgba(255, 255, 255, 0.45);
   box-shadow: 0 0 15px rgba(0,0,0,0.06);
   backdrop-filter: blur(10px);
+
+  .container {
+    width: 80%;
+    display: flex;
+    padding-right: 22px;
+    justify-content: end;
+  }
 
   .ul-large {
     display: none;
@@ -61,7 +68,7 @@ const StyleLargeNav = styled.nav`
 
     .ul-large {
     display: flex;
-    width: 80%;
+    align-items: end;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
@@ -128,6 +135,7 @@ const Header = () => {
   return (
     <>
     <StyleLargeNav>
+    <div className='container'>
       <ul className='ul-large'>
         <TransitionGroup component={null}>
           {isMounted &&
@@ -152,6 +160,7 @@ const Header = () => {
         onClick={()=> setMenuOpen(!menuOpen)}>
           {menuOpen ? <>&#10005;</> : <>&#8801;</>}
         </Button>
+        </div>
     </StyleLargeNav>
     <MenuStyle className={menuOpen ? "open" : ""}>
       <ul className='ul-small'>

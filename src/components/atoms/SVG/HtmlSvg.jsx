@@ -3,9 +3,9 @@ import * as React from "react";
 const HtmlSvg = (props) => {
   return (
     <svg
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 299.215 299.215"
-      width={50} height={50}
     >
       <path
         fill="currentColor"

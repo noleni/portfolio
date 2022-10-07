@@ -4,6 +4,8 @@ import Button from '../UI/Button';
 
 import projectsData from "../../data/projectsData";
 import styled from 'styled-components';
+import ExternalLink from '../atoms/SVG/ExternalLink';
+import Github from '../atoms/SVG/Github';
 
 const ProjetsListContainerStyle = styled.div`
 
@@ -16,7 +18,6 @@ const ProjetsListContainerStyle = styled.div`
   @media(min-width: 768px) {
     flex-direction: row;
   }
-
 `
 
 const ProjectListStyle = styled.ul`
@@ -27,7 +28,11 @@ const ProjectListStyle = styled.ul`
   max-height: 100vh;
   margin-top: 22px;
   padding: 0;
+  width: 15%;
 
+  li {
+    padding-left: 0;
+  }
 
   .project-title-small {
     font-size: 12px;
@@ -55,60 +60,81 @@ const ProjectListStyle = styled.ul`
 
 `
 
-const ProjectCardStyle = styled.li`
-  width: 45px;
-  height: 45px;
-  border-radius: 4px;
-  margin-bottom: 6px;
-  margin-top: 4px;
-  ${'' /* margin-left: 12px;
-  margin-right: 12px; */}
-  opacity: 1;
-  position: relative;
-  cursor: pointer;
-  border: 1px solid var(--black);
-  transition: all 200ms ease-in-out;
+// const ProjectCardStyle = styled.li`
+//   width: 45px;
+//   height: 45px;
+//   border-radius: 4px;
+//   margin-bottom: 6px;
+//   margin-top: 4px;
+//   ${'' /* margin-left: 12px;
+//   margin-right: 12px; */}
+//   opacity: 1;
+//   position: relative;
+//   cursor: pointer;
+//   border: 1px solid var(--black);
+//   transition: all 200ms ease-in-out;
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     position: absolute;
+//     object-fit: cover;
+//     opacity: 0.6;
+//     transition: all 200ms ease-in-out;
+// }
+
+//   .img-active {
+//     opacity: 0.9;
+//   }
+
+//   &.active {
+//     border: 1.5px solid var(--neon-pink);
+//     transform: scale(1.04)
+//     ${'' /* width: 110px;
+//     height: 110px; */}
+//   }
+
+//   @media(min-width: 768px) {
+//     width: 120px;
+//   height: 120px;
+//   margin-left: 12px;
+//   margin-right: 12px;
+
+
+//   }
+// `
+
+const ProjectSelectedStyle = styled.div`
+
+  display: flex;
+  width: 85%;
+
+  ${'' /* padding-left: 80px; */}
+
+
+  .img-selected {
+    width: 200px;
+    ${'' /* height: 60%; */}
+    position: relative;
+    opacity: 1;
+  ${'' /* border: 1px solid var(--black); */}
+  }
 
   img {
     width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     position: absolute;
     object-fit: cover;
-    opacity: 0.6;
-    transition: all 200ms ease-in-out;
-}
-
-  .img-active {
-    opacity: 0.9;
+    opacity: 0.8;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
   }
 
-  &.active {
-    border: 1.5px solid var(--neon-pink);
-    transform: scale(1.04)
-    ${'' /* width: 110px;
-    height: 110px; */}
-  }
-
-  @media(min-width: 768px) {
-    width: 120px;
-  height: 120px;
-  margin-left: 12px;
-  margin-right: 12px;
-
-  }
-`
-
-const ProjectSelectedStyle = styled.div`
-  width: 100%;
-  position: relative;
-  ${'' /* padding-left: 80px; */}
-
-
-  img {
-    width: 100%;
-    object-fit: contain;
+  .project-informations {
+    width: 30%;
   }
 
   .selected-project-title {
@@ -167,17 +193,20 @@ const Projects = () => {
         <ProjectSelectedStyle className='selected-project'>
           {projectsData.filter(selected => selected.id === +active).map(project => (
             <>
-
-
-              <h3>{project.name} / {project.date}</h3>
-              <div className='tags-container'>
-              {project.tech.map(techno => (<p className='techno-tag'>{techno}</p>))}
+              <div className='img-selected'>
+                <img src={`${process.env.PUBLIC_URL}/images/${project.poster}`} alt={project.name} id={project.id}/>
               </div>
-            <img src={`${process.env.PUBLIC_URL}/images/${project.poster}`} alt={project.name} id={project.id}/>
-            <p>{project.notice}</p>
-
-
-
+              <div>
+                <h3>{project.name} / {project.date}</h3>
+                <div className='project-informations'>
+                  <a href={project.url}><ExternalLink height={24} width={24}/></a>
+                  <a href={project.github}><Github height={24} width={24} /></a>
+                </div>
+                <div className='tags-container'>
+                  {project.tech.map(techno => (<p className='techno-tag'>{techno}</p>))}
+                </div>
+                <p>{project.notice}</p>
+              </div>
             </>
           ))}
         </ProjectSelectedStyle>
