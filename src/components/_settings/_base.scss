@@ -115,8 +115,17 @@ a:hover {
 
 .down-effect:hover {
   transition: all 300ms ease-out;
+  transform: translateY(10px);
 }
 
-.down-effect:hover {
-  transform: translateY(10px);
+.left-effet:hover {
+  transition: all 300ms ease-in-out;
+  transform: translateX(-4px);
+  color: var(--neon-pink);
+}
+
+.right-effet:hover {
+  transition: all 300ms ease-in-out;
+  transform: translateX(4px);
+  color: var(--neon-pink);
 }
