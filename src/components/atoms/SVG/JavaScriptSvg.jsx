@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const JavascriptSvg = (props) => {
+const SvgComponent = (props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630" {...props}>
       <path fill="currentColor" d="M0 0h630v630H0z" />
@@ -12,4 +12,4 @@ const JavascriptSvg = (props) => {
   );
 }
 
-export default JavascriptSvg;
+export default SvgComponent;

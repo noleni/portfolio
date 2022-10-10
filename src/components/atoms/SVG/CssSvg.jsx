@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const CssSvg = (props) => {
+const SvgComponent = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,4 +15,4 @@ const CssSvg = (props) => {
   );
 }
 
-export default CssSvg;
+export default SvgComponent;

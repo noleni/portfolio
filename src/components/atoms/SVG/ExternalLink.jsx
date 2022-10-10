@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExternalLink = (props) => {
+const SvgComponent = (props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" {...props}>
       <path
@@ -17,4 +17,4 @@ const ExternalLink = (props) => {
   );
 };
 
-export default ExternalLink;
+export default SvgComponent;

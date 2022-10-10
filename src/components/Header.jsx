@@ -43,6 +43,7 @@ const StyleLargeNav = styled.nav`
     display: flex;
     padding-right: 22px;
     justify-content: end;
+    align-items: center;
   }
 
   .ul-large {
@@ -61,7 +62,6 @@ const StyleLargeNav = styled.nav`
 
   @media(min-width: 768px) {
 
-
     .btn-small-nav {
       display: none;
     }
@@ -78,6 +78,7 @@ const StyleLargeNav = styled.nav`
 
   .btn-cv-large {
     display: block;
+    height: fit-content;
   }
   }
 `
@@ -89,7 +90,7 @@ const MenuStyle = styled.aside`
   right: 0;
   z-index: 10;
   height: 100vh;
-  background-color: var(--neon-pink);
+  background-color: rgba(247,31,102, 0.97);
   transition: all 0.2s ease-in-out;
 
   &.open {

@@ -4,7 +4,6 @@ import Github from './atoms/SVG/Github';
 import styled from 'styled-components';
 
 const StyleSide = styled.div`
-
   width: 40px;
   position: fixed;
   bottom: 10px;
@@ -53,12 +52,12 @@ const SideBarLinks = () => {
       <ul>
         <li>
           <a href={'https://www.linkedin.com/in/marine-ramillon'} target="_blank" rel="noreferrer">
-            <Linkedin width={42} height={42} className='bump'/>
+            <Linkedin width={36} height={36} className='bump'/>
           </a>
         </li>
         <li>
           <a href={'https://github.com/noleni'} target="_blank" rel="noreferrer">
-            <Github width={42} height={42} className='bump' />
+            <Github width={36} height={36} className='bump' />
           </a>
         </li>
       </ul>

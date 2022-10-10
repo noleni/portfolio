@@ -10,7 +10,7 @@ const HomesGreetingStyles = styled.p`
 
 const Home = (props) => {
   return (
-    <section >
+    <section>
       <div>
         <HomesGreetingStyles>Bonjour, je suis</HomesGreetingStyles>
         <h1 className={props.h1Class}>Marine Ramillon,</h1>

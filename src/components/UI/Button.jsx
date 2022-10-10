@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ButtonStyle = styled.button`
+const Button = styled.button`
   padding: 6px 22px;
   color: var(--black);
   border: 1px solid var(--neon-pink);
@@ -21,17 +21,10 @@ const ButtonStyle = styled.button`
   &.active {
     background-color: rgba(247,31,102, 0.35);
   }
+
   @media(max-width: 764px) {
     background-color: rgba(247,31,102, 0.35);
   }
 `
-
-const Button = (props) => {
-  return (
-    <ButtonStyle className='btn-main' {...props}>
-      {props.children}
-    </ButtonStyle>
-  );
-};
 
 export default Button;

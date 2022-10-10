@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-import More from "../More";
+// import More from "../More";
 import TechList from "../TechList";
 import Button from '../UI/Button';
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
 
 const AboutStyle = styled.section`
+height: fit-content;
 
   .pic-n-tech {
     display: flex;
@@ -54,7 +62,7 @@ const AboutStyle = styled.section`
 
 const ProfilPicStyle = styled.div`
     text-align: -webkit-center;
-    margin: 22px 0 32px 0;
+    margin: 0 0 32px 0;
 
     .img-border {
       position: relative;
@@ -62,6 +70,7 @@ const ProfilPicStyle = styled.div`
       border-radius: 4px;
       width: 160px;
       height: 160px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
     img {
@@ -89,21 +98,47 @@ const ProfilPicStyle = styled.div`
 
 const About = (props) => {
 
+
+  const aboutRef = useRef(null);
+  const textRef = useRef(null);
+
+  const scrollEffect = (e, delay, duration) => {
+    gsap.fromTo(
+      e,
+      {
+        opacity: 0.1,
+      },
+      {
+        opacity: 1,
+        scrollTrigger : {
+          trigger: e,
+          start: "top center",
+          end: "bottom center"
+        }
+      },
+    )
+  };
+
+  useEffect(() => {
+    scrollEffect(aboutRef.current, 0.5, 0.5)
+  }, []);
+
+
   const [showMore, setShowMore] = useState(false);
 
-  const paragraph = `J'ai travaillé pendant près de 10 ans dans le secteur culturel, à Paris, en banlieue parisienne... et en Nouvelle-Zélande !
-  Je m'occupais particulièrement de la billetterie, des stratégies de développement de ventes et de l'analyse statistique de fréquentation.
-  Fin 2021, j'ai quitté mon poste à la Cinémathèque française pour me consacrer exclusivement au développement web.
-  J'ai commencé à travailler de mon côté grâce à plusieurs ressources en ligne, puis, j'ai suivi la formation du Wagon Paris au printemps.
-  J'y ai appris à travailler en équipe, dompter git et le terminal et user des bonnes pratiques. Aujourd'hui, je pousse mon apprentissage sur React (que j'adore)
-  et je cherche à rejoindre une équipe pour utiliser mes nouvelles compétences au service d'un projet concret et ambitieux.`
+  const paragraph = `Je me forme au développement web depuis janvier 2022. J'ai commencé par JavaScript grâce à plusieurs
+  ressources en ligne (OpenClassroom, JSdeZero, CodeWars), puis j'ai rejoint la formation du Wagon Paris au printemps.
+  J'y ai appris Ruby et Rails, la POO et l'organisation du développement en équipe. Depuis cet été, je travaille sur React (que j'affectionne tout particulièrement).
+  J'aimerais à présent rejoindre une équipe pour utiliser et améliorer ces compétences au service d'un projet concret et ambitieux.
+  Avant de me lancer dans le développement web, j'étais responsable de la billetterie et de l'étude des publics de la Cinémathèque française.
+  J'ai quitté mon poste par attrait pour le code et pour m'offrir de nouveaux challenges intellectuels.`
 
   return (
-    <AboutStyle id="about">
+    <AboutStyle id="about" ref={aboutRef}>
       <div className='pic-n-tech'>
         <ProfilPicStyle>
           <div className='img-border'>
-            <img src={process.env.PUBLIC_URL +`images/profil.jpeg`} alt="profil" />
+            <img src={process.env.PUBLIC_URL +`images/profil.jpg`} alt="profil" />
           </div>
         </ProfilPicStyle>
         <TechList />
@@ -111,23 +146,27 @@ const About = (props) => {
       <p className='section-title'>À propos</p>
       <div className='small-device'>
         {!showMore &&
-          <p className='presentation opacity-down'>{paragraph.substring(0, 200)}
+          <p className='presentation opacity-down'>{paragraph.substring(0, 400)}
             <span className='masked'></span>
           </p>
         }
         {showMore && <p className='presentation'>{paragraph}</p> }
-        <Button className="btn-show-more" type="button" onClick={() => setShowMore(!showMore)}>
+        <Button
+          className="btn-show-more"
+          type="button"
+          onClick={() => setShowMore(!showMore)}
+        >
           {!showMore ? "Voir plus" : "Voir moins"}
         </Button>
       </div>
 
-      <p className='presentation large-device'>{paragraph}</p>
+      <p className='presentation large-device' ref={textRef}>{paragraph}</p>
 
-      <More
+      {/* <More
         className="projects"
         arrowClassName="down-effect"
         text="Mes projets">
-      </More>
+      </More> */}
     </AboutStyle>
   )
 };

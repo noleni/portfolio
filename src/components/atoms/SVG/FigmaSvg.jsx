@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const FigmaSvg = (props) => {
+const SvgComponent = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,4 +21,4 @@ const FigmaSvg = (props) => {
   );
 }
 
-export default FigmaSvg;
+export default SvgComponent;

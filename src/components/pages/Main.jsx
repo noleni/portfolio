@@ -1,4 +1,5 @@
-import React, {} from 'react';
+import React, { useEffect } from 'react';
+
 
 import Home from '../sections/Home';
 import About from '../sections/About';
@@ -8,23 +9,20 @@ import Contact from '../sections/Contact';
 import '../_settings/_variables.scss';
 import styled from 'styled-components';
 
+
+
+
+
+
 const MainStyle = styled.div`
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
     height: 100vh;
-    overflow-y: scroll;
+    padding: 0 20px 0 20px;
+    ${'' /* overflow-y: scroll; */}
     scroll-snap-type: y mandatory;
 
   section {
     scroll-snap-align: center;
-    padding-bottom: 100px;
-  }
-
-  .projects {
-    padding-top: 100px;
   }
 
   .title-big {
@@ -49,7 +47,6 @@ const MainStyle = styled.div`
     font-size: 18px;
     margin-bottom: 0;
   }
-
 
   .btn-contact {
     font-size: 22px;
@@ -96,6 +93,8 @@ const MainStyle = styled.div`
 `;
 
 const Main = () => {
+
+
   return (
     <MainStyle>
       <Home

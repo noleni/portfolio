@@ -1,77 +1,58 @@
-import React, { useRef, useEffect } from 'react';
-import sr from 'scrollreveal';
-
+import TechTag from './atoms/TechTag/TechTag';
 import ReactSvg from "./atoms/SVG/React";
 import HtmlSvg from "./atoms/SVG/HtmlSvg";
 import JavascriptSvg from "./atoms/SVG/JavaScriptSvg";
 import RubySvg from "./atoms/SVG/RubySvg";
 import RailsSvg from "./atoms/SVG/RailsSvg";
-import CssSvg from "./atoms/SVG/CssSvg";
 import HerokuSvg from "./atoms/SVG/HerokuSvg";
 import FigmaSvg from "./atoms/SVG/FigmaSvg";
 import SassSvg from "./atoms/SVG/SassSvg";
 import StyledComponentsSVG from './atoms/SVG/StyledComponentsSVG';
+import StimulusSvg from './atoms/SVG/StimulusSvg';
+import BootstrapSvg from './atoms/SVG/BootstrapSvg';
+import PostgreSvg from './atoms/SVG/PostgreSvg';
+import GitSvg from './atoms/SVG/GitSvg';
 
 import styled from 'styled-components';
 
 const TechListStyle = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-  border-bottom: 1px solid var(--neon-pink);
-  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
-  align-self: center;
-  margin: auto;
+  padding: 0;
 
-@media(min-width: 576px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
+  h4 {
+    margin: 0 6px 0 0;
+    padding-top: 3px;
+  }
 
 @media(min-width: 764px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height : fit-content;
+    padding: 0 100px 0 40px;
+    justify-content: start;
   }
 `
 
 const TechList = (props) => {
 
-  const techList = [
-    <HtmlSvg height={30} width={30} />,
-    <JavascriptSvg height={30} width={30} />,
-    <ReactSvg height={30} width={30} />,
-    <RubySvg height={30} width={30} />,
-    <RailsSvg height={30} width={30} />,
-    <CssSvg height={30} width={30} />,
-    <HerokuSvg height={30} width={30} />,
-    <FigmaSvg height={30} width={30} />,
-    <SassSvg height={30} width={30} />,
-    <StyledComponentsSVG height={30} width={30} />
-  ]
-
-  const sectionTwo = useRef(null);
-  // const prefersReducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    const config = {
-      origin: 'right',
-      duration: 1000,
-      delay: 150,
-      distance: '500px',
-      scale: 1,
-      easing: 'ease',
-    }
-    sr().reveal(sectionTwo, config)
-    // ScrollReveal().reveal('#about',{ delay: 50, duration: 600, origin: 'bottom', distance: '20px' });
-  }, []);
-
   return (
-    <TechListStyle ref={sectionTwo} className='tech-list'>
-      {techList.map((item, i) =>
-        (
-          <li key={i}>{item}</li>
-        )
-      )}
+
+    <TechListStyle className='tech-list'>
+      <h4>Technologies</h4>
+      <TechTag SVG={<HtmlSvg height={18} width={18} />} name={'HTML'} />
+      <TechTag SVG={<JavascriptSvg height={18} width={18} />} name={'JavaScript'} />
+      <TechTag SVG={<ReactSvg height={18} width={18} />} name={'React'} />
+      <TechTag SVG={<StimulusSvg height={18} width={18} />} name={'Stimulus'} />
+      <TechTag SVG={<RubySvg height={18} width={18} />} name={'Ruby'} />
+      <TechTag SVG={<RailsSvg height={18} width={18} />} name={'Rails'} />
+      <TechTag SVG={<PostgreSvg height={18} width={18} />} name={'PostgreSQL'} />
+      <TechTag SVG={<SassSvg height={18} width={18} />} name={'Sass'} />
+      <TechTag SVG={<StyledComponentsSVG height={18} width={18} />} name={'StyledComponents'} />
+      <TechTag SVG={<BootstrapSvg height={18} width={18} />} name={'Bootstrap'} />
+      <TechTag SVG={<FigmaSvg height={18} width={18} />} name={'Figma'} />
+      <TechTag SVG={<HerokuSvg height={18} width={18} />} name={'Heroku'} />
+      <TechTag SVG={<GitSvg height={18} width={18} />} name={'Git'} />
     </TechListStyle>
   )
 };

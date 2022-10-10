@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const HtmlSvg = (props) => {
+const SvgComponent = (props) => {
   return (
     <svg
       {...props}
@@ -15,4 +15,4 @@ const HtmlSvg = (props) => {
   );
 }
 
-export default HtmlSvg;
+export default SvgComponent;
