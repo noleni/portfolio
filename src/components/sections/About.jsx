@@ -68,8 +68,8 @@ const ProfilPicStyle = styled.div`
       position: relative;
       border: 1px solid var(--neon-pink);
       border-radius: 4px;
-      width: 160px;
-      height: 160px;
+      width: 200px;
+      height: 200px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
@@ -89,8 +89,8 @@ const ProfilPicStyle = styled.div`
 
   @media(min-width: 768px) {
     .img-border {
-      width: 200px;
-      height: 200px;
+      width: 240px;
+      height: 240px;
     }
   }
 `

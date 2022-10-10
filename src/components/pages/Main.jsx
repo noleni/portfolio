@@ -16,18 +16,11 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
-
-
 const MainStyle = styled.div`
 
     height: 100vh;
     padding: 0 20px 0 20px;
-    ${'' /* overflow-y: scroll; */}
-    scroll-snap-type: y mandatory;
 
-  section {
-    scroll-snap-align: center;
-  }
 
   .title-big {
     font-family: var(--title);

@@ -4,6 +4,10 @@ import More from "../More";
 import Button from "../UI/Button";
 import styled from 'styled-components';
 
+const HomeStyle = styled.section`
+  justify-content: center
+`
+
 const HomesGreetingStyles = styled.p`
   @media(max-width: 576px) {
     display : none;
@@ -12,7 +16,7 @@ const HomesGreetingStyles = styled.p`
 
 const Home = React.forwardRef((props, ref) => {
   return (
-    <section ref={ref}>
+    <HomeStyle ref={ref}>
       <div>
         <HomesGreetingStyles>Bonjour, je suis</HomesGreetingStyles>
         <h1 className={props.h1Class}>Marine Ramillon,</h1>
@@ -24,7 +28,7 @@ const Home = React.forwardRef((props, ref) => {
         arrowClassName="down-effect"
         text="Pour en savoir plus">
       </More>
-    </section>
+    </HomeStyle>
   )
 });
 
