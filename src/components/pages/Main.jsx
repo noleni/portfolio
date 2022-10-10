@@ -42,7 +42,7 @@ const MainStyle = styled.div`
     font-size: 18px;
 
     @media(min-width: 768px) {
-      &-small {
+      &.small {
         display: none;
       }
     }

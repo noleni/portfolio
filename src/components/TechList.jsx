@@ -24,7 +24,7 @@ const TechListStyle = styled.ul`
 
   h4 {
     margin: 0 6px 0 0;
-    padding-top: 3px;
+    padding-top: 8px;
   }
 
 @media(min-width: 764px) {

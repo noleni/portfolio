@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import projectsData from "../../data/projectsData";
 import ProjectPic from '../ProjectPick';
+import More from '../More';
 
 import ExternalLink from '../icons/SVG/ExternalLink';
 import Github from '../icons/SVG/Github';
@@ -10,35 +11,35 @@ import RightSvg from '../icons/SVG/RightSvg';
 
 import styled from 'styled-components';
 
-const ProjetsListContainerStyle = styled.div`
+
+const ProjectsSection = styled.section`
+
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-height: 100vh;
   align-items: baseline;
 
   @media(min-width: 768px) {
     flex-direction: row;
   }
-`;
+`
 
 const ProjectSelectedStyle = styled.div`
   padding-left: 0;
-  border-top: 0.5px solid var(--black);
 
   & .img-selected {
-    width: 111%;
+    width: 100%;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     position: relative;
-    margin: 12px 0 32px -20px;
+    margin: 12px 0 32px 0px;
   }
 
   & img {
     width: 100%;
     object-fit: cover;
-    opacity: 0.9;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    opacity: 0.8;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
     padding: 4px 0 4px 0;
   }
 
@@ -115,15 +116,16 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   return (
-    <section id="projects" ref={ref}>
-      <ProjetsListContainerStyle>
+<>
+<p className='section-title small'>Mes projets</p>
+    <ProjectsSection id="projects" ref={ref}>
 
         <ProjectPic
           data={projectsData}
           activeState={+active}
           onClick={(e) => setActive(e.target.id)}
         />
-        <p className='section-title-small'>Mes projets</p>
+
         <ProjectSelectedStyle className='selected-project'>
         {projectsData.filter(selected => selected.id === +active).map(project => (
           <>
@@ -169,9 +171,15 @@ const Projects = React.forwardRef((props, ref) => {
 
           </>
         ))}
-          </ProjectSelectedStyle>
-      </ProjetsListContainerStyle>
-    </section>
+      </ProjectSelectedStyle>
+
+    </ProjectsSection>
+      <More
+        className="projects"
+        arrowClassName="down-effect"
+        text="Contact">
+      </More>
+    </>
   )
 });
 

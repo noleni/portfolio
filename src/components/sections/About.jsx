@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// import More from "../More";
+import More from "../More";
 import TechList from "../TechList";
 import Button from '../UI/Button';
 
@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 const AboutStyle = styled.section`
-height: fit-content;
+${'' /* height: fit-content; */}
 
   .pic-n-tech {
     display: flex;
@@ -79,8 +79,8 @@ const ProfilPicStyle = styled.div`
       left: 12px;
       width: 100%;
       height: 100%;
-      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-      filter: grayscale(100%);
+      -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(50%);
       border: 1px solid var(--black);
       border-radius: 4px;
       margin: 0 60px 0 0;
@@ -136,11 +136,11 @@ const About = React.forwardRef((props, ref) => {
 
       <p className='presentation large-device'>{paragraph}</p>
 
-      {/* <More
+      <More
         className="projects"
         arrowClassName="down-effect"
         text="Mes projets">
-      </More> */}
+      </More>
     </AboutStyle>
   )
 });
