@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // import More from "../More";
@@ -96,33 +96,7 @@ const ProfilPicStyle = styled.div`
 `
 
 
-const About = (props) => {
-
-
-  const aboutRef = useRef(null);
-  const textRef = useRef(null);
-
-  const scrollEffect = (e, delay, duration) => {
-    gsap.fromTo(
-      e,
-      {
-        opacity: 0.1,
-      },
-      {
-        opacity: 1,
-        scrollTrigger : {
-          trigger: e,
-          start: "top center",
-          end: "bottom center"
-        }
-      },
-    )
-  };
-
-  useEffect(() => {
-    scrollEffect(aboutRef.current, 0.5, 0.5)
-  }, []);
-
+const About = React.forwardRef((props, ref) => {
 
   const [showMore, setShowMore] = useState(false);
 
@@ -134,7 +108,7 @@ const About = (props) => {
   J'ai quitté mon poste par attrait pour le code et pour m'offrir de nouveaux challenges intellectuels.`
 
   return (
-    <AboutStyle id="about" ref={aboutRef}>
+    <AboutStyle id="about" ref={ref}>
       <div className='pic-n-tech'>
         <ProfilPicStyle>
           <div className='img-border'>
@@ -160,7 +134,7 @@ const About = (props) => {
         </Button>
       </div>
 
-      <p className='presentation large-device' ref={textRef}>{paragraph}</p>
+      <p className='presentation large-device'>{paragraph}</p>
 
       {/* <More
         className="projects"
@@ -169,6 +143,6 @@ const About = (props) => {
       </More> */}
     </AboutStyle>
   )
-};
+});
 
 export default About;

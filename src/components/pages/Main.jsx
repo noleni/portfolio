@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 
 import Home from '../sections/Home';
@@ -9,7 +9,11 @@ import Contact from '../sections/Contact';
 import '../_settings/_variables.scss';
 import styled from 'styled-components';
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 
@@ -46,7 +50,14 @@ const MainStyle = styled.div`
     font-family: var(--title);
     font-size: 18px;
     margin-bottom: 0;
+
+    @media(min-width: 768px) {
+      &-small {
+        display: none;
+      }
+    }
   }
+
 
   .btn-contact {
     font-size: 22px;
@@ -94,19 +105,55 @@ const MainStyle = styled.div`
 
 const Main = () => {
 
+  const homeRef = useRef(null);
+  const projectRef = useRef(null);
+  const aboutRef = useRef(null);
+
+  const scrollEffect = (e, delay, duration) => {
+    gsap.fromTo(
+      e,
+      {
+        opacity: 0,
+        y: 50
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger : {
+          trigger: e,
+          start: "top center",
+          end: "bottom center"
+        }
+      },
+    )
+  };
+
+  useEffect(() => {
+    scrollEffect(homeRef.current, 0.2, 0.6)
+  }, []);
+
+  useEffect(() => {
+    scrollEffect(aboutRef.current, 0.2, 0.6)
+  }, []);
+
+  useEffect(() => {
+    scrollEffect(projectRef.current, 0.2, 0.6)
+  }, []);
 
   return (
     <MainStyle>
       <Home
+        ref={homeRef}
         h1Class={'title-big'}
         h2Class={'title'}
         projectsClass={'projects'}
         btnClass={'btn-contact'}
       />
       <About
+        ref={aboutRef}
         presentationClass={'presentation'}
       />
-      <Projects />
+      <Projects ref={projectRef}/>
       <Contact />
     </MainStyle>
   );

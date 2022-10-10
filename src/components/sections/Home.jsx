@@ -1,3 +1,5 @@
+import React from 'react';
+
 import More from "../More";
 import Button from "../UI/Button";
 import styled from 'styled-components';
@@ -8,9 +10,9 @@ const HomesGreetingStyles = styled.p`
   }
 `;
 
-const Home = (props) => {
+const Home = React.forwardRef((props, ref) => {
   return (
-    <section>
+    <section ref={ref}>
       <div>
         <HomesGreetingStyles>Bonjour, je suis</HomesGreetingStyles>
         <h1 className={props.h1Class}>Marine Ramillon,</h1>
@@ -24,6 +26,6 @@ const Home = (props) => {
       </More>
     </section>
   )
-};
+});
 
 export default Home;

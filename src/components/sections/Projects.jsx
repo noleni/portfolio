@@ -24,12 +24,14 @@ const ProjetsListContainerStyle = styled.div`
 
 const ProjectSelectedStyle = styled.div`
   padding-left: 0;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
 
   & .img-selected {
-    width: 100%;
+    width: 111%;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     position: relative;
-    margin: 12px 0 32px 0px;
+    margin: 12px 0 32px -20px;
   }
 
   & img {
@@ -45,6 +47,7 @@ const ProjectSelectedStyle = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 33px;
   }
 
   & .project-informations-title {
@@ -63,6 +66,8 @@ const ProjectSelectedStyle = styled.div`
     flex-wrap: wrap;
     width: 100%;
     padding: 0;
+    margin-top: 42px;
+    margin-bottom: 42px;
   }
 
   & .techno-tag {
@@ -78,6 +83,8 @@ const ProjectSelectedStyle = styled.div`
 
   @media(min-width: 768px) {
     margin-left: 80px;
+    border-top: 0;
+    border-bottom: 0;
 
     .project-informations {
       justify-content: start;
@@ -95,7 +102,7 @@ const ProjectSelectedStyle = styled.div`
 `;
 
 
-const Projects = () => {
+const Projects = React.forwardRef((props, ref) => {
 
   const [active, setActive] = useState(1);
 
@@ -108,7 +115,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" ref={ref}>
       <ProjetsListContainerStyle>
 
         <ProjectPic
@@ -116,10 +123,11 @@ const Projects = () => {
           activeState={+active}
           onClick={(e) => setActive(e.target.id)}
         />
-
+        <p className='section-title-small'>Mes projets</p>
         <ProjectSelectedStyle className='selected-project'>
         {projectsData.filter(selected => selected.id === +active).map(project => (
           <>
+
             <div className="project-informations" >
               <LeftSvg
                 heigth={30}
@@ -165,6 +173,6 @@ const Projects = () => {
       </ProjetsListContainerStyle>
     </section>
   )
-};
+});
 
 export default Projects;
