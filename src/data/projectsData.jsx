@@ -1,14 +1,14 @@
-import TechTag from "../components/atoms/TechTag/TechTag";
+import TechTag from "../components/icons/TechTag/TechTag";
 
-import RubySvg from "../components/atoms/SVG/RubySvg";
-import RailsSvg from "../components/atoms/SVG/RailsSvg";
-import StimulusSvg from "../components/atoms/SVG/StimulusSvg";
-import Bootstrap from "../components/atoms/SVG/BootstrapSvg";
-import SassSvg from "../components/atoms/SVG/SassSvg";
-import PostgreSvg from "../components/atoms/SVG/PostgreSvg";
-import ReactSvg from "../components/atoms/SVG/React";
-import JavaScriptSvg from "../components/atoms/SVG/JavaScriptSvg";
-import StyledComponentsSVG from "../components/atoms/SVG/StyledComponentsSVG";
+import RubySvg from "../components/icons/SVG/RubySvg";
+import RailsSvg from "../components/icons/SVG/RailsSvg";
+import StimulusSvg from "../components/icons/SVG/StimulusSvg";
+import Bootstrap from "../components/icons/SVG/BootstrapSvg";
+import SassSvg from "../components/icons/SVG/SassSvg";
+import PostgreSvg from "../components/icons/SVG/PostgreSvg";
+import ReactSvg from "../components/icons/SVG/React";
+import JavaScriptSvg from "../components/icons/SVG/JavaScriptSvg";
+import StyledComponentsSVG from "../components/icons/SVG/StyledComponentsSVG";
 
 
 const projectsData = [

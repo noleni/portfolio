@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Button from './UI/Button';
+import Social from './Social';
 
 import styled from 'styled-components';
-import Github from '../components/atoms/SVG/Github';
-import Linkedin from '../components/atoms/SVG/Linkedin';
 
 
 const navLinks = [
@@ -98,20 +97,19 @@ const MenuStyle = styled.aside`
     visibility: visible;
   }
 
-
   .ul-small {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 120px;
     padding-right: 12px;
+    position: relative;
   }
 
   .social {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 12px 0;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
   }
 `
 
@@ -132,36 +130,35 @@ const Header = () => {
   const timeout = isMounted ? 1000 : 0;
   const fadeDownClass = isMounted ? 'fadedown' : '';
 
-
   return (
     <>
     <StyleLargeNav>
-    <div className='container'>
-      <ul className='ul-large'>
-        <TransitionGroup component={null}>
-          {isMounted &&
-            navLinks.map(({url, name}, i) => (
-              <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
-                <li key={i} style={{ transitionDelay: `${isMounted ? i * 300 : 0}ms` }}>
-                  <a href={url}>{`0${i + 1} - ${name}`}</a>
-                </li>
-              </CSSTransition>
-            ))
-          }
-        </TransitionGroup>
-      </ul>
-      {isMounted &&
-        <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-          <Button className='btn-cv-large' type="button">CV</Button>
-        </CSSTransition>
-      }
-      <Button
-        className="btn-small-nav"
-        type="button"
-        onClick={()=> setMenuOpen(!menuOpen)}>
-          {menuOpen ? <>&#10005;</> : <>&#8801;</>}
+      <div className='container'>
+        <ul className='ul-large'>
+          <TransitionGroup component={null}>
+            {isMounted &&
+              navLinks.map(({url, name}, i) => (
+                <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
+                  <li key={i} style={{ transitionDelay: `${isMounted ? i * 300 : 0}ms` }}>
+                    <a href={url}>{`0${i + 1} - ${name}`}</a>
+                  </li>
+                </CSSTransition>
+              ))
+            }
+          </TransitionGroup>
+        </ul>
+        {isMounted &&
+          <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+            <Button className='btn-cv-large' type="button">CV</Button>
+          </CSSTransition>
+        }
+        <Button
+          className="btn-small-nav"
+          type="button"
+          onClick={()=> setMenuOpen(!menuOpen)}>
+            {menuOpen ? <>&#10005;</> : <>&#8801;</>}
         </Button>
-        </div>
+      </div>
     </StyleLargeNav>
     <MenuStyle className={menuOpen ? "open" : ""}>
       <ul className='ul-small'>
@@ -172,8 +169,7 @@ const Header = () => {
         ))}
       </ul>
       <div className='social'>
-        <Github width={50} height={50} />
-        <Linkedin width={50} height={50} />
+        <Social />
       </div>
     </MenuStyle>
     </>

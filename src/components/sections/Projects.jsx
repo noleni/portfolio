@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import projectsData from "../../data/projectsData";
 import ProjectPic from '../ProjectPick';
 
-import ExternalLink from '../atoms/SVG/ExternalLink';
-import Github from '../atoms/SVG/Github';
-import LeftSvg from '../atoms/SVG/LeftSvg';
-import RightSvg from '../atoms/SVG/RightSvg';
+import ExternalLink from '../icons/SVG/ExternalLink';
+import Github from '../icons/SVG/Github';
+import LeftSvg from '../icons/SVG/LeftSvg';
+import RightSvg from '../icons/SVG/RightSvg';
 
 import styled from 'styled-components';
 
@@ -24,8 +24,7 @@ const ProjetsListContainerStyle = styled.div`
 
 const ProjectSelectedStyle = styled.div`
   padding-left: 0;
-  border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
+  border-top: 0.5px solid var(--black);
 
   & .img-selected {
     width: 111%;
@@ -63,6 +62,7 @@ const ProjectSelectedStyle = styled.div`
 
   & .tags-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     padding: 0;
@@ -91,7 +91,7 @@ const ProjectSelectedStyle = styled.div`
     }
 
     .tags-container {
-    display: flex;
+      justify-content: start;
     }
 
     .img-selected {

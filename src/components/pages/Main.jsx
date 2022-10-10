@@ -18,9 +18,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MainStyle = styled.div`
 
-    height: 100vh;
-    padding: 0 20px 0 20px;
-
+    padding: 0 20px;
 
   .title-big {
     font-family: var(--title);
@@ -42,7 +40,6 @@ const MainStyle = styled.div`
     color: var(--black);
     font-family: var(--title);
     font-size: 18px;
-    margin-bottom: 0;
 
     @media(min-width: 768px) {
       &-small {
@@ -50,7 +47,6 @@ const MainStyle = styled.div`
       }
     }
   }
-
 
   .btn-contact {
     font-size: 22px;

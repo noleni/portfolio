@@ -1,5 +1,5 @@
 import React from 'react';
-import DownArrow from "./atoms/SVG/DownArrow";
+import DownArrow from "./icons/SVG/DownArrow";
 import { CSSTransition } from "react-transition-group";
 
 import './More.scss';
@@ -7,11 +7,9 @@ import './More.scss';
 
 const More = (props) => {
 
-  // const nodeRef = React.useRef(null)
 
   return (
     <CSSTransition
-      // nodeRef={nodeRef}
       in
       appear={true}
       timeout={600}
