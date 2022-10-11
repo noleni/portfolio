@@ -14,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
 const AboutStyle = styled.section`
-${'' /* height: fit-content; */}
 
   .pic-n-tech {
     display: flex;

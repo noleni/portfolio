@@ -16,7 +16,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
-const MainStyle = styled.div`
+const MainStyle = styled.main`
 
     padding: 0 20px;
 
@@ -97,6 +97,7 @@ const Main = () => {
   const homeRef = useRef(null);
   const projectRef = useRef(null);
   const aboutRef = useRef(null);
+  const contactRef = useRef(null);
 
   const scrollEffect = (e, delay, duration) => {
     gsap.fromTo(
@@ -129,6 +130,10 @@ const Main = () => {
     scrollEffect(projectRef.current, 0.2, 0.6)
   }, []);
 
+  useEffect(() => {
+    scrollEffect(contactRef.current, 0.2, 0.6)
+  }, []);
+
   return (
     <MainStyle>
       <Home
@@ -143,7 +148,7 @@ const Main = () => {
         presentationClass={'presentation'}
       />
       <Projects ref={projectRef}/>
-      <Contact />
+      <Contact ref={contactRef} />
     </MainStyle>
   );
 };
