@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import TechList from "../TechList";
-import Button from '../UI/Button';
+// import Button from '../UI/Button';
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -20,7 +20,11 @@ const AboutStyle = styled.section`
     width: 100%;
   }
 
-  .opacity-down {
+  strong {
+    font-weight: bold;
+  }
+
+  ${'' /* .opacity-down {
     background: var(--off-white);
     z-index: 1;
     position:relative;
@@ -38,11 +42,11 @@ const AboutStyle = styled.section`
     background: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
     background: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
     background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-  }
+  } */}
 
-  .large-device {
+  ${'' /* .large-device {
     display:none;
-  }
+  } */}
 
   @media(min-width: 768px) {
     .small-device {
@@ -96,14 +100,14 @@ const ProfilPicStyle = styled.div`
 
 const About = React.forwardRef((props, ref) => {
 
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
-  const paragraph = `Je me forme au développement web depuis janvier 2022. J'ai commencé par JavaScript grâce à plusieurs
-  ressources en ligne (OpenClassroom, JSdeZero, CodeWars), puis j'ai rejoint la formation du Wagon Paris au printemps.
-  J'y ai appris Ruby et Rails, la POO et l'organisation du développement en équipe. Depuis cet été, je travaille sur React (que j'affectionne tout particulièrement).
-  J'aimerais à présent rejoindre une équipe pour utiliser et améliorer ces compétences au service d'un projet concret et ambitieux.
-  Avant de me lancer dans le développement web, j'étais responsable de la billetterie et de l'étude des publics de la Cinémathèque française.
-  J'ai quitté mon poste par attrait pour le code et pour m'offrir de nouveaux challenges intellectuels.`
+  // const paragraph = `Je me forme au développement web depuis janvier 2022. J'ai commencé par JavaScript grâce à plusieurs
+  // ressources en ligne (OpenClassroom, JSdeZero, CodeWars), puis j'ai rejoint la formation du Wagon Paris au printemps.
+  // J'y ai appris Ruby et Rails, la POO et l'organisation du développement en équipe. Depuis cet été, je travaille sur React (que j'affectionne tout particulièrement).
+  // J'aimerais à présent rejoindre une équipe pour utiliser et améliorer ces compétences au service d'un projet concret et ambitieux.
+  // Avant de me lancer dans le développement web, j'étais responsable de la billetterie et de l'étude des publics de la Cinémathèque française.
+  // J'ai quitté mon poste par attrait pour le code et pour m'offrir de nouveaux challenges intellectuels.`
 
   return (
     <AboutStyle id="about" ref={ref}>
@@ -116,7 +120,7 @@ const About = React.forwardRef((props, ref) => {
         <TechList />
       </div>
       <p className='section-title'>À propos</p>
-      <div className='small-device'>
+      {/* <div className='small-device'>
         {!showMore &&
           <p className='presentation opacity-down'>{paragraph.substring(0, 400)}
             <span className='masked'></span>
@@ -130,9 +134,16 @@ const About = React.forwardRef((props, ref) => {
         >
           {!showMore ? "Voir plus" : "Voir moins"}
         </Button>
-      </div>
+      </div> */}
 
-      <p className='presentation large-device'>{paragraph}</p>
+      <p className='presentation'>
+      Je me forme au développement web depuis <strong>janvier 2022</strong>. J'ai commencé par <strong>JavaScript "vanilla"</strong> grâce à plusieurs
+  ressources en ligne (OpenClassroom, JSdeZero, CodeWars), puis j'ai rejoint la formation du <strong>Wagon Paris</strong> au printemps.
+  J'y ai appris <strong>Ruby et Rails, la POO et l'organisation du développement en équipe</strong>. Depuis cet été, je travaille sur <strong>React</strong> (que j'affectionne tout particulièrement).
+  J'aimerais à présent rejoindre une équipe pour utiliser et améliorer ces compétences au service d'un projet concret et ambitieux.
+  Avant de me lancer dans le développement web, j'étais responsable de la billetterie et de l'étude des publics de la Cinémathèque française.
+  J'ai quitté mon poste par attrait pour le code et pour m'offrir de nouveaux challenges intellectuels.
+      </p>
 
     </AboutStyle>
   )

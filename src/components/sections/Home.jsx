@@ -5,7 +5,8 @@ import Button from "../UI/Button";
 import styled from 'styled-components';
 
 const HomeStyle = styled.section`
-  justify-content: center
+  justify-content: center;
+  height: 100vh;
 `
 
 const HomesGreetingStyles = styled.p`
