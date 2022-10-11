@@ -17,6 +17,7 @@ const ProjectsSection = styled.section`
   flex-direction: column;
   width: 100%;
   align-items: baseline;
+  margin-bottom: 60px;
 
   @media(min-width: 768px) {
     flex-direction: row;
@@ -25,6 +26,7 @@ const ProjectsSection = styled.section`
 
 const ProjectSelectedStyle = styled.div`
   padding-left: 0;
+
 
   & .img-selected {
     width: 100%;
@@ -44,9 +46,12 @@ const ProjectSelectedStyle = styled.div`
 
   & .project-informations {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
-    margin-top: 33px;
+  }
+
+  .project-informations-title-and-date {
+    display: flex;
   }
 
   & .project-informations-title {
@@ -58,6 +63,7 @@ const ProjectSelectedStyle = styled.div`
   & .project-links {
     margin-top: 12px;
     display: flex;
+    justify-content: center;
   }
 
   & .tags-container {
@@ -66,8 +72,8 @@ const ProjectSelectedStyle = styled.div`
     flex-wrap: wrap;
     width: 100%;
     padding: 0;
-    margin-top: 42px;
-    margin-bottom: 42px;
+    margin-top: 8px;
+    margin-bottom: 32px;
   }
 
   & .techno-tag {
@@ -120,64 +126,70 @@ const Projects = React.forwardRef((props, ref) => {
 
   return (
 <>
-<p className='section-title small'>Mes projets</p>
     <ProjectsSection id="projects" ref={ref}>
+      <p className='section-title small'>Mes projets</p>
 
-        <ProjectPic
-          data={projectsData}
-          activeState={+active}
-          onClick={(e) => setActive(e.target.id)}
-        />
+      <ProjectPic
+        data={projectsData}
+        activeState={+active}
+        onClick={(e) => setActive(e.target.id)}
+      />
 
-        <ProjectSelectedStyle className='selected-project'>
+      <ProjectSelectedStyle className='selected-project'>
         {projectsData.filter(selected => selected.id === +active).map(project => (
           <>
+              <div className="project-informations" >
+                <LeftSvg
+                  heigth={30}
+                  width={30}
+                  onClick={leftProjectHandler}
+                  className="left-effet hover-neon"
+                />
+                <div className='project-informations-title-and-date'>
+                  <h3 className='project-informations-title'>{project.name}</h3>
+                  <p>{project.date}</p>
+                </div>
+                <RightSvg
+                  heigth={30}
+                  width={30}
+                  onClick={rightProjectHandler}
+                  className="right-effet hover-neon"
+                />
+              </div>
 
-            <div className="project-informations" >
-              <LeftSvg
-                heigth={30}
-                width={30}
-                onClick={leftProjectHandler}
-                className="left-effet hover-neon"
-              />
-              <h3 className='project-informations-title'>{project.name}</h3>
-              <p>{project.date}</p>
-              <RightSvg
-                heigth={30}
-                width={30}
-                onClick={rightProjectHandler}
-                className="right-effet hover-neon"
-              />
-            </div>
-            <div className='img-selected-tags-container'>
-            <div className='img-selected'>
-              <img
-                src={`${process.env.PUBLIC_URL}/images/${project.poster}`}
-                alt={project.name}
-                id={project.id}
-              />
-            </div>
-            <div className='tags-container'>
-              {project.tech.map(techno =>(techno))}
-            </div>
-            </div>
+
+              <div className='img-selected-tags-container'>
+
+                <div className='img-selected'>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/${project.poster}`}
+                    alt={project.name}
+                    id={project.id}
+                  />
+                </div>
+
+                <div className='tags-container'>
+                  {project.tech.map(techno =>(techno))}
+                </div>
+
+              </div>
+
 
             <p>{project.notice}</p>
             <div className='project-links'>
-              {project.url !== undefined &&
-                <a href={project.url} target="_blank" rel="noreferrer">
-                  <ExternalLink height={24} width={24} className="hover-neon"/>
-                </a>
-              }
-              <a href={project.github} target="_blank" rel="noreferrer">
-                <Github height={24} width={24} className="hover-neon" />
-              </a>
-            </div>
-
+                  {project.url !== undefined &&
+                    <a href={project.url} target="_blank" rel="noreferrer">
+                      <ExternalLink height={24} width={24} className="hover-neon"/>
+                    </a>
+                  }
+                  <a href={project.github} target="_blank" rel="noreferrer">
+                    <Github height={24} width={24} className="hover-neon" />
+                  </a>
+                </div>
           </>
-        ))}
-      </ProjectSelectedStyle>
+              ))}
 
+      </ProjectSelectedStyle>
     </ProjectsSection>
 
     </>
