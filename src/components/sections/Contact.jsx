@@ -8,7 +8,7 @@ const ContactSection = styled.section`
 
   @media(min-width: 768px) {
     width: 80%;
-    padding-left: 220px;
+    padding-left: 150px;
   }
 `
 

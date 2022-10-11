@@ -7,7 +7,7 @@ const ProjectPicStyle = styled.ul`
   padding-left: 0;
 
   li {
-    padding-left: 0;
+    padding: 10px 60px 10px 0;
   }
 
   @media(min-width: 768px) {
@@ -15,7 +15,6 @@ const ProjectPicStyle = styled.ul`
     width: 150px;
     flex-direction: column;
     padding-right: 0px;
-    border-right: 1px solid var(--black);
   }
 `;
 

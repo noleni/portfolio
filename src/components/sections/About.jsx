@@ -43,8 +43,12 @@ const AboutStyle = styled.section`
     display:none;
   }
 
-  .btn-show-more {
-    margin: 0 auto;
+  .small-device {
+    text-align: center;
+  }
+
+  .presentation {
+    text-align: left;
   }
 
   @media(min-width: 768px) {
@@ -131,7 +135,7 @@ const About = React.forwardRef((props, ref) => {
           type="button"
           onClick={() => setShowMore(!showMore)}
         >
-          {!showMore ? "Voir plus" : "Voir moins"}
+          {!showMore ? "Lire plus" : "Voir moins"}
         </Button>
       </div>
 

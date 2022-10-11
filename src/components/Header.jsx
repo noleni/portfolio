@@ -101,7 +101,7 @@ const MenuStyle = styled.aside`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 120px;
+    padding-top: 60px;
     padding-right: 12px;
     position: relative;
   }
@@ -164,7 +164,7 @@ const Header = () => {
       <ul className='ul-small'>
         {navLinks.map(({url, name}, i) => (
           <li key={i}>
-            <a onClick={() => setMenuOpen(false)} href={url}><h3>{`0${i + 1} - ${name}`}</h3></a>
+            <a onClick={() => setMenuOpen(false)} href={url}><h4>{`0${i + 1} - ${name}`}</h4></a>
           </li>
         ))}
       </ul>

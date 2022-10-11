@@ -87,18 +87,24 @@ const ProjectSelectedStyle = styled.div`
     padding: 0 8px;
   }
 
+  @media(min-width: 576px) {
+
+
+    .img-selected {
+      width: 70%;
+      margin-left: 0;
+    }
+  }
+
   @media(min-width: 768px) {
-    margin-left: 80px;
+    border-left: 1px solid var(--dark-blue);
+    padding-left: 80px;
     border-top: 0;
     border-bottom: 0;
 
     .project-informations {
       justify-content: start;
     }
-
-    ${'' /* .img-selected-tags-container {
-      display: flex;
-    } */}
 
     .tags-container, .project-links {
       justify-content: start;
