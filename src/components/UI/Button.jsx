@@ -18,11 +18,11 @@ const Button = styled.button`
   transform: scale(1.06);
 
 
-  &:disabled {
+  ${'' /* &:disabled {
   border: 1px solid #999999;
   background-color: transparent;
   transform: scale(1);
-  cursor: default;
+  cursor: default; */}
 }
 
   &.active {

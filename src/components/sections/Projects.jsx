@@ -100,7 +100,7 @@ const ProjectSelectedStyle = styled.div`
       display: flex;
     } */}
 
-    .tags-container {
+    .tags-container, .project-links {
       justify-content: start;
     }
 
@@ -187,7 +187,7 @@ const Projects = React.forwardRef((props, ref) => {
                   </a>
                 </div>
           </>
-              ))}
+        ))}
 
       </ProjectSelectedStyle>
     </ProjectsSection>

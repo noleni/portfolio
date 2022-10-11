@@ -4,6 +4,14 @@ import styled from 'styled-components';
 import Button from "../UI/Button";
 import emailjs from "emailjs-com";
 
+const ContactSection = styled.section`
+
+  @media(min-width: 768px) {
+    width: 80%;
+    padding-left: 220px;
+  }
+`
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -69,9 +77,9 @@ const Contact = React.forwardRef((props, ref) => {
 
   return (
 
-  <section id="contact" ref={ref}>
-    <p className="section-title">Contact</p>
-    <p>Pour me contacter, remplissez le formulaire ci-dessous. Je vous répondrai le plus rapidement possible.</p>
+  <ContactSection id="contact" ref={ref}>
+    <p className="section-title">Restons en contact !</p>
+    <p>Pour me contacter, vous pouvez remplir le formulaire ci-dessous. Je vous répondrai le plus rapidement possible.</p>
     <Form ref={formRef} onSubmit={sendEmail} className="form-control">
       <input
         onChange={emailValidityHandler}
@@ -89,7 +97,7 @@ const Contact = React.forwardRef((props, ref) => {
         />
         <Button type="submit" disabled={!formIsValid}>Envoyer</Button>
     </Form>
-  </section>
+  </ContactSection>
 
   )
 });
