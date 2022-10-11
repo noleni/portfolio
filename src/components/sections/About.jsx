@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import More from "../More";
 import TechList from "../TechList";
 import Button from '../UI/Button';
 
@@ -135,11 +134,6 @@ const About = React.forwardRef((props, ref) => {
 
       <p className='presentation large-device'>{paragraph}</p>
 
-      <More
-        className="projects"
-        arrowClassName="down-effect"
-        text="Mes projets">
-      </More>
     </AboutStyle>
   )
 });

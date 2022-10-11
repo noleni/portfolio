@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import projectsData from "../../data/projectsData";
 import ProjectPic from '../ProjectPick';
-import More from '../More';
 
 import ExternalLink from '../icons/SVG/ExternalLink';
 import Github from '../icons/SVG/Github';
@@ -91,12 +90,16 @@ const ProjectSelectedStyle = styled.div`
       justify-content: start;
     }
 
+    ${'' /* .img-selected-tags-container {
+      display: flex;
+    } */}
+
     .tags-container {
       justify-content: start;
     }
 
     .img-selected {
-      width: 60%;
+      width: 50%;
       margin-left: 0;
     }
   }
@@ -146,6 +149,7 @@ const Projects = React.forwardRef((props, ref) => {
                 className="right-effet hover-neon"
               />
             </div>
+            <div className='img-selected-tags-container'>
             <div className='img-selected'>
               <img
                 src={`${process.env.PUBLIC_URL}/images/${project.poster}`}
@@ -153,10 +157,11 @@ const Projects = React.forwardRef((props, ref) => {
                 id={project.id}
               />
             </div>
-
             <div className='tags-container'>
               {project.tech.map(techno =>(techno))}
             </div>
+            </div>
+
             <p>{project.notice}</p>
             <div className='project-links'>
               {project.url !== undefined &&
@@ -174,11 +179,7 @@ const Projects = React.forwardRef((props, ref) => {
       </ProjectSelectedStyle>
 
     </ProjectsSection>
-      <More
-        className="projects"
-        arrowClassName="down-effect"
-        text="Contact">
-      </More>
+
     </>
   )
 });
