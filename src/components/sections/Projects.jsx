@@ -24,6 +24,8 @@ const ProjectsSection = styled.section`
 `;
 
 const ProjectSelectedStyle = styled.div`
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 4px;
   padding-left: 0;
 
   & .img-selected {
@@ -64,6 +66,12 @@ const ProjectSelectedStyle = styled.div`
     justify-content: center;
   }
 
+  & .project-notice {
+    padding: 8px;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
   & .tags-container {
     display: flex;
     justify-content: center;
@@ -86,6 +94,9 @@ const ProjectSelectedStyle = styled.div`
   }
 
   @media(min-width: 576px) {
+    box-shadow: 0 0 0px rgba(0,0,0,0);
+    border-radius: 0;
+
     .img-selected {
       width: 70%;
       margin-left: 0;
@@ -93,13 +104,20 @@ const ProjectSelectedStyle = styled.div`
   }
 
   @media(min-width: 768px) {
+    box-shadow: 0 0 0px rgba(0,0,0,0);
+    border-radius: 0;
     border-left: 1px solid var(--dark-blue);
     padding-left: 80px;
     border-top: 0;
     border-bottom: 0;
+    box-shadow: 0;
 
     .project-informations {
       justify-content: start;
+    }
+
+    .project-notice {
+
     }
 
     .tags-container, .project-links {
@@ -174,7 +192,7 @@ const Projects = React.forwardRef((props, ref) => {
                 </div>
               </div>
 
-            <p>{project.notice}</p>
+            <p className='project-notice'>{project.notice}</p>
 
             <div className='project-links'>
               {project.url !== undefined &&

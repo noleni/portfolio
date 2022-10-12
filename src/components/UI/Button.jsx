@@ -9,6 +9,7 @@ const Button = styled.button`
   animation: pulse 1s;
   transition: all 200ms ease-in-out;
   font-family: var(--texts);
+  font-size: 16px;
   background-color: transparent;
 
   &:hover {

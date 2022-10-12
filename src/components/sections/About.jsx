@@ -47,6 +47,10 @@ const AboutStyle = styled.section`
     text-align: center;
   }
 
+  .btn-show-more {
+    width: 100%;
+  }
+  
   .presentation {
     text-align: left;
   }

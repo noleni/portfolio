@@ -68,6 +68,7 @@ const StyleLargeNav = styled.nav`
     .ul-large {
     display: flex;
     align-items: end;
+    margin-right: 22px;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
@@ -89,7 +90,7 @@ const MenuStyle = styled.aside`
   right: 0;
   z-index: 10;
   height: 100vh;
-  background-color: rgba(247,31,102, 0.97);
+  background-color: var(--neon-pink);
   transition: all 0.2s ease-in-out;
 
   &.open {
@@ -149,7 +150,13 @@ const Header = () => {
         </ul>
         {isMounted &&
           <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-            <Button className='btn-cv-large' type="button">CV</Button>
+            <Button
+              className='btn-cv-large'
+              type="button">
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                CV
+              </a>
+            </Button>
           </CSSTransition>
         }
         <Button
@@ -160,7 +167,7 @@ const Header = () => {
         </Button>
       </div>
     </StyleLargeNav>
-    
+
     <MenuStyle className={menuOpen ? "open" : ""}>
       <ul className='ul-small'>
         {navLinks.map(({url, name}, i) => (

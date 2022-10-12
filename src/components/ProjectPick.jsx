@@ -12,7 +12,7 @@ const ProjectPicStyle = styled.ul`
 
   @media(min-width: 768px) {
     display: flex;
-    width: 150px;
+    width: 180px;
     flex-direction: column;
     padding-right: 0px;
   }
