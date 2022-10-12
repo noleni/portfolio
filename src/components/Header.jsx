@@ -160,6 +160,7 @@ const Header = () => {
         </Button>
       </div>
     </StyleLargeNav>
+    
     <MenuStyle className={menuOpen ? "open" : ""}>
       <ul className='ul-small'>
         {navLinks.map(({url, name}, i) => (

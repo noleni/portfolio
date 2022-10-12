@@ -105,7 +105,7 @@ const About = React.forwardRef((props, ref) => {
 
   const [showMore, setShowMore] = useState(false);
 
-  const paragraph = `Je me forme au développement web depuis janvier 2022. J'ai commencé par JavaScript grâce à plusieurs
+  const paragraph = `Je me forme au développement web depuis janvier 2022. J'ai commencé par JavaScript "vanilla" grâce à plusieurs
   ressources en ligne (OpenClassroom, JSdeZero, CodeWars), puis j'ai rejoint la formation du Wagon Paris au printemps.
   J'y ai appris Ruby et Rails, la POO et l'organisation du développement en équipe. Depuis cet été, je travaille sur React (que j'affectionne tout particulièrement).
   J'aimerais à présent rejoindre une équipe pour utiliser et améliorer ces compétences au service d'un projet concret et ambitieux.

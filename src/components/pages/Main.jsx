@@ -39,7 +39,7 @@ const MainStyle = styled.main`
   .section-title {
     color: var(--black);
     font-family: var(--title);
-    font-size: 18px;
+    font-size: 20px;
 
     @media(min-width: 768px) {
       &.small {

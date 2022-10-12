@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TechTagStyle = styled.li`
+const TechTagStyle = styled.div`
   border: 0.2px solid var(--dark-blue);
   color: var(--dark-blue);
   border-radius: 16px;
@@ -16,9 +16,9 @@ const TechTagStyle = styled.li`
   }
 `
 
-const TechTag = ({SVG, name}) => {
+const TechTag = ({SVG, name, i}) => {
   return (
-    <TechTagStyle key={name}>
+    <TechTagStyle key={i}>
       {SVG}
       <p>{name}</p>
     </TechTagStyle>

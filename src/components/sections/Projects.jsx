@@ -12,7 +12,6 @@ import styled from 'styled-components';
 
 
 const ProjectsSection = styled.section`
-
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -22,11 +21,10 @@ const ProjectsSection = styled.section`
   @media(min-width: 768px) {
     flex-direction: row;
   }
-`
+`;
 
 const ProjectSelectedStyle = styled.div`
   padding-left: 0;
-
 
   & .img-selected {
     width: 100%;
@@ -88,8 +86,6 @@ const ProjectSelectedStyle = styled.div`
   }
 
   @media(min-width: 576px) {
-
-
     .img-selected {
       width: 70%;
       margin-left: 0;
@@ -143,7 +139,7 @@ const Projects = React.forwardRef((props, ref) => {
 
       <ProjectSelectedStyle className='selected-project'>
         {projectsData.filter(selected => selected.id === +active).map(project => (
-          <>
+          <div key={project.id}>
               <div className="project-informations" >
                 <LeftSvg
                   heigth={30}
@@ -165,7 +161,6 @@ const Projects = React.forwardRef((props, ref) => {
 
 
               <div className='img-selected-tags-container'>
-
                 <div className='img-selected'>
                   <img
                     src={`${process.env.PUBLIC_URL}/images/${project.poster}`}
@@ -175,24 +170,26 @@ const Projects = React.forwardRef((props, ref) => {
                 </div>
 
                 <div className='tags-container'>
-                  {project.tech.map(techno =>(techno))}
+                  {project.tech.map((techno, i) => (techno))}
                 </div>
-
               </div>
 
-
             <p>{project.notice}</p>
+
             <div className='project-links'>
-                  {project.url !== undefined &&
-                    <a href={project.url} target="_blank" rel="noreferrer">
-                      <ExternalLink height={24} width={24} className="hover-neon"/>
-                    </a>
-                  }
-                  <a href={project.github} target="_blank" rel="noreferrer">
-                    <Github height={24} width={24} className="hover-neon" />
-                  </a>
-                </div>
-          </>
+              {project.url !== undefined &&
+
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  <ExternalLink height={24} width={24} className="hover-neon"/>
+                </a>
+              }
+
+              <a href={project.github} target="_blank" rel="noreferrer">
+                <Github height={24} width={24} className="hover-neon" />
+              </a>
+
+            </div>
+          </div>
         ))}
 
       </ProjectSelectedStyle>

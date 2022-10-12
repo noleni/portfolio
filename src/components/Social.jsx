@@ -36,12 +36,12 @@ const SocialStyle = styled.ul`
 const Social = () => {
   return (
     <SocialStyle>
-      <li key={'linkedin'}>
+      <li key={'Linkedin'}>
         <a href={'https://www.linkedin.com/in/marine-ramillon'} target="_blank" rel="noreferrer">
           <Linkedin width={36} height={36} className='bump'/>
         </a>
       </li>
-      <li key={'github'}>
+      <li key={'Github'}>
         <a href={'https://github.com/noleni'} target="_blank" rel="noreferrer">
           <Github width={36} height={36} className='bump' />
         </a>
