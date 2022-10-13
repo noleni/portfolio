@@ -104,7 +104,7 @@ const ProfilPicStyle = styled.div`
       height: 240px;
     }
   }
-`
+`;
 
 
 const About = React.forwardRef((props, ref) => {

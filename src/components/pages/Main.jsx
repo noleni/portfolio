@@ -39,7 +39,7 @@ const MainStyle = styled.main`
   .section-title {
     color: var(--dark-blue);
     font-family: var(--title);
-    font-size: 20px;
+    font-size: 18px;
 
     @media(min-width: 768px) {
       &.small {
@@ -51,7 +51,7 @@ const MainStyle = styled.main`
   .section-title::after {
     content: '';
     position: absolute;
-    width: 100px;
+    width: 120px;
     height: 1.2px;
     background-color: var(--dark-blue);
     transform: translateY(17px) translateX(4px);

@@ -6,6 +6,7 @@ const ProjectPicStyle = styled.ul`
   display: none;
   padding-left: 0;
 
+
   li {
     padding: 10px 60px 10px 0;
   }
@@ -20,8 +21,8 @@ const ProjectPicStyle = styled.ul`
 
 const ProjectPic = ({data, activeState, onClick}) => {
   return (
+
     <ProjectPicStyle>
-    <p className='section-title'>Mes projets</p>
       {data.map(project => (
         <li key={project.id}>
           <Button
@@ -33,6 +34,7 @@ const ProjectPic = ({data, activeState, onClick}) => {
         </li>
       ))}
     </ProjectPicStyle>
+
   )
 };
 

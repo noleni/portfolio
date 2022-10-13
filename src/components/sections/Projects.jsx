@@ -14,8 +14,12 @@ const ProjectsSection = styled.section`
   align-items: baseline;
   margin-bottom: 60px;
 
+  .project {
+    display: flex;
+  }
+
   @media(min-width: 768px) {
-    flex-direction: row;
+    ${'' /* flex-direction: row; */}
   }
 `;
 
@@ -32,8 +36,10 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   return (
+    <>
     <ProjectsSection id="projects" ref={ref}>
-      <p className='section-title small'>02. Mes projets</p>
+      <p className='section-title'>02. Mes projets</p>
+      <div class="project">
       <ProjectPic
         data={projectsData}
         activeState={+active}
@@ -45,7 +51,9 @@ const Projects = React.forwardRef((props, ref) => {
         onLeftClick={leftProjectHandler}
         onRightClick={rightProjectHandler}
       />
+      </div>
     </ProjectsSection>
+    </>
   )
 });
 
