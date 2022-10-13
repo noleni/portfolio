@@ -37,6 +37,7 @@ const AboutStyle = styled.section`
     background: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
     background: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
     background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
+    transition: all 0.5s ease-in-out;
   }
 
   .large-device {
@@ -50,9 +51,10 @@ const AboutStyle = styled.section`
   .btn-show-more {
     width: 100%;
   }
-  
+
   .presentation {
     text-align: left;
+
   }
 
   @media(min-width: 768px) {
@@ -126,7 +128,7 @@ const About = React.forwardRef((props, ref) => {
         </ProfilPicStyle>
         <TechList />
       </div>
-      <p className='section-title'>À propos</p>
+      <p className='section-title'>01. À propos</p>
       <div className='small-device'>
         {!showMore &&
           <p className='presentation opacity-down'>{paragraph.substring(0, 400)}

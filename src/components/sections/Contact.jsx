@@ -5,6 +5,8 @@ import Button from "../UI/Button";
 import emailjs from "emailjs-com";
 
 const ContactSection = styled.section`
+  height: 60vh;
+
   .message-confirmation {
     color: var(--neon-pink);
   }
@@ -86,7 +88,7 @@ const Contact = React.forwardRef((props, ref) => {
   return (
 
   <ContactSection id="contact" ref={ref}>
-    <p className="section-title">Restons en contact !</p>
+    <p className="section-title">03. Restons en contact !</p>
     {!messageIsSent ?
       <>
         <p>Pour me contacter, vous pouvez remplir le formulaire ci-dessous. Je vous répondrai le plus rapidement possible.</p>

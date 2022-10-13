@@ -9,17 +9,18 @@ const ProjectSelectedStyle = styled.div`
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 4px;
   padding-left: 0;
+  margin-top: 18px;
 
   & .img-selected {
     width: 100%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    ${'' /* box-shadow: 0 0 15px rgba(0,0,0,0.2); */}
     position: relative;
     margin: 12px 0 32px 0px;
   }
 
   & .project-informations {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -72,6 +73,7 @@ const ProjectSelectedStyle = styled.div`
 
     .img-selected {
       margin-left: 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
   }
 
@@ -107,7 +109,7 @@ const Image = styled.img`
     -webkit-filter: grayscale(50%);
     filter: grayscale(50%);
     padding: 4px 0 4px 0;
-`
+`;
 
 
 const ProjectActive = ({data, activeState, onLeftClick, onRightClick}) => {

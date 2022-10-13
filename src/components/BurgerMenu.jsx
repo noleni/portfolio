@@ -13,7 +13,7 @@ const BurgerMenuStyle = styled.div`
     width: 80%;
     height: 80%;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
   ._burger {
     width: 30px;
@@ -21,7 +21,7 @@ const BurgerMenuStyle = styled.div`
     background-color: var(--black);
     color: var(--black);
     border-radius: 4px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   ._burger::before,
@@ -33,7 +33,7 @@ const BurgerMenuStyle = styled.div`
     background-color: var(--black);
     color: var(--black);
     border-radius: 4px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   ._burger::before {

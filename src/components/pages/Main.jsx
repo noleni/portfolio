@@ -37,7 +37,7 @@ const MainStyle = styled.main`
   }
 
   .section-title {
-    color: var(--black);
+    color: var(--dark-blue);
     font-family: var(--title);
     font-size: 20px;
 
@@ -46,6 +46,15 @@ const MainStyle = styled.main`
         display: none;
       }
     }
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1.2px;
+    background-color: var(--dark-blue);
+    transform: translateY(17px) translateX(4px);
   }
 
   .btn-contact {
