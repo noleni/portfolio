@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import Button from './UI/Button';
 import Social from './Social';
+import BurgerMenu from './BurgerMenu';
 
 import styled from 'styled-components';
 
@@ -59,9 +60,10 @@ const StyleLargeNav = styled.nav`
     font-size: 62px;
   }
 
+
   @media(min-width: 768px) {
 
-    .btn-small-nav {
+    .menu-btn_burger{
       display: none;
     }
 
@@ -84,6 +86,9 @@ const StyleLargeNav = styled.nav`
 `
 
 const MenuStyle = styled.aside`
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   width: 0%;
   visibility: hidden;
   position:fixed;
@@ -98,19 +103,34 @@ const MenuStyle = styled.aside`
     visibility: visible;
   }
 
+  .ul-small-container {
+    ${'' /* display: flex; */}
+    ${'' /* justify-content: center;
+    align-items: center; */}
+  }
+
   .ul-small {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-    padding-right: 12px;
-    position: relative;
+    margin-left: -20px;
+
+    li {
+      text-align: center;
+
+      p {
+        color: var(--off-white);
+        margin-bottom: 0;
+      }
+
+      h3 {
+        margin-top: 6px;
+        margin-bottom: 6px;
+      }
+    }
   }
 
   .social {
-    position: absolute;
     bottom: 0;
-    left: 40%;
+    padding-left: 20px;
+    margin-top: 60px;
   }
 `
 
@@ -159,26 +179,31 @@ const Header = () => {
             </Button>
           </CSSTransition>
         }
-        <Button
-          className="btn-small-nav"
-          type="button"
-          onClick={()=> setMenuOpen(!menuOpen)}>
-            {menuOpen ? <>&#10005;</> : <>&#8801;</>}
-        </Button>
+        <BurgerMenu
+          menuState={menuOpen}
+          onClick={()=> setMenuOpen(!menuOpen)}
+        />
       </div>
     </StyleLargeNav>
 
     <MenuStyle className={menuOpen ? "open" : ""}>
+    <div className='ul-small-container'>
       <ul className='ul-small'>
         {navLinks.map(({url, name}, i) => (
           <li key={i}>
-            <a onClick={() => setMenuOpen(false)} href={url}><h4>{`0${i + 1} - ${name}`}</h4></a>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href={url}>
+              <p>{`0${i + 1}.`}</p>
+              <h3>{name}</h3>
+            </a>
           </li>
         ))}
       </ul>
       <div className='social'>
         <Social />
       </div>
+    </div>
     </MenuStyle>
     </>
   )
