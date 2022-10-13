@@ -7,7 +7,7 @@ const RightSvg = (props) => {
         className="feather feather-github"
         role="img"
         stroke="currentColor"
-        strokeWidth="0.8"
+        strokeWidth="0.4"
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"

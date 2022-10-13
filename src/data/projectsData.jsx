@@ -15,7 +15,7 @@ const projectsData = [
   {
     id: 1,
     name: 'ExpoPlus',
-    notice: "ExpoPlus propose à l'utilisateur une sélection des meilleures expositions (selon les notes attribuées par la communauté) correspondant à ses goûts et sa géolocalisation. Une fois l'expo trouvée, il peut la mettre en favori et lancer une proposition de sortie aux autres utilisateurs. Les données des expositions sont parsées depuis d'API de la Mairie de Paris. ExpoPlus a été développée à quatre dans le cadre des deux dernières semaines de formation au Wagon. L'app est uniquement adaptée au format mobile.",
+    notice: "ExpoPlus propose à l'utilisateur une sélection des meilleures expositions (selon les notes attribuées par la communauté) correspondant à ses goûts et sa géolocalisation. Une fois l'expo trouvée, il peut la mettre en favori et lancer une proposition de sortie aux autres utilisateurs. Les données des expositions sont parsées depuis l'API de la Mairie de Paris. ExpoPlus a été développée à quatre dans le cadre des deux dernières semaines de formation au Wagon. L'app est uniquement adaptée au format mobile.",
     date: 'Juin 2022',
     features: ['requête API', 'Geolocalisation', 'Authentification', 'Filtres multicritères', 'Search'],
     tech: [
@@ -27,7 +27,7 @@ const projectsData = [
       <TechTag SVG={<PostgreSvg height={22} width={22} />} name={'PostgreSQL'} />,
       ],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    poster: "expoplus-cover.png",
+    poster: ["expoplus-cover.png", "expoplus-cover-large.png"],
     github: "https://github.com/Linabemu/expo-plus",
     url: "https://expo-plus.herokuapp.com/"
   },
@@ -43,7 +43,7 @@ const projectsData = [
       <TechTag SVG={<Bootstrap height={22} width={22} />} name={'Bootstrap'} />,
     ],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    poster: "paperapp-cover.png",
+    poster: ["paperapp-cover.png", "paperapp-cover-large.png"],
     github: "https://github.com/noleni/rails-papers-app",
   },
   {
@@ -56,7 +56,7 @@ const projectsData = [
       <TechTag SVG={<ReactSvg height={22} width={22} />} name={'React'} />,
       <TechTag SVG={<JavaScriptSvg height={22} width={22} />} name={'JavaScript'} />,],
     packages: ['Devise', 'Pundit', 'Cloudinary', 'FlatPicket', 'Mapbox'],
-    poster: "dreamyourmeal-cover.png",
+    poster: ["dreamyourmeal-cover.png", "dreamyourmeal-cover-large.png"],
     github: "https://github.com/noleni/react-fake-marketplace"
   },
   {
@@ -72,7 +72,7 @@ const projectsData = [
       <TechTag SVG={<StyledComponentsSVG height={22} width={22} />} name={'Styled Components'} />,
     ],
     packages: [],
-    poster: "paper-app-screen.png",
+    poster: ["portfolio-cover-large.png", "portfolio-cover-large.png"],
     github: "https://github.com/noleni/portfolio"
   },
 ]

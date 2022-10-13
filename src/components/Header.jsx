@@ -122,7 +122,7 @@ const Header = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsMounted(true);
-    }, 200);
+    }, 1000);
     return () => {
       clearTimeout(timeout);
     };

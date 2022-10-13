@@ -56,7 +56,7 @@ const MainStyle = styled.main`
 
   @media(min-width: 576px) {
 
-    padding: 50px;
+    padding: 0 50px;
     min-height: 100vh;
 
     .title-big {
@@ -77,7 +77,7 @@ const MainStyle = styled.main`
 
   @media(min-width: 764px) {
 
-    padding: 0 100px 0 100px;
+    padding: 0 110px;
     min-height: 100vh;
 
     .title-big {
@@ -119,19 +119,19 @@ const Main = () => {
   };
 
   useEffect(() => {
-    scrollEffect(homeRef.current, 0.2, 0.6)
+    scrollEffect(homeRef.current, 0.4, 0.8)
   }, []);
 
   useEffect(() => {
-    scrollEffect(aboutRef.current, 0.2, 0.6)
+    scrollEffect(aboutRef.current, 0.4, 0.8)
   }, []);
 
   useEffect(() => {
-    scrollEffect(projectRef.current, 0.2, 0.6)
+    scrollEffect(projectRef.current, 0.4, 0.8)
   }, []);
 
   useEffect(() => {
-    scrollEffect(contactRef.current, 0.2, 0.6)
+    scrollEffect(contactRef.current, 0.4, 0.8)
   }, []);
 
   return (

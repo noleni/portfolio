@@ -1,8 +1,9 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import AllRoutes from "./components/AllRoutes";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import SideBarLinks from "./components/SideBarLinks";
 import Footer from "./components/Footer";
+import Main from "./components/pages/Main";
+import Error from "./components/pages/Error";
 
 import "./App.scss";
 
@@ -10,7 +11,10 @@ function App() {
   return (
     <Router>
       <Header />
-      <AllRoutes />
+      <Routes>
+        <Route exact path="/" element={<Main />} />
+        <Route exact path="*" element={<Error />} />
+      </Routes>
       <SideBarLinks />
       <Footer />
     </Router>
