@@ -6,7 +6,7 @@ const TechTagStyle = styled.div`
   border-radius: 16px;
   display: flex;
   padding: 4px 8px;
-  margin: 6px;
+  margin: 4px;
 
   p {
     margin: 0;
