@@ -17,10 +17,6 @@ const ProjectsSection = styled.section`
   .project {
     display: flex;
   }
-
-  @media(min-width: 768px) {
-    ${'' /* flex-direction: row; */}
-  }
 `;
 
 const Projects = React.forwardRef((props, ref) => {
@@ -36,7 +32,6 @@ const Projects = React.forwardRef((props, ref) => {
   };
 
   return (
-    <>
     <ProjectsSection id="projects" ref={ref}>
       <p className='section-title'>02. Mes projets</p>
       <div className="project">
@@ -53,7 +48,6 @@ const Projects = React.forwardRef((props, ref) => {
       />
       </div>
     </ProjectsSection>
-    </>
   )
 });
 

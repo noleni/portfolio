@@ -17,13 +17,6 @@ const Button = styled.button`
   color: var(--black);
   cursor: pointer;
   transform: scale(1.06);
-
-
-  ${'' /* &:disabled {
-  border: 1px solid #999999;
-  background-color: transparent;
-  transform: scale(1);
-  cursor: default; */}
 }
 
   &.active {

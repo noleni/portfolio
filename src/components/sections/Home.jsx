@@ -19,10 +19,14 @@ const Home = React.forwardRef((props, ref) => {
     <HomeStyle ref={ref}>
       <div>
         <HomesGreetingStyles>Bonjour, je suis</HomesGreetingStyles>
-        <h1 className={props.h1Class}>Marine Ramillon,</h1>
-        <h2 className={props.h2Class}>Développeuse web en quête d'opportunités.</h2>
+        <h1 className={props.titleBigClass}>Marine Ramillon,</h1>
+        <h2 className={props.titleClass}>Développeuse web en quête d'opportunités.</h2>
       </div>
-      <Button className={props.btnClass}><a href="/#contact">Me contacter</a></Button>
+        <a href="/#contact" className={props.btnLinkClass}>
+          <Button className={props.btnClass}>
+                Me contacter
+          </Button>
+        </a>
     </HomeStyle>
   )
 });

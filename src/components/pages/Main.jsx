@@ -20,20 +20,20 @@ const MainStyle = styled.main`
 
     padding: 0 20px;
 
-  .title-big {
-    font-family: var(--title);
-    font-size: 48px;
-    margin: 0;
-    text-align: center;
-  }
-
-  .title {
+    .title {
     font-family: var(--title);
     color: var(--dark-blue);
     font-size: 28px;
     font-weight: lighter;
     text-align: center;
     padding-bottom: 22px;
+
+    &-big {
+      font-family: var(--title);
+      font-size: 48px;
+      margin: 0;
+      text-align: center;
+    }
   }
 
   .section-title {
@@ -46,21 +46,26 @@ const MainStyle = styled.main`
         display: none;
       }
     }
-  }
 
-  .section-title::after {
-    content: '';
-    position: absolute;
-    width: 120px;
-    height: 1.2px;
-    background-color: var(--dark-blue);
-    transform: translateY(17px) translateX(4px);
+    &::after {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 1.2px;
+      background-color: var(--dark-blue);
+      transform: translateY(17px) translateX(4px);
+    }
   }
 
   .btn-contact {
     font-size: 22px;
     margin: 0 auto;
     width: 100%;
+
+    &-link {
+      width: 100%;
+      padding: 0;
+    }
   }
 
   @media(min-width: 576px) {
@@ -68,14 +73,14 @@ const MainStyle = styled.main`
     padding: 0 50px;
     min-height: 100vh;
 
-    .title-big {
-      font-size: 58px;
-      text-align: start;
-    }
-
     .title {
       font-size: 38px;
       text-align: start;
+
+      &-big {
+        font-size: 58px;
+        text-align: start;
+      }
     }
 
     .btn-contact {
@@ -89,14 +94,14 @@ const MainStyle = styled.main`
     padding: 0 110px;
     min-height: 100vh;
 
-    .title-big {
-      font-size: 66px;
-      text-align: start;
-    }
-
     .title {
       font-size: 42px;
       text-align: start;
+
+      &-big {
+        font-size: 66px;
+        text-align: start;
+      }
     }
   }
 `;
@@ -147,10 +152,11 @@ const Main = () => {
     <MainStyle>
       <Home
         ref={homeRef}
-        h1Class={'title-big'}
-        h2Class={'title'}
+        titleBigClass={'title-big'}
+        titleClass={'title'}
         projectsClass={'projects'}
         btnClass={'btn-contact'}
+        btnLinkClass={'btn-contact-link'}
       />
       <About
         ref={aboutRef}

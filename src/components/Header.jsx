@@ -78,10 +78,10 @@ const StyleLargeNav = styled.nav`
     list-style: none;
   }
 
-  .btn-cv-large {
-    display: block;
-    height: fit-content;
-  }
+    .btn-cv-large {
+      display: block;
+      height: fit-content;
+    }
   }
 `
 
@@ -101,12 +101,6 @@ const MenuStyle = styled.aside`
   &.open {
     width: 80%;
     visibility: visible;
-  }
-
-  .ul-small-container {
-    ${'' /* display: flex; */}
-    ${'' /* justify-content: center;
-    align-items: center; */}
   }
 
   .ul-small {
@@ -170,13 +164,13 @@ const Header = () => {
         </ul>
         {isMounted &&
           <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-            <Button
-              className='btn-cv-large'
-              type="button">
               <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                CV
+                <Button
+                  className='btn-cv-large'
+                  type="button">
+                    CV
+                </Button>
               </a>
-            </Button>
           </CSSTransition>
         }
         <BurgerMenu

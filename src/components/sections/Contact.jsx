@@ -21,7 +21,7 @@ const Form = styled.form`
   flex-direction: column;
   width: 100%;
 
-  & .form-control__input, .form-control__textarea {
+  & input, & textarea {
     padding: 12px;
     margin: 12px 0;
     border-radius: 4px;
@@ -30,11 +30,11 @@ const Form = styled.form`
     font-size: 14px;
   }
 
-  & .form-control__textarea {
+  & textarea {
     height: 100px;
   }
 
-  & .form-control__input:focus, .form-control__textarea:focus {
+  & input:focus, & textarea:focus {
     outline: none !important;
     border: 2px solid var(--neon-pink);
   }
@@ -92,11 +92,10 @@ const Contact = React.forwardRef((props, ref) => {
     {!messageIsSent ?
       <>
         <p>Pour me contacter, vous pouvez remplir le formulaire ci-dessous. Je vous répondrai le plus rapidement possible.</p>
-        <Form ref={formRef} onSubmit={sendEmail} className="form-control">
+        <Form ref={formRef} onSubmit={sendEmail}>
           <input
             ref={emailRef}
             onChange={emailValidityHandler}
-            className='form-control__input'
             type="input"
             name="email"
             placeholder="Votre adresse mail..."
@@ -105,7 +104,6 @@ const Contact = React.forwardRef((props, ref) => {
           <textarea
             ref={messageRef}
             onChange={messageValidityHandler}
-            className='form-control__textarea'
             type="text-area"
             name="message"
             placeholder="Votre message..."
