@@ -146,7 +146,7 @@ const ProjectActive = ({data, activeState, onLeftClick, onRightClick}) => {
             </div>
 
             <div className='tags-container'>
-              {project.tech.map((techno, i) => (techno))}
+              {project.tech.map((techno, i) => (<div key={i}>{techno}</div>))}
             </div>
           </div>
 
