@@ -57,16 +57,18 @@ const AboutStyle = styled.section`
 
   }
 
+  @media(min-width: 576px) {
+    .pic-n-tech {
+      flex-direction: row;
+    }
+  }
+
   @media(min-width: 768px) {
     .small-device {
       display: none;
     }
     .large-device {
       display: flex;
-    }
-
-    .pic-n-tech {
-      flex-direction: row;
     }
   }
 `;
@@ -111,9 +113,9 @@ const About = React.forwardRef((props, ref) => {
 
   const [showMore, setShowMore] = useState(false);
 
-  const paragraph = `Je suis dévenue développeuse après une reconversion professionnelle. D'abord passionée d'art et de cinéma,
+  const paragraph = `Je suis devenue développeuse après une reconversion professionnelle. D'abord passionée d'art et de cinéma,
   j'ai travaillé pendant presque 10 ans auprès des publics culturels. De la médiation à la billetterie en passant par les stratégies marketing,
-  j'ai vite pris goût pour les outils web dans le cadre de mes différents métiers. Fin 2022, j'ai décidé de franchir un cap :
+  j'ai vite pris goût pour les outils web dans le cadre de mes différents métiers. Fin 2021, j'ai décidé de franchir un cap :
   de simple utilisatrice de ces outils, j'allais tenter de les penser et les fabriquer moi-même ! J'ai donc quitté mon poste de responsable
   billetterie à la Cinémathèque française et ai commencé à apprendre JavaScript "vanilla" grâce à plusieurs
   ressources en ligne (OpenClassroom, JSdeZero, CodeWars). En avril 22, je rejoignais la formation du Wagon Paris.
@@ -123,7 +125,7 @@ const About = React.forwardRef((props, ref) => {
   de cette librairie.
   Je suis depuis novembre 22 employée par Rakuten France en tant que développeuse Full Stack. J'y développe des projets en JavaScript (React
   et vanilla pour le front, Node et Express côté back).
-  Je poursuis par ailleurs mon apprentissage en solo de continue de développer des projets personnels. Mes objectifs restent intacts : progresser
+  Je poursuis par ailleurs mon apprentissage en solo et continue de développer des projets personnels. Mes objectifs restent intacts : progresser
   et proposer des outils intuitifs, agréables et pensés pour leurs utilisateurs.`
 
   return (

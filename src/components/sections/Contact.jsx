@@ -78,8 +78,15 @@ const Contact = React.forwardRef((props, ref) => {
     setMessageIsTouched(true);
 
     if (emailIsValid && messageIsValid) {
-      emailjs.sendForm('service_7aby91j', 'template_r1810gh', formRef.current, 'i5Cr-_YMYYpMjhYT7')
-      setMessageIsSent(true)
+      emailjs.sendForm('service_du93sgv', 'template_r1810gh', formRef.current, '7djMiV7XIYs6Mb_HB')
+      .then((res) => {
+        console.log(res)
+        if (res.status === 412) {
+          alert('oops')
+        } else {
+          setMessageIsSent(true)
+        }
+      })
     } else {
       return;
     }

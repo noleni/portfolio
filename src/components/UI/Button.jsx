@@ -13,18 +13,18 @@ const Button = styled.button`
   background-color: transparent;
 
   &:hover {
-  background-color: rgba(247,31,102, 0.35);
+  background-color: rgba(255,87,88, 0.35);
   color: var(--black);
   cursor: pointer;
   transform: scale(1.06);
 }
 
   &.active {
-    background-color: rgba(247,31,102, 0.35);
+    background-color: rgba(255,87,88, 0.35);
   }
 
   @media(max-width: 764px) {
-    background-color: rgba(247,31,102, 0.35);
+    background-color: rgba(255,87,88, 0.35);
   }
 `
 

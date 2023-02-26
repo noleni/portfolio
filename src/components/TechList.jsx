@@ -12,25 +12,51 @@ import StimulusSvg from './icons/SVG/StimulusSvg';
 import BootstrapSvg from './icons/SVG/BootstrapSvg';
 import PostgreSvg from './icons/SVG/PostgreSvg';
 import GitSvg from './icons/SVG/GitSvg';
+import ExpressSvg from './icons/SVG/ExpressSvg';
+import NodeSvg from './icons/SVG/NodeSvg';
+import NotionSvg from './icons/SVG/NotionSvg';
+import SlackSvg from './icons/SVG/Slacksvg';
+import FirebaseSvg from './icons/SVG/FirebaseSvg';
 
 import styled from 'styled-components';
 
-const TechListStyle = styled.ul`
+const TechListStyle = styled.div`
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .tech-card {
+    text-align: center;
+    background-color: rgba(255,87,88, 0.35);
+    border-radius: 4px;
+    padding: 12px;
+    margin: 0 6px 20px 0;
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+
+  .tech-card-box {
+    display: flex;
+    margin-top: 12px;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+  }
 
   h4 {
     margin: 0 6px 0 0;
     padding-top: 8px;
   }
 
-@media(min-width: 764px) {
-    height : fit-content;
-    padding: 0 100px 0 40px;
-    justify-content: start;
+  @media(min-width: 576px) {
+    margin-left: 32px;
+  }
+
+  @media(min-width: 821px) {
+    margin-left: 22px;
+    flex-direction: row;
+
   }
 `
 
@@ -38,20 +64,39 @@ const TechList = (props) => {
 
   return (
     <TechListStyle className='tech-list'>
-      <h4>Technologies</h4>
-      <TechTag SVG={<HtmlSvg height={18} width={18} />} name={'HTML'} key={1} />
-      <TechTag SVG={<JavascriptSvg height={18} width={18} />} name={'JavaScript'} key={2} />
-      <TechTag SVG={<ReactSvg height={18} width={18} />} name={'React'} key={3} />
-      <TechTag SVG={<StimulusSvg height={18} width={18} />} name={'Stimulus'} key={4} />
-      <TechTag SVG={<RubySvg height={18} width={18} />} name={'Ruby'} key={5} />
-      <TechTag SVG={<RailsSvg height={18} width={18} />} name={'Rails'} key={6} />
-      <TechTag SVG={<PostgreSvg height={18} width={18} />} name={'PostgreSQL'} key={7} />
-      <TechTag SVG={<SassSvg height={18} width={18} />} name={'Sass'} key={8} />
-      <TechTag SVG={<StyledComponentsSVG height={18} width={18} />} name={'StyledComponents'} key={9} />
-      <TechTag SVG={<BootstrapSvg height={18} width={18} />} name={'Bootstrap'} key={10} />
-      <TechTag SVG={<FigmaSvg height={18} width={18} />} name={'Figma'} key={11} />
-      <TechTag SVG={<HerokuSvg height={18} width={18} />} name={'Heroku'} key={12} />
-      <TechTag SVG={<GitSvg height={18} width={18} />} name={'Git'} key={13} />
+    <div className='tech-card'>
+      <h4>Front-end</h4>
+        <div className='tech-card-box'>
+        <TechTag SVG={<HtmlSvg height={18} width={18} />} name={'HTML'} key={1} />
+        <TechTag SVG={<JavascriptSvg height={18} width={18} />} name={'JavaScript'} key={2} />
+        <TechTag SVG={<ReactSvg height={18} width={18} />} name={'React'} key={3} />
+        <TechTag SVG={<StimulusSvg height={18} width={18} />} name={'Stimulus'} key={4} />
+        <TechTag SVG={<SassSvg height={18} width={18} />} name={'Sass'} key={5} />
+        <TechTag SVG={<StyledComponentsSVG height={18} width={18} />} name={'StyledComponents'} key={6} />
+        <TechTag SVG={<BootstrapSvg height={18} width={18} />} name={'Bootstrap'} key={7} />
+        <TechTag SVG={<FigmaSvg height={18} width={18} />} name={'Figma'} key={8} />
+        </div>
+    </div>
+    <div className='tech-card'>
+      <h4>Back-end</h4>
+      <div className='tech-card-box'>
+      <TechTag SVG={<ExpressSvg height={18} width={18} />} name={'Express'} key={16} />
+      <TechTag SVG={<NodeSvg height={18} width={18} />} name={'Node'} key={17} />
+      <TechTag SVG={<RubySvg height={18} width={18} />} name={'Ruby'} key={9} />
+      <TechTag SVG={<PostgreSvg height={18} width={18} />} name={'PostgreSQL'} key={10} />
+      <TechTag SVG={<RailsSvg height={18} width={18} />} name={'Rails'} key={11} />
+      </div>
+    </div>
+    <div className='tech-card'>
+      <h4>Versionning, projets, déploiement</h4>
+      <div className='tech-card-box'>
+      <TechTag SVG={<NotionSvg height={18} width={18} />} name={'Notion'} key={12} />
+      <TechTag SVG={<SlackSvg height={18} width={18} />} name={'Slack'} key={13} />
+      <TechTag SVG={<HerokuSvg height={18} width={18} />} name={'Heroku'} key={14} />
+      <TechTag SVG={<GitSvg height={18} width={18} />} name={'Git'} key={15} />
+      <TechTag SVG={<FirebaseSvg height={18} width={18} />} name={'Firebase'} key={18} />
+      </div>
+    </div>
     </TechListStyle>
   )
 };
