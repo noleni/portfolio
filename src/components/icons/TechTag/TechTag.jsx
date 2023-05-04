@@ -8,6 +8,16 @@ const TechTagStyle = styled.div`
   padding: 4px 8px;
   margin: 4px;
 
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  & {
+    transition: transform 0.2s ease-in-out;
+  }
+
+
+
   p {
     margin: 0;
     padding-top: 2px;

@@ -21,13 +21,16 @@ import FirebaseSvg from './icons/SVG/FirebaseSvg';
 import styled from 'styled-components';
 
 const TechListStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+
+  .tech-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 
   .tech-card {
     text-align: center;
-    background-color: rgba(255,87,88, 0.35);
+    background-color: rgba(255,87,88, 0);
     border-radius: 4px;
     padding: 12px;
     margin: 0 6px 20px 0;
@@ -49,21 +52,29 @@ const TechListStyle = styled.div`
     padding-top: 8px;
   }
 
+  .competencies-title {
+    margin-left: 20px
+  }
+
   @media(min-width: 576px) {
-    margin-left: 32px;
+      margin-left: 32px;
   }
 
   @media(min-width: 821px) {
     margin-left: 22px;
-    flex-direction: row;
 
+    .tech-list {
+    flex-direction: row;
+    }
   }
 `
 
 const TechList = (props) => {
 
   return (
-    <TechListStyle className='tech-list'>
+    <TechListStyle>
+    <h3 className='section-title competencies-title'>Compétences techniques</h3>
+    <div className='tech-list'>
     <div className='tech-card'>
       <h4>Front-end</h4>
         <div className='tech-card-box'>
@@ -97,6 +108,8 @@ const TechList = (props) => {
       <TechTag SVG={<FirebaseSvg height={18} width={18} />} name={'Firebase'} key={18} />
       </div>
     </div>
+    </div>
+
     </TechListStyle>
   )
 };

@@ -5,6 +5,7 @@ import Home from '../sections/Home';
 import About from '../sections/About';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
+import Pro from '../sections/ProfessionalExp';
 
 import '../_settings/_variables.scss';
 import styled from 'styled-components';
@@ -110,6 +111,7 @@ const Main = () => {
 
   const homeRef = useRef(null);
   const projectRef = useRef(null);
+  const proRef= useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -148,6 +150,10 @@ const Main = () => {
     scrollEffect(contactRef.current, 0.4, 0.8)
   }, []);
 
+  useEffect(() => {
+    scrollEffect(projectRef.current, 0.4, 0.8)
+  }, [])
+
   return (
     <MainStyle>
       <Home
@@ -162,6 +168,7 @@ const Main = () => {
         ref={aboutRef}
         presentationClass={'presentation'}
       />
+      <Pro ref={proRef}/>
       <Projects ref={projectRef}/>
       <Contact ref={contactRef} />
     </MainStyle>
