@@ -95,7 +95,7 @@ const Contact = React.forwardRef((props, ref) => {
   return (
 
   <ContactSection id="contact" ref={ref}>
-    <p className="section-title">03. Restons en contact !</p>
+    <p className="section-title">04. Restons en contact !</p>
     {!messageIsSent ?
       <>
         <p>Pour me contacter, vous pouvez remplir le formulaire ci-dessous. Je vous répondrai le plus rapidement possible.</p>

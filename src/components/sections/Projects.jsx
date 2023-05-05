@@ -33,7 +33,7 @@ const Projects = React.forwardRef((props, ref) => {
 
   return (
     <ProjectsSection id="projects" ref={ref}>
-      <p className='section-title'>02. Mes projets</p>
+      <p className='section-title'>03. Mes projets</p>
       <div className="project">
       <ProjectPic
         data={projectsData}

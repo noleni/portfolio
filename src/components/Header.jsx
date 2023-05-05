@@ -14,6 +14,10 @@ const navLinks = [
     url: '/#about',
   },
   {
+    name: 'EXPERIENCES',
+    url: '/#professional'
+  },
+  {
     name: 'PROJETS',
     url: '/#projects',
   },
