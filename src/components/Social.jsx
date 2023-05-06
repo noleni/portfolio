@@ -15,7 +15,7 @@ const SocialStyle = styled.ul`
     content: '';
     display: block;
     width: 2px;
-    height: 90px;
+    height: 80px;
     margin: 0 auto;
     background-color: #1A1C1A;
   }

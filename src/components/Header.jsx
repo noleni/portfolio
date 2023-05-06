@@ -97,7 +97,7 @@ const MenuStyle = styled.aside`
   visibility: hidden;
   position:fixed;
   right: 0;
-  z-index: 10;
+  z-index: 2;
   height: 100vh;
   background-color: var(--neon-pink);
   transition: all 0.2s ease-in-out;
@@ -107,28 +107,36 @@ const MenuStyle = styled.aside`
     visibility: visible;
   }
 
+  .ul-small-container {
+    height: 100%;
+    position: relative;
+  }
+
   .ul-small {
     margin-left: -20px;
+    height: 60%;
 
     li {
       text-align: center;
+
 
       p {
         color: var(--off-white);
         margin-bottom: 0;
       }
 
-      h3 {
+      h4 {
         margin-top: 6px;
-        margin-bottom: 6px;
+        margin-bottom: 0;
       }
     }
   }
 
   .social {
+    position: absolute;
     bottom: 0;
-    padding-left: 20px;
-    margin-top: 60px;
+    left: 44%;
+    margin-top: 30px;
   }
 `
 
@@ -193,7 +201,7 @@ const Header = () => {
               onClick={() => setMenuOpen(false)}
               href={url}>
               <p>{`0${i + 1}.`}</p>
-              <h3>{name}</h3>
+              <h4>{name}</h4>
             </a>
           </li>
         ))}

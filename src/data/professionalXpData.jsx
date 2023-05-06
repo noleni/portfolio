@@ -9,7 +9,7 @@ const professionalXpData = [
     contract : "CDI",
     job : "Full Stack developer",
     cityCountry : "Paris, France",
-    duration : differenceInMonths(new Date(), new Date('2022-11-07'))
+    duration : `${differenceInMonths(new Date(), new Date('2022-11-07'))} mois`
   },
   {
     isFlipped : false,
@@ -30,6 +30,16 @@ const professionalXpData = [
     job : "Chargée de billetterie / Location d'espaces",
     cityCountry : "Wellington, Nouvelle-Zélande",
     duration : "6 mois"
+  },
+  {
+    isFlipped : false,
+    current : false,
+    logo : "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1d/LogoLigueEnseignement.svg/langfr-440px-LogoLigueEnseignement.svg.png",
+    society : "Ligue de l'enseignement",
+    contract : "Service civique",
+    job : "Médiatrice culturelle",
+    cityCountry : "Paris, France",
+    duration : "1 an"
   }
 ]
 
