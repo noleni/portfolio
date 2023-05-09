@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import RibbonEl from '../UI/Ribbon';
+import ExternalLink from '../icons/SVG/ExternalLink';
 
 const ProXpStyle = styled.ul`
 
@@ -48,13 +49,19 @@ const ProXpStyle = styled.ul`
     border-radius: 4px;
   }
 
+  .card-job-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .card-job-title {
     background-color: rgba(255,87,88, 0.35);
     font-size: 14px;
+    margin-top: 0;
   }
 
   .card-job-infos {
-
     justify-content: center;
     align-content: center;
   }
@@ -81,9 +88,14 @@ const ProXpStyle = styled.ul`
   @media(min-width: 768px) {
     flex-direction: row;
     margin-top: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
 
     .card {
       margin : 0 12px;
+      width: calc(50% - 24px); /* 24px = margin-left + margin-right */
+      margin: 12px;
   }
 `;
 
@@ -118,7 +130,12 @@ const ProXpItem = ({data, activeState}) => {
               <img src={card.logo} alt={card.society}/>
             </div>
             <div className="back">
-              <h4>{card.society}</h4>
+              <div className='card-job-name'>
+                <h4>{card.society}</h4>
+                <a href={card.website} target="_blank" rel="noreferrer">
+                  <span><ExternalLink height={18} width={18} className="hover-neon"/></span>
+                </a>
+              </div>
               <p className='card-job-title'>{card.job}</p>
               <div className="card-job-infos">
                 <p className='card-job-infos-item'>{card.contract}</p>

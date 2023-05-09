@@ -26,6 +26,7 @@ const TechListStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: 100%;
   }
 
   .tech-card {
@@ -47,13 +48,17 @@ const TechListStyle = styled.div`
     padding: 0;
   }
 
-  h4 {
+  h5 {
     margin: 0 6px 0 0;
-    padding-top: 8px;
+    text-transform: uppercase;
+    color: var(--off-white);
+    background-color: var(--dark-blue);
+    border-radius: 4px;
   }
 
   .competencies-title {
-    margin-left: 20px
+    margin-left: 20px;
+
   }
 
   @media(min-width: 576px) {
@@ -73,13 +78,13 @@ const TechList = (props) => {
 
   return (
     <TechListStyle>
-    <h3 className='section-title competencies-title'>Compétences techniques</h3>
+    {/* <h3 className='section-title competencies-title'>Compétences techniques</h3> */}
     <div className='tech-list'>
     <div className='tech-card'>
-      <h4>Front-end</h4>
+      <h5>Front-end, design</h5>
         <div className='tech-card-box'>
         <TechTag SVG={<HtmlSvg height={18} width={18} />} name={'HTML'} key={1} />
-        <TechTag SVG={<JavascriptSvg height={18} width={18} />} name={'JavaScript'} key={2} />
+        <TechTag SVG={<JavascriptSvg height={18} width={18} />} name={'JavaScript'} fillColor="#FF5758" key={2} />
         <TechTag SVG={<ReactSvg height={18} width={18} />} name={'React'} key={3} />
         <TechTag SVG={<StimulusSvg height={18} width={18} />} name={'Stimulus'} key={4} />
         <TechTag SVG={<SassSvg height={18} width={18} />} name={'Sass'} key={5} />
@@ -89,7 +94,7 @@ const TechList = (props) => {
         </div>
     </div>
     <div className='tech-card'>
-      <h4>Back-end</h4>
+      <h5>Back-end</h5>
       <div className='tech-card-box'>
       <TechTag SVG={<ExpressSvg height={18} width={18} />} name={'Express'} key={16} />
       <TechTag SVG={<NodeSvg height={18} width={18} />} name={'Node'} key={17} />
@@ -99,7 +104,7 @@ const TechList = (props) => {
       </div>
     </div>
     <div className='tech-card'>
-      <h4>Versionning, projets, déploiement</h4>
+      <h5>Projets, déploiement</h5>
       <div className='tech-card-box'>
       <TechTag SVG={<NotionSvg height={18} width={18} />} name={'Notion'} key={12} />
       <TechTag SVG={<SlackSvg height={18} width={18} />} name={'Slack'} key={13} />

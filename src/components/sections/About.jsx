@@ -17,6 +17,7 @@ const AboutStyle = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 4px 0 0 4px;
   }
 
   .opacity-down {
@@ -64,6 +65,7 @@ const AboutStyle = styled.section`
   }
 
   @media(min-width: 768px) {
+
     .small-device {
       display: none;
     }
@@ -94,7 +96,7 @@ const ProfilPicStyle = styled.div`
       height: 100%;
       -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
       filter: grayscale(50%);
-      border: 1px solid var(--black);
+      border: 1px solid var(--dark-blue);
       border-radius: 4px;
       margin: 0 60px 0 0;
       transition: all 200ms ease-in-out;

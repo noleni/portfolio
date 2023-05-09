@@ -9,6 +9,7 @@ const professionalXpData = [
     contract : "CDI",
     job : "Full Stack developer",
     cityCountry : "Paris, France",
+    website: "https://fr.shopping.rakuten.com/",
     duration : `${differenceInMonths(new Date(), new Date('2022-11-07'))} mois`
   },
   {
@@ -19,6 +20,7 @@ const professionalXpData = [
     contract : "CDI",
     job : "Responsable billetterie / Etude des publics",
     cityCountry : "Paris, France",
+    website: "https://www.cinematheque.fr/",
     duration : "7 ans"
   },
   {
@@ -29,6 +31,7 @@ const professionalXpData = [
     contract : "CDD",
     job : "Chargée de billetterie / Location d'espaces",
     cityCountry : "Wellington, Nouvelle-Zélande",
+    website: "https://www.lighthousecinema.co.nz/",
     duration : "6 mois"
   },
   {
@@ -39,6 +42,7 @@ const professionalXpData = [
     contract : "Service civique",
     job : "Médiatrice culturelle",
     cityCountry : "Paris, France",
+    website: "https://ligueparis.org/",
     duration : "1 an"
   }
 ]
