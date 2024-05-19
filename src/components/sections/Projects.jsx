@@ -21,30 +21,14 @@ const ProjectsSection = styled.section`
 
 const Projects = React.forwardRef((props, ref) => {
 
-  const [active, setActive] = useState(1);
-
-  const leftProjectHandler = () => {
-    +active === 1 ? setActive(projectsData.length) : setActive(+active -1);
-  };
-
-  const rightProjectHandler = () => {
-    +active === projectsData.length ? setActive(1) : setActive(+active +1);
-  };
 
   return (
     <ProjectsSection id="projects" ref={ref}>
       <p className='section-title'>03. Mes projets</p>
       <div className="project">
-      <ProjectPic
-        data={projectsData}
-        activeState={+active}
-        onClick={(e) => setActive(e.target.id)}
-      />
       <ProjectActive
         data={projectsData}
-        activeState={+active}
-        onLeftClick={leftProjectHandler}
-        onRightClick={rightProjectHandler}
+        activeState={true}
       />
       </div>
     </ProjectsSection>

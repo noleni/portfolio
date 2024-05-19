@@ -43,7 +43,7 @@ const Home = React.forwardRef((props, ref) => {
           <span className='fadeInElement'>Marine Ramillon,</span>
         </h1>
         <h2 className={`${props.titleClass} fadeInElement`}>
-          <span className='fadeInElement'>Développeuse web et web mobile.</span>
+          <span className='fadeInElement'>Développeuse web et mobile.</span>
         </h2>
 
       <a href="/#contact" className={props.btnLinkClass}>

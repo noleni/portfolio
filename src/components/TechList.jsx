@@ -15,6 +15,7 @@ import NodeSvg from './icons/SVG/NodeSvg';
 import NotionSvg from './icons/SVG/NotionSvg';
 import SlackSvg from './icons/SVG/Slacksvg';
 import FirebaseSvg from './icons/SVG/FirebaseSvg';
+import D3Svg from './icons/SVG/D3Svg';
 
 import styled from 'styled-components';
 
@@ -87,6 +88,7 @@ const TechList = (props) => {
         <TechTag SVG={<StyledComponentsSVG height={18} width={18} />} name={'StyledComponents'} key={6} />
         <TechTag SVG={<BootstrapSvg height={18} width={18} />} name={'Bootstrap'} key={7} />
         <TechTag SVG={<FigmaSvg height={18} width={18} />} name={'Figma'} key={8} />
+        <TechTag SVG={<D3Svg height={18} width={18} />} name={'D3'} key={1} />
         </div>
     </div>
     <div className='tech-card'>

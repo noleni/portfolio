@@ -9,27 +9,35 @@ const ProfessionalSection = styled.section`
   flex-direction: column;
   align-items: baseline;
   margin-bottom: 60px;
+  padding: 20px 30px;
+  box-sizing: border-box; /* Ajouté ici */
 
   .professionnal-xp-content {
     width: 100%;
-    padding: 20px 30px;
   }
 
   .project {
     display: flex;
+  }
+
+  @media(min-width: 576px) {
+    padding: 20px 60px;
+
   }
 `;
 
 const ProfessionalExp = React.forwardRef((props, ref) => {
   return (
     <ProfessionalSection id="professional" ref={ref}>
-    <div className="professionnal-xp-content">
+    <div className='professionnal-xp-content'>
     <p className='section-title'>02. Expériences pro</p>
     <ProXpItem
       data={professionalXpData.dev}
+      cardClass={'card-dev'}
     ></ProXpItem>
     <ProXpItem
       data={professionalXpData.noDev}
+      cardClass={'card-no-dev'}
     ></ProXpItem>
     </div>
     </ProfessionalSection>

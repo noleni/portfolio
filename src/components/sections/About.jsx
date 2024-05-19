@@ -35,7 +35,7 @@ const AboutStyle = styled.section`
 
   @media(min-width: 576px) {
     .about-content {
-    padding: 20px 60px;
+    padding: 20px 60px 40px 60px;
   }
 
   .presentation {
@@ -59,7 +59,7 @@ const ProfilPicStyle = styled.div`
       width: 200px;
       height: 200px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      background-color: var(--light-pink);
+      background-color: var(--super-light-pink);
     }
 
     img {
@@ -93,7 +93,7 @@ const About = React.forwardRef((props, ref) => {
       <p className='section-title'>01. À propos</p>
       <p className='presentation'>
       Je développe des applications web et mobiles depuis 2022. Après une carrière dans le secteur marketing et culturel,
-  je me suis reconvertie dans le développement dans l'optique de créer des outils numériques intuitifs, accessibles et répondants aux besoins des utilisateurs.
+  je me suis reconvertie dans l'optique de créer des outils numériques intuitifs, accessibles et répondants aux besoins des utilisateurs.
   Après un passage au sein du pôle User Care de Rakuten France, je développe actuellement des applications de data visualisation chez Daily d'initiés.
       </p>
 

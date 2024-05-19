@@ -6,7 +6,7 @@ import ExternalLink from '../icons/SVG/ExternalLink';
 const ProXpStyle = styled.ul`
 
   padding-left: 0;
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,17 +51,17 @@ const ProXpStyle = styled.ul`
   }
 
   .card-job-name {
-    ${'' /* display: flex; */}
     align-items: center;
     justify-content: center;
   }
 
   .card-job-title {
-    background-color: rgba(255,87,88, 0.35);
+    background-color: var(--dark-blue);
+    color: var(--pure-white);
     font-size: 14px;
     margin-top: 0;
     text-align: center;
-    padding: 2px 0;
+    padding: 8px 0;
     border-radius: 4px 4px 0 0;
   }
 
@@ -94,7 +94,7 @@ const ProXpStyle = styled.ul`
     flex-direction: row;
     margin-top: 16px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
 
     .card {
@@ -102,11 +102,19 @@ const ProXpStyle = styled.ul`
       width: calc(50% - 24px); /* 24px = margin-left + margin-right */
       margin: 12px;
   }
+
+  .card-dev {
+    width: calc(50% - 24px); /* 24px = margin-left + margin-right */
+  }
+
+  .card-no-dev {
+    width: calc(33% - 24px); /* 24px = margin-left + margin-right */
+  }
 `;
 
 
 
-const ProXpItem = ({data, activeState}) => {
+const ProXpItem = ({data, cardClass}) => {
 
   const [flippedCards, setFlippedCards] = useState([]);
 
@@ -123,7 +131,7 @@ const ProXpItem = ({data, activeState}) => {
     <ProXpStyle>
         {data.map((card, index) => (
           <li
-            className={`card ${flippedCards[index] ? 'flipped' : ''}`}
+            className={`card ${cardClass} ${flippedCards[index] ? 'flipped' : ''}`}
             onClick={() => handleCardClick(index)}
              /* onMouseEnter={() => handleCardClick(index)} */
             key={index}
