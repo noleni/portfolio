@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const HomeStyle = styled.section`
   justify-content: center;
   height: 100vh;
-  background-image: url('/images/home-bg.svg');
+  background-image: url('/images/home-bg2.svg');
   background-repeat: no-repeat;
 
   .home-content {
@@ -22,6 +22,7 @@ const HomeStyle = styled.section`
   }
 
     @media(min-width: 576px) {
+      background-image: url('/images/home-bg.svg');
 
       .home-content {
     margin: 0 110px;

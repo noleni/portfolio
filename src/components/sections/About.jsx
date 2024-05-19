@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import TechList from "../TechList";
-import Button from '../UI/Button';
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,45 +11,21 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const AboutStyle = styled.section`
   margin: 0 0 60px 0px;
-  background: linear-gradient(120deg, rgb(250, 69, 81), rgb(255, 152, 159));
+  background: linear-gradient(120deg, rgb(250, 69, 81), rgb(255, 120, 120));
 
   .about-content {
-    padding: 20px 60px;
+    padding: 20px 30px;
+  }
 
   .pic-n-tech {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 4px 0 0 4px;
-    margin-top: 12px;
+    margin-top: 30px;
   }
 
-  .opacity-down {
-    background: var(--off-white);
-    z-index: 1;
-    position:relative;
-  }
-
-  .masked {
-    content: "";
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    z-index: 2;
-    background: -webkit-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-    background: -moz-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-    background: -o-linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255,255,255,1) 70%);
-    transition: all 0.5s ease-in-out;
-  }
-
-  .large-device {
-    display:none;
-  }
-
-  .small-device {
+  .presentation {
     text-align: center;
   }
 
@@ -58,24 +33,18 @@ const AboutStyle = styled.section`
     width: 100%;
   }
 
+  @media(min-width: 576px) {
+    .about-content {
+    padding: 20px 60px;
+  }
+
   .presentation {
     text-align: left;
-
   }
 
-  @media(min-width: 576px) {
     .pic-n-tech {
       flex-direction: row;
-    }
-  }
-
-  @media(min-width: 768px) {
-
-    .small-device {
-      display: none;
-    }
-    .large-device {
-      display: flex;
+      margin-top: 60px;
     }
   }
 `;
@@ -118,34 +87,15 @@ const ProfilPicStyle = styled.div`
 
 const About = React.forwardRef((props, ref) => {
 
-  const [showMore, setShowMore] = useState(false);
-
-  const paragraph = `Je développe des applications web et mobiles depuis 2022. Après une carrière dans le secteur marketing et culturel,
-  je me suis reconvertie dans le développement dans l'optique de créer des outils numériques intuitifs, accessibles et répondants aux besoins des utilisateurs.
-  Après un passage au sein du pôle User Care de Rakuten France, je développe actuellement des applications de data visualisation chez Daily d'initiés.`;
-
-
   return (
     <AboutStyle id="about" ref={ref}>
       <div className='about-content'>
       <p className='section-title'>01. À propos</p>
-      <div className='small-device'>
-        {!showMore &&
-          <p className='presentation opacity-down'>{paragraph.substring(0, 400)}
-            <span className='masked'></span>
-          </p>
-        }
-        {showMore && <p className='presentation'>{paragraph}</p> }
-        <Button
-          className="btn-show-more"
-          type="button"
-          onClick={() => setShowMore(!showMore)}
-        >
-          {!showMore ? "Lire plus" : "Voir moins"}
-        </Button>
-      </div>
-
-      <p className='presentation large-device'>{paragraph}</p>
+      <p className='presentation'>
+      Je développe des applications web et mobiles depuis 2022. Après une carrière dans le secteur marketing et culturel,
+  je me suis reconvertie dans le développement dans l'optique de créer des outils numériques intuitifs, accessibles et répondants aux besoins des utilisateurs.
+  Après un passage au sein du pôle User Care de Rakuten France, je développe actuellement des applications de data visualisation chez Daily d'initiés.
+      </p>
 
       <div className='pic-n-tech'>
         <ProfilPicStyle>

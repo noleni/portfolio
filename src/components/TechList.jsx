@@ -48,11 +48,10 @@ const TechListStyle = styled.div`
 
   h5 {
     margin: 0 6px 0 0;
-    padding: 4px 8px;
+    padding: 8px;
     text-transform: uppercase;
     color: var(--off-white);
     background-color: var(--dark-blue);
-    border-radius: 4px;
   }
 
   .competencies-title {

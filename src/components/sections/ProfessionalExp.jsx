@@ -7,9 +7,13 @@ import professionalXpData from "../../data/professionalXpData";
 const ProfessionalSection = styled.section`
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: baseline;
   margin-bottom: 60px;
+
+  .professionnal-xp-content {
+    width: 100%;
+    padding: 20px 30px;
+  }
 
   .project {
     display: flex;
@@ -19,6 +23,7 @@ const ProfessionalSection = styled.section`
 const ProfessionalExp = React.forwardRef((props, ref) => {
   return (
     <ProfessionalSection id="professional" ref={ref}>
+    <div className="professionnal-xp-content">
     <p className='section-title'>02. Expériences pro</p>
     <ProXpItem
       data={professionalXpData.dev}
@@ -26,6 +31,7 @@ const ProfessionalExp = React.forwardRef((props, ref) => {
     <ProXpItem
       data={professionalXpData.noDev}
     ></ProXpItem>
+    </div>
     </ProfessionalSection>
   )
 })
