@@ -1,6 +1,5 @@
 import TechTag from './icons/TechTag/TechTag';
 import ReactSvg from "./icons/SVG/React";
-import HtmlSvg from "./icons/SVG/HtmlSvg";
 import JavascriptSvg from "./icons/SVG/JavaScriptSvg";
 import RubySvg from "./icons/SVG/RubySvg";
 import RailsSvg from "./icons/SVG/RailsSvg";
@@ -8,7 +7,6 @@ import HerokuSvg from "./icons/SVG/HerokuSvg";
 import FigmaSvg from "./icons/SVG/FigmaSvg";
 import SassSvg from "./icons/SVG/SassSvg";
 import StyledComponentsSVG from './icons/SVG/StyledComponentsSVG';
-import StimulusSvg from './icons/SVG/StimulusSvg';
 import BootstrapSvg from './icons/SVG/BootstrapSvg';
 import PostgreSvg from './icons/SVG/PostgreSvg';
 import GitSvg from './icons/SVG/GitSvg';
@@ -50,6 +48,7 @@ const TechListStyle = styled.div`
 
   h5 {
     margin: 0 6px 0 0;
+    padding: 4px 8px;
     text-transform: uppercase;
     color: var(--off-white);
     background-color: var(--dark-blue);
@@ -83,10 +82,8 @@ const TechList = (props) => {
     <div className='tech-card'>
       <h5>Front-end, design</h5>
         <div className='tech-card-box'>
-        <TechTag SVG={<HtmlSvg height={18} width={18} />} name={'HTML'} key={1} />
-        <TechTag SVG={<JavascriptSvg height={18} width={18} />} name={'JavaScript'} fillColor="#FF5758" key={2} />
+        <TechTag SVG={<JavascriptSvg height={18} width={18} fillColor="white" />} name={'JavaScript'} fillColor="#FF5758" key={2} />
         <TechTag SVG={<ReactSvg height={18} width={18} />} name={'React'} key={3} />
-        <TechTag SVG={<StimulusSvg height={18} width={18} />} name={'Stimulus'} key={4} />
         <TechTag SVG={<SassSvg height={18} width={18} />} name={'Sass'} key={5} />
         <TechTag SVG={<StyledComponentsSVG height={18} width={18} />} name={'StyledComponents'} key={6} />
         <TechTag SVG={<BootstrapSvg height={18} width={18} />} name={'Bootstrap'} key={7} />

@@ -19,14 +19,14 @@ const Ribbon = styled.div`
     position: absolute;
     display: block;
     width: 225px;
-    padding: 15px 0;
+    padding: 10px 0;
     background-color: var(--neon-pink);
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
     color: #fff;
     text-transform: uppercase;
     text-align: center;
     z-index: 1000;
-    left: -25px;
+    left: -10px;
     top: 30px;
     transform: rotate(45deg);
     font-family: var(--title);

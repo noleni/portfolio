@@ -39,6 +39,7 @@ const StyleLargeNav = styled.nav`
   width: 100%;
   height: 60px;
   background-color: rgba(255, 255, 255, 0.45);
+  ${'' /* rgb(247, 243, 227) */}
   box-shadow: 0 0 15px rgba(0,0,0,0.06);
   backdrop-filter: blur(10px);
 
@@ -145,14 +146,6 @@ const Header = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsMounted(true);
-    }, 1000);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
 
   const timeout = isMounted ? 1000 : 0;
   const fadeDownClass = isMounted ? 'fadedown' : '';
@@ -163,7 +156,7 @@ const Header = () => {
       <div className='container'>
         <ul className='ul-large'>
           <TransitionGroup component={null}>
-            {isMounted &&
+            {
               navLinks.map(({url, name}, i) => (
                 <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                   <li key={i} style={{ transitionDelay: `${isMounted ? i * 300 : 0}ms` }}>

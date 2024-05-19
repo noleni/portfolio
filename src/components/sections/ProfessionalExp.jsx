@@ -21,7 +21,10 @@ const ProfessionalExp = React.forwardRef((props, ref) => {
     <ProfessionalSection id="professional" ref={ref}>
     <p className='section-title'>02. Expériences pro</p>
     <ProXpItem
-      data={professionalXpData}
+      data={professionalXpData.dev}
+    ></ProXpItem>
+    <ProXpItem
+      data={professionalXpData.noDev}
     ></ProXpItem>
     </ProfessionalSection>
   )

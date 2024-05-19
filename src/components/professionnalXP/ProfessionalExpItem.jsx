@@ -13,7 +13,7 @@ const ProXpStyle = styled.ul`
 
   .card {
     width: 100%;
-    height: 190px;
+    height: 180px;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
     border-radius: 4px;
     margin : 12px 0;
@@ -21,6 +21,7 @@ const ProXpStyle = styled.ul`
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
     cursor: pointer;
+    background-color: var(--pure-white);
   }
 
   .card.flipped {
@@ -39,7 +40,7 @@ const ProXpStyle = styled.ul`
     z-index: 2;
     transform: rotateY(0deg);
     display: flex;
-
+    flex-direction: column;
   }
 
   .card .back {
@@ -50,7 +51,7 @@ const ProXpStyle = styled.ul`
   }
 
   .card-job-name {
-    display: flex;
+    ${'' /* display: flex; */}
     align-items: center;
     justify-content: center;
   }
@@ -59,11 +60,15 @@ const ProXpStyle = styled.ul`
     background-color: rgba(255,87,88, 0.35);
     font-size: 14px;
     margin-top: 0;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 4px 4px 0 0;
   }
 
   .card-job-infos {
-    justify-content: center;
+    align-self: center;
     align-content: center;
+    flex-grow: 1;
   }
 
   .card-job-infos-item {
@@ -127,20 +132,23 @@ const ProXpItem = ({data, activeState}) => {
             <RibbonEl/>
           }
             <div className="front">
+              <div>
+              <p className='card-job-title'>{card.job} @ {card.society}</p>
               <img src={card.logo} alt={card.society}/>
-            </div>
-            <div className="back">
-              <div className='card-job-name'>
-                <h4>{card.society}</h4>
-                <a href={card.website} target="_blank" rel="noreferrer">
-                  <span><ExternalLink height={18} width={18} className="hover-neon"/></span>
-                </a>
               </div>
-              <p className='card-job-title'>{card.job}</p>
               <div className="card-job-infos">
                 <p className='card-job-infos-item'>{card.contract}</p>
                 <p className='card-job-infos-item'>{card.duration}</p>
                 <p className='card-job-infos-item'>{card.cityCountry}</p>
+              </div>
+            </div>
+            <div className="back">
+            <div className='card-job-name'>
+                <h4>{card.society}</h4>
+                <a href={card.website} target="_blank" rel="noreferrer">
+                  <span><ExternalLink height={18} width={18} className="hover-neon"/></span>
+                </a>
+                <p>{card.societyDescription}</p>
               </div>
             </div>
           </li>

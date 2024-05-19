@@ -1,49 +1,60 @@
 import React from 'react';
-
 import Button from "../UI/Button";
 import styled from 'styled-components';
-
-import RocketSvg from '../icons/SVG/RocketSvg';
 
 const HomeStyle = styled.section`
   justify-content: center;
   height: 100vh;
+  background-image: url('/images/home-bg.svg');
+  background-repeat: no-repeat;
 
-  .rocket-picto {
-    display: block;
-    margin: auto;
-    margin-bottom: 16px;
+  .home-content {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  span {
+    display : block;
+  }
+
+  .fire {
+    color : red;
+  }
 
     @media(min-width: 576px) {
-    margin: 0 0 16px 0;
-    float: left;
+
+      .home-content {
+    margin: 0 110px;
+    text-align: left;
+    }
   }
-  }
-`
+
+`;
 
 const HomesGreetingStyles = styled.p`
   @media(max-width: 576px) {
-    display : none;
+    display: none;
   }
 `;
 
 const Home = React.forwardRef((props, ref) => {
   return (
     <HomeStyle ref={ref}>
-      <div>
+      <div className="home-content">
         <HomesGreetingStyles>Bonjour, je suis</HomesGreetingStyles>
-        <h1 className={props.titleBigClass}>Marine Ramillon,</h1>
-          <h2 className={props.titleClass}>Développeuse web en quête d'opportunités.</h2>
-          <RocketSvg className="rocket-picto"/>
+        <h1 className={`${props.titleBigClass} `}>
+          <span className='fadeInElement'>Marine Ramillon,</span>
+        </h1>
+        <h2 className={`${props.titleClass} fadeInElement`}>
+          <span className='fadeInElement'>Développeuse web en quête d'opportunités.</span>
+        </h2>
 
+      <a href="/#contact" className={props.btnLinkClass}>
+        <Button className={props.btnClass}>Me contacter</Button>
+      </a>
       </div>
-        <a href="/#contact" className={props.btnLinkClass}>
-          <Button className={props.btnClass}>
-                Me contacter
-          </Button>
-        </a>
     </HomeStyle>
-  )
+  );
 });
 
 export default Home;

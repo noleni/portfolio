@@ -2,7 +2,6 @@ import TechTag from "../components/icons/TechTag/TechTag";
 
 import RubySvg from "../components/icons/SVG/RubySvg";
 import RailsSvg from "../components/icons/SVG/RailsSvg";
-import StimulusSvg from "../components/icons/SVG/StimulusSvg";
 import Bootstrap from "../components/icons/SVG/BootstrapSvg";
 import SassSvg from "../components/icons/SVG/SassSvg";
 import PostgreSvg from "../components/icons/SVG/PostgreSvg";
@@ -21,7 +20,6 @@ const projectsData = [
     tech: [
       <TechTag SVG={<RubySvg height={22} width={22} />} name={'Ruby'} />,
       <TechTag SVG={<RailsSvg height={22} width={22} />} name={'Rails'} />,
-      <TechTag SVG={<StimulusSvg height={22} width={22} />} name={'Stimulus'} />,
       <TechTag SVG={<Bootstrap height={22} width={22} />} name={'Bootstrap'} />,
       <TechTag SVG={<SassSvg height={22} width={22} />} name={'Sass'} />,
       <TechTag SVG={<PostgreSvg height={22} width={22} />} name={'PostgreSQL'} />,

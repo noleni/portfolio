@@ -19,8 +19,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MainStyle = styled.main`
 
-    padding: 0 20px;
-
     .title {
     font-family: var(--title);
     color: var(--dark-blue);
@@ -61,7 +59,6 @@ const MainStyle = styled.main`
   .btn-contact {
     font-size: 22px;
     margin: 0 auto;
-    width: 100%;
 
     &-link {
       width: 100%;
@@ -70,8 +67,6 @@ const MainStyle = styled.main`
   }
 
   @media(min-width: 576px) {
-
-    padding: 0 50px;
     min-height: 100vh;
 
     .title {
@@ -83,16 +78,9 @@ const MainStyle = styled.main`
         text-align: start;
       }
     }
-
-    .btn-contact {
-      margin: 0;
-      width:auto;
-    }
   }
 
   @media(min-width: 764px) {
-
-    padding: 0 110px;
     min-height: 100vh;
 
     .title {
@@ -134,9 +122,9 @@ const Main = () => {
     )
   };
 
-  useEffect(() => {
-    scrollEffect(homeRef.current, 0.4, 0.8)
-  }, []);
+  // useEffect(() => {
+  //   scrollEffect(homeRef.current, 0.4, 0.8)
+  // }, []);
 
   useEffect(() => {
     scrollEffect(aboutRef.current, 0.4, 0.8)
