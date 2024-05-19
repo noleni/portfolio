@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const TechTagStyle = styled.div`
-  border: 0.2px solid var(--dark-blue);
+  border: 0.5px solid var(--dark-blue);
   color: var(--dark-blue);
   border-radius: 16px;
   display: flex;
   padding: 4px 8px;
   margin: 4px;
+  background-color: var(--super-light-pink);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
   &:hover {
     transform: translateY(-5px);
@@ -16,11 +18,8 @@ const TechTagStyle = styled.div`
     transition: transform 0.2s ease-in-out;
   }
 
-
-
   p {
     margin: 0;
-    padding-top: 2px;
     padding-left: 8px;
     font-size: 12px;
   }

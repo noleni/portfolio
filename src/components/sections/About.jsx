@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const AboutStyle = styled.section`
   margin: 0 0 60px 0px;
-  background: linear-gradient(120deg, rgb(250, 69, 81), rgb(255, 120, 120));
+  background: linear-gradient(120deg, rgb(250, 69, 81), rgb(255, 152, 159));
 
   .about-content {
     padding: 20px 30px;
@@ -59,7 +59,7 @@ const ProfilPicStyle = styled.div`
       width: 200px;
       height: 200px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      background-color: var(--off-white);
+      background-color: var(--light-pink);
     }
 
     img {

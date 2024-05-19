@@ -50,7 +50,7 @@ const TechListStyle = styled.div`
     margin: 0 6px 0 0;
     padding: 8px;
     text-transform: uppercase;
-    color: var(--off-white);
+    color: var(--super-light-pink);
     background-color: var(--dark-blue);
   }
 
@@ -81,7 +81,7 @@ const TechList = (props) => {
     <div className='tech-card'>
       <h5>Front-end, design</h5>
         <div className='tech-card-box'>
-        <TechTag SVG={<JavascriptSvg height={18} width={18} fillColor="white" />} name={'JavaScript'} fillColor="#FF5758" key={2} />
+        <TechTag SVG={<JavascriptSvg height={18} width={18} fillColor="#ffa59a" />} name={'JavaScript'} fillColor="#FFE3E4" key={2} />
         <TechTag SVG={<ReactSvg height={18} width={18} />} name={'React'} key={3} />
         <TechTag SVG={<SassSvg height={18} width={18} />} name={'Sass'} key={5} />
         <TechTag SVG={<StyledComponentsSVG height={18} width={18} />} name={'StyledComponents'} key={6} />
