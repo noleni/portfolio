@@ -10,7 +10,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const AboutStyle = styled.section`
-  background: linear-gradient(120deg, rgb(250, 69, 81), rgb(255, 152, 159));
+  background: linear-gradient(150deg, rgb(250, 69, 81), rgb(255, 152, 159));
 
   .about-content {
     padding: 20px 30px;
@@ -58,6 +58,7 @@ const ProfilPicStyle = styled.div`
     height: 200px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     background-color: var(--super-light-pink);
+    margin-bottom: 38px;
   }
 
   img {
@@ -78,6 +79,7 @@ const ProfilPicStyle = styled.div`
     .img-border {
       width: 240px;
       height: 240px;
+      margin-bottom: 0;
     }
   }
 `;

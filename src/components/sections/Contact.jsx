@@ -5,6 +5,9 @@ import Button from "../UI/Button";
 import emailjs from "emailjs-com";
 
 const ContactSection = styled.section`
+  height: 60vh;
+  margin-top: 60px;
+
   .section-title {
     padding: 0 30px;
   }
@@ -13,7 +16,7 @@ const ContactSection = styled.section`
   }
   @media (min-width: 768px) {
     width: 60%;
-    margin: 30px auto;
+    margin: 60px auto;
   }
 `;
 

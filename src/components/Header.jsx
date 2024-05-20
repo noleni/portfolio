@@ -114,6 +114,7 @@ const MenuStyle = styled.aside`
   .ul-small {
     margin-left: -20px;
     height: 60%;
+    margin-top: 60px;
 
     li {
       text-align: center;

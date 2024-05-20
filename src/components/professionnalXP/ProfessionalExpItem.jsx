@@ -101,7 +101,7 @@ const ProXpStyle = styled.ul`
     .card {
       margin : 0 12px;
       width: calc(50% - 24px); /* 24px = margin-left + margin-right */
-      margin: 12px;
+      margin: 12px 12px 12px 0;
   }
 
   .card-dev {

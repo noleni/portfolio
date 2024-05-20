@@ -11,12 +11,15 @@ const ProjectsSection = styled.section`
   width: 100%;
   align-items: baseline;
   margin-bottom: 60px;
+  background-color: var(--pure-white);
 
   .section-title {
     padding: 0 30px;
   }
 
   @media (min-width: 576px) {
+    padding-top: 30px;
+
     .section-title {
       padding: 0 60px;
     }

@@ -24,7 +24,6 @@ const Image = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s, -webkit-filter 0.5s, filter 0.5s;
   margin-bottom: 12px;
 
   &::before {
@@ -54,7 +53,7 @@ const Image = styled.div`
     height: 80px;
     border-radius: 50%;
     align-content: center;
-    transition: all 0.3s;
+    transition: all 0.3s ;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
     padding: 0 4px;
 
