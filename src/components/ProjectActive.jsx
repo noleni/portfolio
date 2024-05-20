@@ -1,22 +1,12 @@
 import styled from "styled-components";
 
-import LeftSvg from "./icons/SVG/LeftSvg";
-import RightSvg from "./icons/SVG/RightSvg";
-import ExternalLink from "./icons/SVG/ExternalLink";
-import Github from "./icons/SVG/Github";
 
 const ProjectSelectedStyle = styled.div`
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  padding-left: 0;
-  margin-top: 18px;
-
-  & .img-selected {
-    width: 100%;
-    ${'' /* box-shadow: 0 0 15px rgba(0,0,0,0.2); */}
-    position: relative;
-    margin: 12px 0 32px 0px;
-  }
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  flex-wrap: wrap;
 
   & .project-informations {
     display: flex;
@@ -71,20 +61,10 @@ const ProjectSelectedStyle = styled.div`
     box-shadow: 0 0 0px rgba(0,0,0,0);
     border-radius: 0;
 
-    .img-selected {
-      margin-left: 0;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
   }
 
   @media(min-width: 768px) {
     box-shadow: 0 0 0px rgba(0,0,0,0);
-    border-radius: 0;
-    border-left: 1.5px solid var(--dark-blue);
-    padding-left: 80px;
-    border-top: 0;
-    border-bottom: 0;
-    box-shadow: 0;
 
     .project-informations {
       justify-content: start;
@@ -95,81 +75,48 @@ const ProjectSelectedStyle = styled.div`
     }
 
     .img-selected {
-      width: 80%;
       margin-left: 0;
     }
   }
 `;
 
-const Image = styled.img`
-    width: 100%;
-    backgroundSize: cover;
-    object-fit: cover;
-    opacity: 1;
+const Image = styled.div`
+    width: 50%;
+    min-width: 400px;
+    height: 300px;
+    background-size: cover;
+    background-image: url(${props => props.bgSrc});
+
     -webkit-filter: grayscale(50%);
     filter: grayscale(50%);
-    padding: 4px 0 4px 0;
+    transition: all 0.5s, -webkit-filter 0.5s, filter 0.5s;
+
+    :hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+      z-index: 1;
+    }
 `;
 
 
-const ProjectActive = ({data, activeState, onLeftClick, onRightClick}) => {
+const ProjectActive = ({data}) => {
   return (
-    <ProjectSelectedStyle className='selected-project'>
-    {data.filter(selected => selected.id === +activeState).map(project => (
-      <div key={project.id}>
-          <div className="project-informations" >
-            <LeftSvg
-              heigth={40}
-              width={40}
-              onClick={onLeftClick}
-              className="left-effet hover-neon"
-            />
-            <div className='project-informations-title-and-date'>
-              <h3 className='project-informations-title'>{project.name}</h3>
-              <p>{project.date}</p>
-            </div>
-            <RightSvg
-              heigth={40}
-              width={40}
-              onClick={onRightClick}
-              className="right-effet hover-neon"
-            />
-          </div>
+    <ProjectSelectedStyle className="selected-project">
+      {data.map((project) => (
 
-          <div className='img-selected-tags-container'>
-            <div className='img-selected'>
-              <Image
-                src={`${process.env.PUBLIC_URL}/images/${project.poster[1]}`}
-                alt={project.name}
-                id={project.id}
-              />
-            </div>
+          <Image
+            key={project.id}
+            bgSrc={`${process.env.PUBLIC_URL}/images/${project.poster[1]}`}
+            alt={project.name}
+            id={project.id}
+          >
+          <div>Hello</div>
+          </Image>
 
-            <div className='tags-container'>
-              {project.tech.map((techno, i) => (<div key={i}>{techno}</div>))}
-            </div>
-          </div>
 
-        <p className='project-notice'>{project.notice}</p>
-
-        <div className='project-links'>
-          {project.url !== undefined &&
-
-            <a href={project.url} target="_blank" rel="noreferrer">
-              <ExternalLink height={24} width={24} className="hover-neon"/>
-            </a>
-          }
-
-          <a href={project.github} target="_blank" rel="noreferrer">
-            <Github height={24} width={24} className="hover-neon" />
-          </a>
-
-        </div>
-      </div>
-    ))}
-
-  </ProjectSelectedStyle>
-  )
+      ))}
+    </ProjectSelectedStyle>
+  );
 };
 
 export default ProjectActive;

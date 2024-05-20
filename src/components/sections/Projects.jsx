@@ -16,6 +16,7 @@ const ProjectsSection = styled.section`
 
   .project {
     display: flex;
+    width: 100%;
   }
 `;
 
@@ -24,13 +25,11 @@ const Projects = React.forwardRef((props, ref) => {
 
   return (
     <ProjectsSection id="projects" ref={ref}>
-      <p className='section-title'>03. Mes projets</p>
-      <div className="project">
+      <p className='section-title'>03. Side projects</p>
       <ProjectActive
         data={projectsData}
         activeState={true}
       />
-      </div>
     </ProjectsSection>
   )
 });
