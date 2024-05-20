@@ -38,10 +38,10 @@ const Home = React.forwardRef((props, ref) => {
     <HomeStyle ref={ref}>
       <div className="home-content">
         <h1 className={`${props.titleBigClass} `}>
-          <span className="fadeInElement">Marine Ramillon,</span>
+          <span className="fadeInElement">Marine Ramillon</span>
         </h1>
         <h2 className={`${props.titleClass} fadeInElement`}>
-          <span className="fadeInElement">Développeuse web et mobile.</span>
+          <span className="fadeInElement">Développeuse web et mobile</span>
         </h2>
 
         <a href="/#contact" className={props.btnLinkClass}>

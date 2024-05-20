@@ -11,7 +11,7 @@ const FooterStyle = styled.footer`
 const Footer = () => {
   return (
     <FooterStyle>
-      <small>Designé et développé par Marine Ramillon</small>
+      <small>Développé par Marine Ramillon</small>
       <small>06 20 41 94 69</small>
     </FooterStyle>
   );
