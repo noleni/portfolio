@@ -7,7 +7,7 @@ const TechTagStyle = styled.div`
   display: flex;
   padding: 4px 8px;
   margin: 4px;
-  background-color: var(--super-light-pink);
+  background-color: props.bgcolor || var(--super-light-pink);
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 
   &:hover {
@@ -20,7 +20,7 @@ const TechTagStyle = styled.div`
 
   p {
     margin: 0;
-    padding-left: 8px;
+    padding: 2px 0 0 8px;
     font-size: 12px;
   }
 `

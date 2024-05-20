@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Button = styled.button`
   padding: 6px 22px;
@@ -12,19 +12,19 @@ const Button = styled.button`
   background-color: var(--neon-pink);
 
   &:hover {
-  background-color: rgba(255,87,88, 0.35);
-  color: var(--black);
-  cursor: pointer;
-  transform: scale(1.06);
-}
+    background-color: rgba(255, 87, 88, 0.35);
+    color: var(--black);
+    cursor: pointer;
+    transform: scale(1.06);
+  }
 
   &.active {
-    background-color: rgba(255,87,88, 0.35);
+    background-color: rgba(255, 87, 88, 0.35);
   }
 
-  @media(max-width: 764px) {
-    background-color: rgba(255,87,88, 0.35);
+  @media (max-width: 764px) {
+    background-color: rgba(255, 87, 88, 0.35);
   }
-`
+`;
 
 export default Button;

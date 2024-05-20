@@ -1,6 +1,6 @@
-import Social from './Social';
+import Social from "./Social";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyleSide = styled.div`
   width: 40px;
@@ -10,8 +10,8 @@ const StyleSide = styled.div`
   left: auto;
   z-index: 10;
 
-  @media(max-width : 576px) {
-    display : none;
+  @media (max-width: 576px) {
+    display: none;
   }
 `;
 
@@ -20,7 +20,7 @@ const SideBarLinks = () => {
     <StyleSide>
       <Social />
     </StyleSide>
-  )
+  );
 };
 
 export default SideBarLinks;

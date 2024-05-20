@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 const Ribbon = styled.div`
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
 
   & :before,
   & :after {
     position: absolute;
     z-index: -1;
-    content: '';
+    content: "";
     display: block;
     border: 2px solid var(--neon-pink);
   }
@@ -21,7 +21,7 @@ const Ribbon = styled.div`
     width: 225px;
     padding: 10px 0;
     background-color: var(--neon-pink);
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -33,8 +33,8 @@ const Ribbon = styled.div`
   }
 
   .ribbon-top-right {
-  top: -5px;
-  right: -5px;
+    top: -5px;
+    right: -5px;
   }
   .ribbon-top-right::before,
   .ribbon-top-right::after {
@@ -49,14 +49,14 @@ const Ribbon = styled.div`
     bottom: 0;
     right: 0;
   }
-`
+`;
 
 const RibbonEl = () => {
   return (
     <Ribbon className="ribbon-top-right">
       <span>Poste actuel</span>
     </Ribbon>
-  )
-}
+  );
+};
 
-export default RibbonEl
+export default RibbonEl;

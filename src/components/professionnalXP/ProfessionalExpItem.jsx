@@ -63,6 +63,7 @@ const ProXpStyle = styled.ul`
     text-align: center;
     padding: 8px 0;
     border-radius: 4px 4px 0 0;
+    font-weight: lighter;
   }
 
   .card-job-infos {
@@ -156,7 +157,7 @@ const ProXpItem = ({data, cardClass}) => {
                 <a href={card.website} target="_blank" rel="noreferrer">
                   <span><ExternalLink height={18} width={18} className="hover-neon"/></span>
                 </a>
-                <p>{card.societyDescription}</p>
+                <p className='small'>{card.societyDescription}</p>
               </div>
             </div>
           </li>

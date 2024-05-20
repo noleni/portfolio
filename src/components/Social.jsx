@@ -4,20 +4,20 @@ import Linkedin from "./icons/SVG/Linkedin";
 import Github from "./icons/SVG/Github";
 
 const SocialStyle = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
 
   &:after {
-    content: '';
+    content: "";
     display: block;
     width: 2px;
     height: 80px;
     margin: 0 auto;
-    background-color: #1A1C1A;
+    background-color: #1a1c1a;
   }
 
   & li {
@@ -31,23 +31,27 @@ const SocialStyle = styled.ul`
   .bump:hover {
     transform: translateY(-10px);
   }
-`
+`;
 
 const Social = () => {
   return (
     <SocialStyle>
-      <li key={'Linkedin'}>
-        <a href={'https://www.linkedin.com/in/marine-ramillon'} target="_blank" rel="noreferrer">
-          <Linkedin width={36} height={36} className='bump'/>
+      <li key={"Linkedin"}>
+        <a
+          href={"https://www.linkedin.com/in/marine-ramillon"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Linkedin width={36} height={36} className="bump" />
         </a>
       </li>
-      <li key={'Github'}>
-        <a href={'https://github.com/noleni'} target="_blank" rel="noreferrer">
-          <Github width={36} height={36} className='bump' />
+      <li key={"Github"}>
+        <a href={"https://github.com/noleni"} target="_blank" rel="noreferrer">
+          <Github width={36} height={36} className="bump" />
         </a>
       </li>
     </SocialStyle>
-  )
+  );
 };
 
-export default Social
+export default Social;

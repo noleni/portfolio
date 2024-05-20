@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from "react";
 
 import projectsData from "../../data/projectsData";
-import ProjectPic from '../ProjectPick';
-import ProjectActive from '../ProjectActive';
+import ProjectActive from "../Project";
 
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 const ProjectsSection = styled.section`
   display: flex;
@@ -14,24 +12,24 @@ const ProjectsSection = styled.section`
   align-items: baseline;
   margin-bottom: 60px;
 
-  .project {
-    display: flex;
-    width: 100%;
+  .section-title {
+    padding: 0 30px;
+  }
+
+  @media (min-width: 576px) {
+    .section-title {
+      padding: 0 60px;
+    }
   }
 `;
 
 const Projects = React.forwardRef((props, ref) => {
-
-
   return (
     <ProjectsSection id="projects" ref={ref}>
-      <p className='section-title'>03. Side projects</p>
-      <ProjectActive
-        data={projectsData}
-        activeState={true}
-      />
+      <p className="section-title">03. Side projects</p>
+      <ProjectActive data={projectsData} activeState={true} />
     </ProjectsSection>
-  )
+  );
 });
 
 export default Projects;

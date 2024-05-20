@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 import Button from "../UI/Button";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const HomeStyle = styled.section`
   justify-content: center;
   height: 100vh;
   min-height: 600px;
-  background-image: url('/images/home-bg2.svg');
+  background-image: url("/images/home-bg2.svg");
   background-repeat: no-repeat;
   background-size: cover;
-
 
   .home-content {
     margin: 0 auto;
@@ -17,22 +16,21 @@ const HomeStyle = styled.section`
   }
 
   span {
-    display : block;
+    display: block;
   }
 
   .fire {
-    color : red;
+    color: red;
   }
 
-    @media(min-width: 576px) {
-      background-image: url('/images/home-bg.svg');
+  @media (min-width: 576px) {
+    background-image: url("/images/home-bg.svg");
 
-      .home-content {
-    margin: 0 110px;
-    text-align: left;
+    .home-content {
+      margin: 0 110px;
+      text-align: left;
     }
   }
-
 `;
 
 const Home = React.forwardRef((props, ref) => {
@@ -40,15 +38,15 @@ const Home = React.forwardRef((props, ref) => {
     <HomeStyle ref={ref}>
       <div className="home-content">
         <h1 className={`${props.titleBigClass} `}>
-          <span className='fadeInElement'>Marine Ramillon,</span>
+          <span className="fadeInElement">Marine Ramillon,</span>
         </h1>
         <h2 className={`${props.titleClass} fadeInElement`}>
-          <span className='fadeInElement'>Développeuse web et mobile.</span>
+          <span className="fadeInElement">Développeuse web et mobile.</span>
         </h2>
 
-      <a href="/#contact" className={props.btnLinkClass}>
-        <Button className={props.btnClass}>Me contacter</Button>
-      </a>
+        <a href="/#contact" className={props.btnLinkClass}>
+          <Button className={props.btnClass}>Me contacter</Button>
+        </a>
       </div>
     </HomeStyle>
   );
