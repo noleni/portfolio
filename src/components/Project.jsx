@@ -47,13 +47,13 @@ const Image = styled.div`
   .project-informations {
     text-align: center;
     background-color: var(--pure-white);
-    border: 2px solid var(--neon-pink);
+    border: 2px solid var(--light-pink);
     opacity: 1;
     width: 80px;
     height: 80px;
     border-radius: 50%;
     align-content: center;
-    transition: all 0.3s ;
+    transition: all 0.3s;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
     padding: 0 4px;
 

@@ -10,16 +10,13 @@ const ProfessionalSection = styled.section`
   align-items: baseline;
   padding: 60px 30px;
   box-sizing: border-box; /* Ajouté ici */
-  background-image: url("/images/pattern-randomized.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
 
   .professionnal-xp-content {
     width: 100%;
   }
 
   @media (min-width: 576px) {
-    padding: 60px 60px;
+    padding: 60px 100px;
     margin-bottom: 0;
   }
 `;

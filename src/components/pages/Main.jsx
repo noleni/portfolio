@@ -1,35 +1,32 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
+import Home from "../sections/Home";
+import About from "../sections/About";
+import Projects from "../sections/Projects";
+import Contact from "../sections/Contact";
+import Pro from "../sections/ProfessionalExp";
 
-import Home from '../sections/Home';
-import About from '../sections/About';
-import Projects from '../sections/Projects';
-import Contact from '../sections/Contact';
-import Pro from '../sections/ProfessionalExp';
+import "../_settings/_variables.scss";
+import styled from "styled-components";
 
-import '../_settings/_variables.scss';
-import styled from 'styled-components';
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
+// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MainStyle = styled.main`
-
-    .title {
+  .title {
     font-family: var(--title);
     color: var(--dark-blue);
-    font-size: 28px;
+    font-size: 22px;
     font-weight: lighter;
     text-align: center;
     padding-bottom: 22px;
 
     &-big {
       font-family: var(--title);
-      font-size: 48px;
+      font-size: 36px;
       margin: 0;
       text-align: center;
     }
@@ -40,14 +37,14 @@ const MainStyle = styled.main`
     font-family: var(--title);
     font-size: 18px;
 
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
       &.small {
         display: none;
       }
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 120px;
       height: 1.2px;
@@ -66,7 +63,7 @@ const MainStyle = styled.main`
     }
   }
 
-  @media(min-width: 576px) {
+  @media (min-width: 576px) {
     min-height: 100vh;
 
     .title {
@@ -80,15 +77,15 @@ const MainStyle = styled.main`
     }
   }
 
-  @media(min-width: 764px) {
+  @media (min-width: 764px) {
     min-height: 100vh;
 
     .title {
-      font-size: 42px;
+      font-size: 32px;
       text-align: start;
 
       &-big {
-        font-size: 66px;
+        font-size: 48px;
         text-align: start;
       }
     }
@@ -96,68 +93,64 @@ const MainStyle = styled.main`
 `;
 
 const Main = () => {
-
   const homeRef = useRef(null);
   const projectRef = useRef(null);
-  const proRef= useRef(null);
+  const proRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
 
-  const scrollEffect = (e, delay, duration) => {
-    gsap.fromTo(
-      e,
-      {
-        opacity: 0,
-        y: 50
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger : {
-          trigger: e,
-          start: "top center",
-          end: "bottom center"
-        }
-      },
-    )
-  };
+  // const scrollEffect = (e, delay, duration) => {
+  //   gsap.fromTo(
+  //     e,
+  //     {
+  //       opacity: 0,
+  //       y: 50,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: e,
+  //         start: "top center",
+  //         end: "bottom center",
+  //       },
+  //     }
+  //   );
+  // };
+
+  // // useEffect(() => {
+  // //   scrollEffect(homeRef.current, 0.4, 0.8)
+  // // }, []);
 
   // useEffect(() => {
-  //   scrollEffect(homeRef.current, 0.4, 0.8)
+  //   scrollEffect(aboutRef.current, 0.4, 0.8);
   // }, []);
 
-  useEffect(() => {
-    scrollEffect(aboutRef.current, 0.4, 0.8)
-  }, []);
+  // useEffect(() => {
+  //   scrollEffect(projectRef.current, 0.4, 0.8);
+  // }, []);
 
-  useEffect(() => {
-    scrollEffect(projectRef.current, 0.4, 0.8)
-  }, []);
+  // useEffect(() => {
+  //   scrollEffect(contactRef.current, 0.4, 0.8);
+  // }, []);
 
-  useEffect(() => {
-    scrollEffect(contactRef.current, 0.4, 0.8)
-  }, []);
-
-  useEffect(() => {
-    scrollEffect(projectRef.current, 0.4, 0.8)
-  }, [])
+  // useEffect(() => {
+  //   scrollEffect(projectRef.current, 0.4, 0.8);
+  // }, []);
 
   return (
     <MainStyle>
       <Home
         ref={homeRef}
-        titleBigClass={'title-big'}
-        titleClass={'title'}
-        projectsClass={'projects'}
-        btnClass={'btn-contact'}
-        btnLinkClass={'btn-contact-link'}
+        titleBigClass={"title-big"}
+        titleClass={"title"}
+        projectsClass={"projects"}
+        btnClass={"btn-contact"}
+        btnLinkClass={"btn-contact-link"}
       />
-      <About
-        ref={aboutRef}
-        presentationClass={'presentation'}
-      />
-      <Pro ref={proRef}/>
-      <Projects ref={projectRef}/>
+      <About ref={aboutRef} presentationClass={"presentation"} />
+      <Pro ref={proRef} />
+      <Projects ref={projectRef} />
       <Contact ref={contactRef} />
     </MainStyle>
   );

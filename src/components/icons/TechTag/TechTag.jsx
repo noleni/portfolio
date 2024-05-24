@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const TechTagStyle = styled.div`
   border: 0.5px solid var(--dark-blue);
@@ -8,14 +8,16 @@ const TechTagStyle = styled.div`
   padding: 4px 8px;
   margin: 4px;
   background-color: props.bgcolor || var(--super-light-pink);
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
-  &:hover {
+  ${
+    "" /* &:hover {
     transform: translateY(-5px);
   }
 
   & {
     transition: transform 0.2s ease-in-out;
+  } */
   }
 
   p {
@@ -23,15 +25,15 @@ const TechTagStyle = styled.div`
     padding: 2px 0 0 8px;
     font-size: 12px;
   }
-`
+`;
 
-const TechTag = ({SVG, name, i}) => {
+const TechTag = ({ SVG, name, i, customClass }) => {
   return (
-    <TechTagStyle key={i}>
+    <TechTagStyle key={i} className={customClass}>
       {SVG}
       <p>{name}</p>
     </TechTagStyle>
-  )
+  );
 };
 
 export default TechTag;

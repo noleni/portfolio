@@ -12,7 +12,7 @@ const ContactSection = styled.section`
     padding: 0 30px;
   }
   .message-confirmation {
-    color: var(--neon-pink);
+    color: var(--light-pink);
   }
   @media (min-width: 768px) {
     width: 60%;
@@ -43,11 +43,11 @@ const Form = styled.form`
   & input:focus,
   & textarea:focus {
     outline: none !important;
-    border: 2px solid var(--neon-pink);
+    border: 2px solid var(--light-pink);
   }
 
   & .error-message {
-    color: var(--neon-pink);
+    color: var(--light-pink);
     margin-top: 0;
   }
 `;

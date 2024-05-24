@@ -36,7 +36,7 @@ const StyleLargeNav = styled.nav`
   width: 100%;
   height: 60px;
   background-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 0 15px rgba(0,0,0,0.06);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(10px);
 
   .container {
@@ -98,7 +98,7 @@ const MenuStyle = styled.aside`
   right: 0;
   z-index: 2;
   height: 100vh;
-  background-color: var(--neon-pink);
+  background-color: var(--light-pink);
   transition: all 0.2s ease-in-out;
 
   &.open {
@@ -122,7 +122,7 @@ const MenuStyle = styled.aside`
       p {
         color: var(--off-white);
         margin-bottom: 0;
-        font-weight: lighter
+        font-weight: lighter;
       }
 
       h4 {
