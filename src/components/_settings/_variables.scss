@@ -1,22 +1,37 @@
-
 :root {
-// Colors
+  // Colors
 
---pure-white: #FFFF;
-// --off-white: #FAFFFD;
---off-white: #030b1c;
+  --black: #040d12;
+  --dark-blue: #081c15;
+  --pure-white: #ffffff;
+  --off-white: #b297bc;
+  --neon-pink: #f94a56;
+  --light-pink: #51355a;
+  --super-light-pink: #ffe3e4;
 
---black: #0C1330;
---neon-pink: #F94A56;
---light-pink: #ffa59a;
---super-light-pink: #FFE3E4;
+  /* CSS HEX */
+  --nyanza: #d8f3dcff;
+  --celadon: #b7e4c7ff;
+  --celadon-2: #95d5b2ff;
+  --mint: #74c69dff;
+  --mint-2: #52b788ff;
+  --sea-green: #40916cff;
+  --dartmouth-green: #2d6a4fff;
+  --brunswick-green: #1b4332ff;
+  --dark-green: #081c15ff;
 
---dark-blue: #2D4759;
---light-blue: #dde5eb;
+  /* CSS HSL */
+  --nyanza: hsla(129, 53%, 90%, 1);
+  --celadon: hsla(141, 45%, 81%, 1);
+  --celadon-2: hsla(147, 43%, 71%, 1);
+  --mint: hsla(150, 42%, 62%, 1);
+  --mint-2: hsla(152, 41%, 52%, 1);
+  --sea-green: hsla(153, 39%, 41%, 1);
+  --dartmouth-green: hsla(153, 40%, 30%, 1);
+  --brunswick-green: hsla(155, 43%, 18%, 1);
+  --dark-green: hsla(159, 56%, 7%, 1);
 
-
-// Fonts
---texts: 'Inter', sans-serif;
---title: 'Inter', sans-serif;
-
+  // Fonts
+  --texts: "Inter", sans-serif;
+  --title: "Inter", sans-serif;
 }

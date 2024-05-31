@@ -7,14 +7,14 @@ html.sr .load-hidden {
 }
 
 body {
-  background-color: var(--off-white);
+  background-color: var(--pure-white);
   min-height: 100vh;
   width: 100%;
   margin: 0;
 }
 
 section {
-  // height: 100vh;
+  background-color: var(--pure-white);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -27,7 +27,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: var(--black);
+  color: var(--dark-blue);
   font-family: var(--title);
 }
 
@@ -41,6 +41,7 @@ span {
   color: var(--black);
   font-family: var(--texts);
   font-size: 14px;
+  font-weight: 200;
 
   &.small {
     font-size: 12px;
