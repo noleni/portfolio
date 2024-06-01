@@ -3,10 +3,8 @@ import styled from "styled-components";
 import TechList from "../TechList";
 
 interface AboutProps {
-  ref: React.RefObject<HTMLDivElement>;
   presentationClass: string;
 }
-
 
 const AboutStyle = styled.section`
   background-color: var(--neon-pink);
@@ -93,10 +91,10 @@ const Brush = styled.div`
   transform: translateY(-1px);
 `;
 
-const About = React.forwardRef(({presentationClass, ref} : AboutProps) => {
+const About = ({ presentationClass }: AboutProps) => {
   return (
     <>
-      <AboutStyle id="about" ref={ref}>
+      <AboutStyle id="about">
         <div className="about-content">
           <p className="presentation">
             Je développe des applications web et mobiles depuis 2022. Après une
@@ -124,6 +122,6 @@ const About = React.forwardRef(({presentationClass, ref} : AboutProps) => {
       <Brush />
     </>
   );
-});
+};
 
 export default About;

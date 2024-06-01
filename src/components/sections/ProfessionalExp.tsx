@@ -1,4 +1,4 @@
-import React, { ForwardedRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import ProXpItem from "../professionnalXP/ProfessionalExpItem";
 import professionalXpData from "../../data/professionalXpData";
@@ -42,18 +42,16 @@ const ProfessionalSection = styled.section`
   }
 `;
 
-const ProfessionalExp = React.forwardRef<HTMLDivElement>(
-  (props, ref: ForwardedRef<HTMLDivElement>) => {
-    return (
-      <ProfessionalSection id="professional" ref={ref}>
-        <ul className="professionnal-xp-content">
-          {professionalXpData.map((data, i) => (
-            <ProXpItem key={i} card={data}></ProXpItem>
-          ))}
-        </ul>
-      </ProfessionalSection>
-    );
-  }
-);
+const ProfessionalExp = () => {
+  return (
+    <ProfessionalSection id="professional">
+      <ul className="professionnal-xp-content">
+        {professionalXpData.map((data, i) => (
+          <ProXpItem key={i} card={data}></ProXpItem>
+        ))}
+      </ul>
+    </ProfessionalSection>
+  );
+};
 
 export default ProfessionalExp;

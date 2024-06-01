@@ -17,12 +17,7 @@ import NotionSvg from "./icons/SVG/NotionSvg";
 import SlackSvg from "./icons/SVG/Slacksvg";
 import FirebaseSvg from "./icons/SVG/FirebaseSvg";
 import D3Svg from "./icons/SVG/D3Svg";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styled from "styled-components";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const TechListStyle = styled.div`
   .tech-list {
@@ -80,58 +75,6 @@ const TechListStyle = styled.div`
 const TechList = () => {
   const container = useRef(null);
   const main = useRef(null);
-
-  // useGSAP(
-  //   () => {
-  //     gsap.to(".tech-tag", {
-  //       duration: 1,
-  //       opacity: 1,
-  //       y: 0,
-  //       stagger: 0.1,
-  //       repeat: 0,
-  //     });
-  //   },
-  //   { scope: container }
-  // );
-
-  useGSAP(
-    () => {
-      const boxes = gsap.utils.toArray(".tech-tag");
-      boxes.forEach((box : any) => {
-        gsap.to(box, {
-          y: 40,
-          scrollTrigger: {
-            trigger: box,
-            start: "bottom bottom",
-            end: "top 20%",
-            scrub: true,
-            // markers: true,
-          },
-        });
-      });
-    },
-    { scope: main }
-  );
-
-  // useGSAP(
-  //   () => {
-  //     const boxes = gsap.utils.toArray("h5");
-  //     boxes.forEach((box) => {
-  //       gsap.from(box, {
-  //         scale: 0.5,
-  //         scrollTrigger: {
-  //           duration: 1,
-  //           repeat: 0,
-  //           ease: "power1.inOut",
-  //           stagger: {
-  //             each: 0.5,
-  //           },
-  //         },
-  //       });
-  //     });
-  //   },
-  //   { scope: main }
-  // );
 
   return (
     <TechListStyle>

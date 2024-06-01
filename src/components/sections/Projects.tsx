@@ -1,10 +1,9 @@
-import React, { ForwardedRef } from "react";
+import React from "react";
 
 import projectsData from "../../data/projectsData";
 import Project from "../Project";
 
 import styled from "styled-components";
-
 
 const ProjectsSection = styled.section`
   display: flex;
@@ -26,14 +25,13 @@ const ProjectsSection = styled.section`
   }
 `;
 
-const Projects = React.forwardRef<HTMLDivElement>(
-  ({ ...props }, ref: ForwardedRef<HTMLDivElement>) => {
+const Projects = () => {
   return (
-    <ProjectsSection id="projects" ref={ref}>
+    <ProjectsSection id="projects">
       <p className="section-title">03. Side projects</p>
       <Project data={projectsData} />
     </ProjectsSection>
   );
-});
+};
 
 export default Projects;

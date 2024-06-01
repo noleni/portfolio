@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import Home from "../sections/Home";
 import About from "../sections/About";
@@ -8,12 +8,6 @@ import Pro from "../sections/ProfessionalExp";
 
 import "../_settings/_variables.scss";
 import styled from "styled-components";
-
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MainStyle = styled.main`
   .title {
@@ -93,65 +87,19 @@ const MainStyle = styled.main`
 `;
 
 const Main = () => {
-  const homeRef = useRef(null);
-  const projectRef = useRef(null);
-  const proRef = useRef(null);
-  const aboutRef = useRef(null);
-  const contactRef = useRef(null);
-
-  // const scrollEffect = (e, delay, duration) => {
-  //   gsap.fromTo(
-  //     e,
-  //     {
-  //       opacity: 0,
-  //       y: 50,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: e,
-  //         start: "top center",
-  //         end: "bottom center",
-  //       },
-  //     }
-  //   );
-  // };
-
-  // // useEffect(() => {
-  // //   scrollEffect(homeRef.current, 0.4, 0.8)
-  // // }, []);
-
-  // useEffect(() => {
-  //   scrollEffect(aboutRef.current, 0.4, 0.8);
-  // }, []);
-
-  // useEffect(() => {
-  //   scrollEffect(projectRef.current, 0.4, 0.8);
-  // }, []);
-
-  // useEffect(() => {
-  //   scrollEffect(contactRef.current, 0.4, 0.8);
-  // }, []);
-
-  // useEffect(() => {
-  //   scrollEffect(projectRef.current, 0.4, 0.8);
-  // }, []);
-
   return (
     <MainStyle>
       <Home
-        ref={homeRef}
         titleBigClass={"title-big"}
         titleClass={"title"}
         projectsClass={"projects"}
         btnClass={"btn-contact"}
         btnLinkClass={"btn-contact-link"}
       />
-      <About ref={aboutRef} presentationClass={"presentation"} />
-      <Pro ref={proRef} />
-      <Projects ref={projectRef} />
-      <Contact ref={contactRef} />
+      <About presentationClass={"presentation"} />
+      <Pro />
+      <Projects />
+      <Contact />
     </MainStyle>
   );
 };

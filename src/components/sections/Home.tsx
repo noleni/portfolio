@@ -1,10 +1,6 @@
 import React, { ForwardedRef } from "react";
 import Button from "../UI/Button";
 import styled from "styled-components";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP);
 
 interface HomeProps {
   titleBigClass: string;
@@ -42,26 +38,18 @@ const HomeStyle = styled.section`
   }
 `;
 
-const Home = React.forwardRef<HTMLDivElement, HomeProps>(
-  ({ ...props }, ref: ForwardedRef<HTMLDivElement>) => {
-    useGSAP(() =>
-      gsap.to("h2", {
-        duration: 3,
-      })
-    );
-    return (
-      <HomeStyle ref={ref}>
-        <div className="home-content">
-          <h1 className={`${props.titleBigClass} `}>Marine Ramillon</h1>
-          <h2 className={`${props.titleClass}`}>Développeuse web et mobile</h2>
-
-          <a href="/#contact" className={props.btnLinkClass}>
-            <Button className={props.btnClass}>Me contacter</Button>
-          </a>
-        </div>
-      </HomeStyle>
-    );
-  }
-);
+const Home = (props: HomeProps) => {
+  return (
+    <HomeStyle>
+      <div className="home-content">
+        <h1 className={`${props.titleBigClass} `}>Marine Ramillon</h1>
+        <h2 className={`${props.titleClass}`}>Développeuse web et mobile</h2>
+        <a href="/#contact" className={props.btnLinkClass}>
+          <Button className={props.btnClass}>Me contacter</Button>
+        </a>
+      </div>
+    </HomeStyle>
+  );
+};
 
 export default Home;

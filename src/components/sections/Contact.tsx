@@ -52,7 +52,7 @@ const Form = styled.form`
   }
 `;
 
-const Contact = React.forwardRef((props, ref) => {
+const Contact = () => {
   const formRef = useRef();
   const emailRef = useRef();
   const messageRef = useRef();
@@ -106,7 +106,7 @@ const Contact = React.forwardRef((props, ref) => {
   };
 
   return (
-    <ContactSection id="contact" ref={ref as React.RefObject<HTMLElement>}>
+    <ContactSection id="contact">
       <p className="section-title">04. Restons en contact !</p>
       {messageIsSent && (
         <p className="message-confirmation">Votre message a bien été envoyé.</p>
@@ -137,6 +137,6 @@ const Contact = React.forwardRef((props, ref) => {
       </Form>
     </ContactSection>
   );
-});
+};
 
 export default Contact;

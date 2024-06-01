@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import ExternalLink from "../icons/SVG/ExternalLink";
 import moment from "moment";
 moment.locale("fr");
 
 interface ProXpItemProps {
-  key: number;
   card: {
     current: boolean;
     dateFrom: Date;
@@ -19,6 +18,13 @@ interface ProXpItemProps {
 }
 
 const ProXpStyle = styled.li`
+  opacity: 0; /* Elements are hidden by default */
+  transition: opacity 0.5s, transform 0.5s;
+
+  &.visible {
+    animation: fadeInUp 0.5s forwards;
+  }
+
   /* row gaps */
   :not(:last-child) {
     margin-bottom: var(--row-gap);
@@ -37,7 +43,7 @@ const ProXpStyle = styled.li`
     height: var(--dateH);
     margin-inline: calc(var(--inlineP) * -1);
     text-align: center;
-    background-color: var(--mint);
+    background-color: var(--celadon-2);
     color: white;
     font-size: 1.25rem;
     font-weight: 700;
@@ -52,7 +58,7 @@ const ProXpStyle = styled.li`
     content: "";
     width: var(--inlineP);
     aspect-ratio: 1;
-    background: var(--mint);
+    background: var(--celadon-2);
     background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
     position: absolute;
     top: 100%;
@@ -66,8 +72,8 @@ const ProXpStyle = styled.li`
     position: absolute;
     width: 2rem;
     aspect-ratio: 1;
-    background: white;
-    border: 0.3rem solid var(--neon-pink);
+    background: var(--pure-white);
+    border: 0.3rem solid red;
     border-radius: 50%;
     top: 50%;
     transform: translate(50%, -50%);
@@ -146,12 +152,37 @@ const ProXpStyle = styled.li`
   }
 `;
 
-const ProXpItem = ({ key, card }: ProXpItemProps) => {
+const ProXpItem = ({ card }: ProXpItemProps) => {
+  const ref = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <ProXpStyle key={key}>
-      <h3 className="card-job-date">
+    <ProXpStyle ref={ref}>
+      <h4 className="card-job-date">
         {moment(card.dateFrom).format("MMM yy")} - {moment(card.dateTo).format("MMM yy")}
-      </h3>
+      </h4>
       <div>
         <span className="card-job-title">
           {card.job} | {card.society}
