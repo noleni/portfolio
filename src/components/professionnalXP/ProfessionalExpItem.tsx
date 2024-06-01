@@ -19,27 +19,139 @@ interface ProXpItemProps {
 }
 
 const ProXpStyle = styled.li`
-  margin-bottom: 20px;
+  /* row gaps */
+  :not(:last-child) {
+    margin-bottom: var(--row-gap);
+  }
+
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+
+  /* date */
+  .card-job-date {
+    --dateH: 3rem;
+    height: var(--dateH);
+    margin-inline: calc(var(--inlineP) * -1);
+    text-align: center;
+    background-color: var(--mint);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: grid;
+    place-content: center;
+    position: relative;
+    border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+  }
+
+  /* date flap */
+  .card-job-date::before {
+    content: "";
+    width: var(--inlineP);
+    aspect-ratio: 1;
+    background: var(--mint);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+    position: absolute;
+    top: 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    right: 0;
+  }
+
+  /* circle */
+  .card-job-date::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    background: white;
+    border: 0.3rem solid var(--neon-pink);
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+
+  /* title and description */
+  .card-job-title,
+  .card-job-infos {
+    background: var(--bgColor);
+    position: relative;
+    padding-inline: 1.5rem;
+  }
 
   .card-job-title {
-    font-size: 14px;
-    margin-top: 0;
-    padding: 0;
-    border-radius: 4px 4px 0 0;
-    font-weight: lighter;
+    overflow: hidden;
+    padding-block-start: 1.5rem;
+    padding-block-end: 1rem;
+    font-weight: 500;
   }
 
   .card-job-infos {
     display: flex;
+    padding-block-end: 1.5rem;
+    font-weight: 300;
+  }
+
+  /* shadows */
+  .card-job-title::before,
+  .card-job-infos::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    left: 50%;
+    border-radius: 50%;
+    filter: blur(4px);
+    transform: translate(-50%, 50%);
+  }
+
+  .card-job-title::before {
+    bottom: calc(100% + 0.125rem);
+  }
+
+  .card-job-infos::before {
+    z-index: -1;
+    bottom: 0.25rem;
+  }
+
+  @media (min-width: 40rem) {
+    :nth-child(odd) {
+      grid-column: 1;
+    }
+    :nth-child(even) {
+      grid-column: 3;
+    }
+
+    :nth-child(2) {
+      grid-row: 2 / 4;
+    }
+
+    :nth-child(odd) .card-job-date::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+      left: 0;
+    }
+
+    :nth-child(odd) .card-job-date::after {
+      transform: translate(-50%, -50%);
+      left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+    }
+
+    :nth-child(odd) .card-job-date {
+      border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+    }
   }
 `;
 
-const ProXpItem = ({ key, card } : ProXpItemProps) => {
+const ProXpItem = ({ key, card }: ProXpItemProps) => {
   return (
     <ProXpStyle key={key}>
-      <span className="small">{moment(card.dateFrom).format("MMM yy")}</span>
-      <span className="small"> - </span>
-      <span className="small">{moment(card.dateTo).format("MMM yy")}</span>
+      <h3 className="card-job-date">
+        {moment(card.dateFrom).format("MMM yy")} - {moment(card.dateTo).format("MMM yy")}
+      </h3>
       <div>
         <span className="card-job-title">
           {card.job} | {card.society}
@@ -52,14 +164,11 @@ const ProXpItem = ({ key, card } : ProXpItemProps) => {
         <p className="small">{card.societyDescription}</p>
       </div>
       <div className="card-job-infos">
-        {card?.technos?.map((tech, index) => (
+        {card.technos?.map((tech, index) => (
           <span key={index} className="">
             {tech}
           </span>
         ))}
-      </div>
-      <div>
-        <div className="card-job-name"></div>
       </div>
     </ProXpStyle>
   );
